@@ -26,4 +26,9 @@ export const loginThunk = createAsyncThunk(
   }
 );
 
+export const currentThunk = createAsyncThunk(
+  'user/current',
+  async
+)
+
 export const logoutThunk = createAsyncThunk('auth/logout');

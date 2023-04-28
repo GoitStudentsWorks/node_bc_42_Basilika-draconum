@@ -1,4 +1,4 @@
-import { privateAPI, publicAPI } from 'http/http';
+import { privateAPI, publicAPI } from '../shared/http';
 
 export const token = {
   set: token => {
@@ -23,3 +23,9 @@ export const logoutService = async () => {
   const { data } = await privateAPI.post('logout');
   return data;
 };
+
+
+export const currentService = async () =>{
+  const {data} = await privateAPI.get('current');
+  return data;
+}
