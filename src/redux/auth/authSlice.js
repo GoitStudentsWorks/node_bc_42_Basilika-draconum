@@ -6,7 +6,9 @@ const initialState = {
   isLogin: false,
   error: null,
   user: null,
+
   token: null,
+
 };
 
 const authSlice = createSlice({
@@ -32,14 +34,18 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.token = payload.token;
+
         state.user = payload.user;
+
         state.isLogin = true;
       })
       .addCase(loginThunk.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
+
       })
     
+
   },
 });
 export const authReducer = authSlice.reducer;

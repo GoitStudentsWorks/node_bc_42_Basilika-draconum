@@ -1,3 +1,4 @@
+
 import { privateAPI, publicAPI } from '../shared/http';
 
 export const registerUserApi = async user => {
@@ -27,5 +28,6 @@ export const getCurrentUserApi = async () => {
 
 export const updateAvatarApi = async avatar => {
   const { data } = await privateAPI.put('api/auth/avatar', avatar);
+
   return data;
 };
