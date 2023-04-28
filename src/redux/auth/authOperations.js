@@ -1,6 +1,5 @@
-
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import {  loginUserApi, registerUserApi } from 'services/authService';
+import { loginUserApi, registerUserApi } from 'services/authService';
 
 import { setAuthHeader } from 'shared/http';
 
@@ -24,12 +23,8 @@ export const loginThunk = createAsyncThunk(
 
       setAuthHeader(data.token);
       return data;
-
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);
     }
   }
 );
-
-
-
