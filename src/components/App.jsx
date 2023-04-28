@@ -1,9 +1,12 @@
-import { StartPage } from "pages";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
+import { RegisterPage } from '../pages/AuthPage/RegisterPage';
+import { LoginPage } from 'pages/AuthPage/LoginPage';
 
 export const App = () => {
-  return (<Routes>
-      <Route path="/" element={<StartPage />} />
-      
-    </Routes>)
+  return (
+    <Routes>
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/login" element={<LoginPage />} />
+    </Routes>
+  );
 };
