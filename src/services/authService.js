@@ -1,4 +1,4 @@
-import { publicAPI } from '../shared/http';
+import { privateAPI, publicAPI } from '../shared/http';
 
 export const registerUserApi = async user => {
   const { data } = await publicAPI.post('api/auth/register', user);
@@ -11,21 +11,21 @@ export const loginUserApi = async user => {
 };
 
 export const logoutApi = async () => {
-  const { data } = await publicAPI.post('api/auth/logout');
+  const { data } = await privateAPI.post('api/auth/logout');
   return data;
 };
 
 export const updateDataUserApi = async dataUser => {
-  const { data } = await publicAPI.put('api/auth', dataUser);
+  const { data } = await privateAPI.put('api/auth', dataUser);
   return data;
 };
 
 export const getCurrentUserApi = async () => {
-  const { data } = await publicAPI.patch('api/auth/current');
+  const { data } = await privateAPI.patch('api/auth/current');
   return data;
 };
 
 export const updateAvatarApi = async avatar => {
-  const { data } = await publicAPI.put('api/auth/avatar', avatar);
+  const { data } = await privateAPI.put('api/auth/avatar', avatar);
   return data;
 };
