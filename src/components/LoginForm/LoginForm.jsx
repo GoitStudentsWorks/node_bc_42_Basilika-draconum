@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import style from './loginForm.module.scss';
-import icons from 'images/icons.svg';
+import icons from 'images/auth.svg';
 import GooseLogIn from 'images/goose-login.png';
 import GooseLogIn2x from 'images/goose-login@2x.png';
 
@@ -58,8 +58,8 @@ export const LoginForm = () => {
             <Field
               className={style.login_input}
               type="password"
-              name="Enter password"
-              placeholder="Password"
+              name="password"
+              placeholder="Enter password"
             />
             <ErrorMessage
               component="span"
@@ -76,7 +76,7 @@ export const LoginForm = () => {
           </Form>
           <img
             className={style.img}
-            srcset={`${GooseLogIn} 1x, ${GooseLogIn2x} 2x`}
+            srcSet={`${GooseLogIn} 1x, ${GooseLogIn2x} 2x`}
             src={`${GooseLogIn}`}
             alt="goose"
           />

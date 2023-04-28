@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import style from './registerForm.module.scss';
-import icons from 'images/icons.svg';
+import icons from 'images/auth.svg';
 import GooseRegister from 'images/goose-register.png';
 import GooseRegister2x from 'images/goose-register@2x.png';
 // import { useNavigate } from "react-router-dom";
@@ -95,7 +95,7 @@ export const RegisterForm = () => {
           </Form>
           <img
             className={style.img}
-            srcset={`${GooseRegister} 1x, ${GooseRegister2x} 2x`}
+            srcSet={`${GooseRegister} 1x, ${GooseRegister2x} 2x`}
             src={`${GooseRegister}`}
             alt="goose"
           />
