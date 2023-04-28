@@ -2,6 +2,10 @@
 import { useDispatch } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import style from './registerForm.module.scss';
+import icons from 'images/icons.svg';
+import GooseRegister from 'images/goose-register.png';
+import GooseRegister2x from 'images/goose-register@2x.png';
 // import { useNavigate } from "react-router-dom";
 
 import { registerThunk } from '../../redux/auth/authOperations';
@@ -35,39 +39,68 @@ export const RegisterForm = () => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <Form >
-        <div className="input-group mb-3">
-          <Field
-            type="name"
-            name="name"
-            className="form-control"
-            placeholder="Name"
-          />
-          <ErrorMessage name="name" />
-        </div>
+      <div className={style.wrapper}>
+        <div className={style.loginFormContainer}>
+          <Form className={style.form}>
+          <h1 className={style.form_title}>Sign Up</h1>
+            <label className={style.login_label}>
+              <p className={style.login_paragraph}>Name</p>
+              <Field
+                className={style.login_input}
+                type="name"
+                name="name"
+                placeholder="Name"
+              />
+            </label>
+            <ErrorMessage
+              component="span"
+              className={style.error_message}
+              name="name"
+            />
+            <label className={style.login_label}>
+              <p className={style.login_paragraph}>Email</p>
+              <Field
+                className={style.login_input}
+                type="email"
+                name="email"
+                placeholder="Email"
+              />
+            </label>
+            <ErrorMessage
+              component="span"
+              className={style.error_message}
+              name="email"
+            />
+            <label className={style.login_label}>
+              <p className={style.login_paragraph}>Password</p>
+              <Field
+                className={style.login_input}
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+            </label>
+            <ErrorMessage
+              component="span"
+              className={style.error_message}
+              name="password"
+            />
 
-        <div className="input-group mb-3">
-          <Field
-            type="email"
-            name="email"
-            className="form-control"
-            placeholder="Email"
+            <button className={style.form_button} type="submit">
+              <span className={style.button_text}>Sign up</span>
+              <svg className={style.svg}>
+                <use href={`${icons}#icon-log-in`} />
+              </svg>
+            </button>
+          </Form>
+          <img
+            className={style.img}
+            srcset={`${GooseRegister} 1x, ${GooseRegister2x} 2x`}
+            src={`${GooseRegister}`}
+            alt="goose"
           />
-          <ErrorMessage name="email" />
         </div>
-
-        <div className="input-group mb-3">
-          <Field
-            type="password"
-            name="password"
-            className="form-control"
-            placeholder="Password"
-          />
-          <ErrorMessage name="password" />
-        </div>
-
-        <button type="submit">Sing Up</button>
-      </Form>
+      </div>
     </Formik>
   );
 };

@@ -1,7 +1,10 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
-
+import style from './loginForm.module.scss';
+import icons from 'images/icons.svg';
+import GooseLogIn from 'images/goose-login.png';
+import GooseLogIn2x from 'images/goose-login@2x.png';
 
 import { loginThunk } from '../../redux/auth/authOperations';
 const schema = yup.object().shape({
@@ -14,7 +17,6 @@ const initialValues = {
 };
 export const LoginForm = () => {
   const dispatch = useDispatch();
-
 
   const handleSubmit = (values, { resetForm }) => {
     dispatch(
@@ -32,36 +34,54 @@ export const LoginForm = () => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <div className="input-group mb-3">
-          <Field
-            type="email"
-            name="email"
-            className="form-control"
-            placeholder="Email"
-          />
-          <ErrorMessage name="email" />
-        </div>
+      <div className={style.wrapper}>
+        <div className={style.loginFormContainer}>
+          <Form className={style.form}>
+            <h1 className={style.form_title}>Log in</h1>
+            <label className={style.login_label}>
+              <p className={style.login_paragraph}>Email</p>
+            <Field
+              className={style.login_input}
+              type="email"
+              name="email"
+              placeholder="Enter email"
+            />
+            </label>
+            <ErrorMessage
+              component="span"
+              className={style.error_message}
+              name="email"
+            />
+            <label className={style.login_label}>
+              <p className={style.login_paragraph}>Password</p>
+            </label>
+            <Field
+              className={style.login_input}
+              type="password"
+              name="Enter password"
+              placeholder="Password"
+            />
+            <ErrorMessage
+              component="span"
+              className={style.error_message}
+              name="password"
+            />
 
-        <div className="input-group mb-3">
-          <Field
-            type="password"
-            name="password"
-            className="form-control"
-            placeholder="Password"
+            <button className={style.form_button} type="submit">
+              <span className={style.button_text}>Log in</span>
+              <svg className={style.svg}>
+                <use href={`${icons}#icon-log-in`} />
+              </svg>
+            </button>
+          </Form>
+          <img
+            className={style.img}
+            srcset={`${GooseLogIn} 1x, ${GooseLogIn2x} 2x`}
+            src={`${GooseLogIn}`}
+            alt="goose"
           />
-          <ErrorMessage name="password" />
         </div>
-
-        <button type="submit">Log in</button>
-      </Form>
+      </div>
     </Formik>
   );
 };
-
-// import React from 'react';
-// import { Input } from 'antd';
-
-// const App: React.FC = () => <Input placeholder="Basic usage" />;
-
-// export default App;
