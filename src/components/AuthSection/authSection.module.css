@@ -1,4 +1,9 @@
 .section {
-    background-color: blue;
+    background-color: var(--color-accent);
+    width: 385px;
+    height: 812px;
+}
+.logotitle {
+    color: white;
 }
 

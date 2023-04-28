@@ -2,15 +2,18 @@ import React from 'react'
 import calendar from '../../images/image-calendar.png'
 import one from '../../images/image-one.png'
 import sidebar from '../../images/image-sidebar.png'
+// import style from '../Description/description.module.css'
+import style from './description.module.css'
 
 export const Description = () => {
   return (
       <>
-      <section>
+          <div className="container">
+      <section className={style.section}>
         <div>
-          <h2>1.</h2>
-          <h3>Calendar</h3>
-          <h4>VIEW</h4>
+          <h2 className='number'>1.</h2>
+          <h3 className='title'>Calendar</h3>
+          <h4 className='subtitle'>VIEW</h4>
           <p>GooseTrack's Calendar view provides a comprehensive overview of your schedule, displaying all your tasks, events, and appointments in a visually appealing and intuitive layout.
           </p>
         </div>
@@ -41,7 +44,8 @@ export const Description = () => {
         <img src={one} alt=""/>
         
         
-      </section> 
+              </section> 
+              </div>
       </>
   )
 }
