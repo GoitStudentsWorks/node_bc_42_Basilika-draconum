@@ -19,12 +19,17 @@
   --bgColor-range-low:#72C2F8;
   --bgColor-range-medium: #F3B249;
   --bgColor-range-high: #EA3D65;
+  --bgColor-btn-AddTask: #E3F3FF;
+  --bgColor-btn-AddTask-hover: #CAE8FF;
+  --borderColor-colum:rgba(220, 227, 229, 0.8);
+  --bgColor-task-cart: #F7F6F9;
 }
 
 * {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
