@@ -1,4 +1,5 @@
 
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import {  loginUserApi, registerUserApi } from 'services/authService';
 
 import { setAuthHeader } from 'shared/http';
