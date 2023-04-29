@@ -1,9 +1,84 @@
-.section {
+.authSection {
+
     background-color: var(--color-accent);
-    width: 385px;
-    height: 812px;
-}
-.logotitle {
-    color: white;
+    // width: 385px;
+
+    padding: 232px 0 88px;
 }
 
+.authConteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logofoto {
+    margin-bottom: 2px;
+}
+
+.logotitle {
+    // font-family: "Coolvetica";
+    color: white;
+    margin-bottom: 32px;
+    text-align: center;
+
+    & span {
+        font-style: italic;
+    }
+}
+.linkWrapper{
+display: flex;
+flex-direction: column;
+gap: 208px;
+}
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: var(--bgColor-primary);
+    width: 131px;
+    height: 46px;
+    border-radius: 16px;
+    border-color: transparent;
+    
+    text-decoration: none;
+    color: var(--color-accent);
+}
+
+.singup {
+    color: white;
+    // margin-left: 166px;
+    display: block;
+    text-align: center;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height, or 117% */
+
+    text-decoration-line: underline;
+}
+
+@media screen and (min-width: 768px) {
+    .authSection{
+        padding: 320px 0;
+    }
+    .logotitle {
+        margin-bottom: 40px;
+    }
+    .linkWrapper {
+        flex-direction: row-reverse;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .authSection {
+        padding: 200px 0;
+    }
+}
