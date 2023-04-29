@@ -1,5 +1,12 @@
-import UserProfile from './UserProfile/UserProfile';
+import { Route, Routes } from 'react-router-dom';
+import { RegisterPage } from '../pages/AuthPage/RegisterPage';
+import { LoginPage } from 'pages/AuthPage/LoginPage';
 
 export const App = () => {
-  return <div>React homework template</div>;
+  return (
+    <Routes>
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/login" element={<LoginPage />} />
+    </Routes>
+  );
 };
