@@ -1,4 +1,10 @@
-
+.part {
+    padding-top: 64px;
+    // background-color: brown;
+}
+.sidebarWrapper {
+    background-color: chartreuse;
+}
 
 .number{
 
@@ -7,9 +13,13 @@ color: var(--color-accent);
 font-style: normal;
 font-weight: 700;
 font-size: 80px;
+padding-bottom: 22px;
 
 }
 .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
@@ -18,6 +28,49 @@ font-size: 80px;
         width: 214px;
         height: 56px;
         border-radius: 44px;
-        background-color: var(--bgColor-secondary)
+        background-color: var(--bgColor-secondary);
+
+       color: var(--color-accent);
         
+}
+.subtitle {
+    font-family: Inter;
+    font-style: Bold;
+    font-size: 32px;
+    line-height: 40px;
+    //  Line height: 103%; 
+    padding-top: 8px;
+    padding-bottom: 14px;
+}
+.descript {
+    // display: block;
+    font-style: Medium;
+    font-size: 14px; 
+    line-height: 18px; 
+      
+    margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+    // .number {
+    //     margin-left: 461px;
+    // }
+    //     .subtitle {
+    //         margin-left: 461px;
+    //     }
+
+    .descript {
+        width: 275px;
+        height: 126px;
+        font-style: normal;
+        font-weight: 500;
+        
+    }
+    .sidebarWrapper {
+margin-left: 461px;
+margin-bottom: 40px;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    
 }
