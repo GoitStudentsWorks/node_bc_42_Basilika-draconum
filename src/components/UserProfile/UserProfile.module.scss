@@ -40,55 +40,73 @@
       margin: 0 auto 40px;
     }
 
-    .figureAvatar {
+    .containerAvatar {
       position: relative;
-      margin-top: -170px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 2px solid #3e85f3;
+      background-color: #f8f8f8;
+      color: rgba(62, 133, 243, 0.18);
+      font-size: 28px;
+      margin: -170px auto 0;
 
       @media screen and (min-width: 768px) {
+        width: 124px;
+        height: 124px;
+        font-size: 36px;
         margin-top: 0;
       }
 
       .avatarImage {
-        width: 72px;
-        height: 72px;
+        width: 100%;
+        height: 100%;
         border-radius: 50%;
-        border: 2px solid #3e85f3;
         object-fit: cover;
-
-        @media screen and (min-width: 768px) {
-          width: 124px;
-          height: 124px;
-        }
       }
 
       .inputUpload {
         position: absolute;
-        bottom: 2px;
-        right: 15px;
+        bottom: -7px;
+        right: 12px;
         opacity: 0;
-        width: 16px;
-        height: 16px;
+        width: 17px;
+        height: 17px;
+
+        @media screen and (min-width: 768px) {
+          bottom: -9px;
+          right: 21px;
+          width: 26px;
+          height: 26px;
+          font-size: 20px;
+        }
       }
 
       .btnUpload {
         position: absolute;
-        bottom: 2px;
-        right: 15px;
+        bottom: -5px;
+        right: 14px;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 14px;
         height: 14px;
         background: #3e85f3;
-        font-size: 20px;
+        font-size: 14px;
         border: none;
         border-radius: 50%;
         cursor: pointer;
         color: #fff;
 
         @media screen and (min-width: 768px) {
+          bottom: -8px;
+          right: 22px;
           width: 24px;
           height: 24px;
+          font-size: 20px;
         }
       }
     }
@@ -245,6 +263,15 @@
   line-height: 1.17;
   color: #da1414;
   margin: 5px 0 0 18px;
+}
+
+// Date Picker
+.reactDatePicker {
+  background-color: #3e85f3;
+}
+
+.react-datepicker {
+  background-color: #3e85f3;
 }
 
 @media screen and (min-width: 768px) {

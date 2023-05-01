@@ -1,11 +1,22 @@
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import { FiPlus, FiChevronDown } from 'react-icons/fi';
+import { AiOutlineUser } from 'react-icons/ai';
+
+import { selectUser } from 'redux/auth/authSelectors';
+import {
+  getCurrentUserThunk,
+  updateUserInfoThunk,
+} from 'redux/auth/authOperations';
 
 import css from './UserProfile.module.scss';
 import photo from './images/cat.jpg';
 
+// Validation Schema
 const profileSchema = Yup.object({
   name: Yup.string().max(16, 'Must be 16 characters or less').required(),
   phone: Yup.string()
@@ -22,17 +33,49 @@ const profileSchema = Yup.object({
     .required(),
 });
 
+// UserProfile
 const UserProfile = () => {
+  const [newAvatar, setNewAvatar] = useState(null);
+  const [newBirthday, setNewBirthday] = useState(null);
+  const [updatedProfile, setUpdatedProfile] = useState(false);
+
+  const userData = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (updatedProfile) {
+      dispatch(getCurrentUserThunk());
+      setUpdatedProfile(false);
+    }
+  }, [dispatch, updatedProfile]);
+
   const handleSubmit = (values, { resetForm }) => {
-    const profileData = {
+    const simpleData = {
       name: values.name,
       phone: values.phone,
-      birthday: values.birthday,
-      skype: values.skype,
       email: values.email,
+      skype: values.skype,
     };
-    console.log(profileData);
+    // const profileData = new FormData();
+    // profileData.append('name', values.name);
+    // profileData.append('email', values.email);
+    // if (values.phone) {
+    //   profileData.append('phone', values.phone);
+    // }
+    // if (values.skype) {
+    //   profileData.append('skype', values.skype);
+    // }
+    // profileData.append('birthday', values.birthday);
+    // if (newAvatar) {
+    //   profileData.append('avatar', newAvatar);
+    // }
+    // console.log(...profileData);
+    dispatch(updateUserInfoThunk(simpleData));
     resetForm();
+  };
+
+  const uploadImage = e => {
+    setNewAvatar(e.target.files[0]);
   };
 
   return (
@@ -45,22 +88,37 @@ const UserProfile = () => {
           skype: '',
           email: '',
         }}
+        // initialValues={{
+        //   name: user.name || '',
+        //   phone: user.phone || '',
+        //   birthday: user.birthday || '',
+        //   skype: user.skype || '',
+        //   email: user.email || '',
+        // }}
         validationSchema={profileSchema}
         onSubmit={handleSubmit}
       >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-        }) => (
+        {({ values, handleChange, handleBlur, handleSubmit }) => (
           <form autoComplete="off" className={css.form} onSubmit={handleSubmit}>
             <div className={css.formAvatar}>
-              <div className={css.figureAvatar}>
-                <img className={css.avatarImage} src={photo} alt="avatar" />
-                <label className={css.labelUpload} htmlFor="avatar">
+              <div className={css.containerAvatar}>
+                {newAvatar ? (
+                  <img
+                    src={URL.createObjectURL(newAvatar)}
+                    className={css.avatarImage}
+                    alt="avatar"
+                  />
+                ) : userData?.avatar ? (
+                  <img
+                    src={userData?.avatar}
+                    className={css.avatarImage}
+                    alt="avatar"
+                  />
+                ) : (
+                  <AiOutlineUser className={css.avatarIcon} />
+                )}
+
+                <label htmlFor="avatar">
                   <button className={css.btnUpload}>
                     <FiPlus />
                   </button>
@@ -69,7 +127,7 @@ const UserProfile = () => {
                     className={css.inputUpload}
                     id="avatar"
                     type="file"
-                    // onChange={event => setAvatarURL(event.target.files[0])}
+                    onChange={uploadImage}
                     accept="image/*,.png,.jpg,.gif,.web"
                     name="avatar"
                   ></input>
@@ -127,7 +185,7 @@ const UserProfile = () => {
                 <label className={css.formLabel} htmlFor="birthday">
                   Birthday
                 </label>
-                <input
+                {/* <input
                   type="date"
                   name="birthday"
                   id="birthday"
@@ -137,20 +195,23 @@ const UserProfile = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="birthday"
-                ></input>
-                {/* <DatePick
-            type="date"
-            name="birthday"
-            id="birthday"
-            input={true}
-            maxDate={new Date()}
-            selected={values.birthday}
-            onChange={data => {
-              setNewBirthday(data);
-            }}
-            placeholder="Birthday"
-            dateFormat="dd/MM/yyyy"
-          /> */}
+                ></input> */}
+                <DatePicker
+                  type="date"
+                  name="birthday"
+                  id="birthday"
+                  input={true}
+                  className={css.formInput}
+                  maxDate={new Date()}
+                  selected={values.birthday}
+                  onChange={date => {
+                    setNewBirthday(date);
+                  }}
+                  placeholder="Birthday"
+                  dateFormat="dd/MM/yyyy"
+                  calendarStartDay={1}
+                  closeOnScroll={e => e.target === document}
+                />
                 {/* 
           <VectorPng>
             <use href={Icon + '#icon-chevron-right-new'}></use>
@@ -168,7 +229,6 @@ const UserProfile = () => {
                   id="skype"
                   className={css.formInput}
                   placeholder="Skype"
-                  // value={values.skype ? values.skype : ''}
                   value={values.skype}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -190,7 +250,6 @@ const UserProfile = () => {
                   id="email"
                   className={css.formInput}
                   placeholder="Email"
-                  // value={values.email}
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
