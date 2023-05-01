@@ -1,7 +1,5 @@
 import s from './taskColumnCard.module.scss';
 
-import avatar from '../../../images/goose-start.png';
-
 
 const maxLengthTitle = 30;
 
@@ -36,13 +34,7 @@ const TaskColumnCard = () => {
         <p className={s.tasksCard__text}>{description}</p>
         <div className={s.tasksCard__bottomWrap}>
           <div className={s.tasksCard__info}>
-            <img
-              className={s.tasksCard__avatar}
-              src={avatar}
-              alt="Avatar"
-              width={32}
-              height={32}
-            />
+          
             <span
               style={{ backgroundColor: priorityBackgroundColor }}
               className={s.tasksCard__riority}

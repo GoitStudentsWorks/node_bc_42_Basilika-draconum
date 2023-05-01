@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/authSlice';
-
+import { tasksReducer } from './tasks/tasksSlice';
 const persistConfig = {
   key: 'goose-track',
   storage,
@@ -21,6 +21,7 @@ const persistedReducer = persistReducer(persistConfig, authReducer);
 export const store = configureStore({
   reducer: {
     auth: persistedReducer,
+    tasks: tasksReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

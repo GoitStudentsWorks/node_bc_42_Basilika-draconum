@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { loginUserApi, registerUserApi } from 'services/authService';
+import { getTaskAllApi } from 'services/tasksService';
 
-import { setAuthHeader } from 'shared/http';
+import { privateAPI, setAuthHeader } from 'shared/http';
 
 export const registerThunk = createAsyncThunk(
   'auth/register',
@@ -22,6 +23,7 @@ export const loginThunk = createAsyncThunk(
       const data = await loginUserApi(credentials);
 
       setAuthHeader(data.token);
+      // const www = await getTaskAllApi();
       return data;
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);

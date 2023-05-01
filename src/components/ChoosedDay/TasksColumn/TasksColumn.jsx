@@ -11,7 +11,7 @@ const TasksColumn = ({ title, tasks, getTask }) => {
 
   return (
     <div className={s.tasksColumnWrap} >
-      <ColumnHeadBar title={"In progress"} />
+      <ColumnHeadBar title={title} />
       <ColumnsTasksList />
       <AddTaskBtn text={"Add task"} icon={"plus"} />
     </div>

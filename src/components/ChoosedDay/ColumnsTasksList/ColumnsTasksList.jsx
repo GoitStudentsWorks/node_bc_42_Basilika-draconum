@@ -6,7 +6,7 @@ import s from './columnsTasksList.module.scss'
 const ColumnsTasksList = () => {
   return (
     <div className={s.taskslistSWrap}>
-      <TaskColumnCard />
+      <TaskColumnCard title={"tinkt"}/>
     </div>
   
   )
