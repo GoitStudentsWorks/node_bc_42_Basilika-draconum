@@ -1,3 +1,8 @@
+import MainLayout from '../components/MainLayout/MainLayout';
 export const App = () => {
-  return <div>React homework template</div>;
+  return (
+    <div>
+      <MainLayout />
+    </div>
+  );
 };
