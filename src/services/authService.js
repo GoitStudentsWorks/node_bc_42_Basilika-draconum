@@ -27,6 +27,5 @@ export const getCurrentUserApi = async () => {
 
 export const updateAvatarApi = async avatar => {
   const { data } = await privateAPI.patch('api/auth/avatar', avatar);
-
   return data;
 };

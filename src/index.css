@@ -3,24 +3,68 @@
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-} */
-:root {
-  --bgColor-primary: #ffffff;
-  --bgColor-secondary: #dcebf7;
-  --bgColor-table: #eaeaea;
-  --bgColor-night-sidebar: #13151a;
-  --bgColor-night-main: #171820;
-  --bgColor-night-calendar: #21222c;
-  --color-accent: #3e85f3;
+}  */
+/* :root {
+  --bgColor-primary: #FFFFFF;
+  --bgColor-secondary: #DCEBF7;
+  --bgColor-table: #EAEAEA;
+  --bgColor-night-sidebar:#13151A;
+  --bgColor-night-main:#171820;
+  --bgColor-night-calendar:#21222C;
+  --color-accent: #3E85F3;
   --textColor-primary: #111111;
   --textColor-secondary: #616161;
-  --textColor-white: #ffffff;
-  --textColor-placeholder: #dce3e5;
-  --bgColor-range-low: #72c2f8;
-  --bgColor-range-medium: #f3b249;
-  --bgColor-range-high: #ea3d65;
-}
+  --textColor-white: #FFFFFF;
+  --textColor-placeholder: #DCE3E5;
+  --bgColor-range-low:#72C2F8;
+  --bgColor-range-medium: #F3B249;
+  --bgColor-range-high: #EA3D65;
+} */
 
+html[data-theme='dark'] {
+  --sidebar: #13151a;
+  --bgColor-secondary: #171820;
+  --calendar: #21222c;
+  --sidebar-accent: #3e85f3;
+  --textColor-main: #111111;
+  --gooseTrack-color: #e3f3ff;
+  --sidebar-text-panel: rgba(250, 250, 250, 0.3);
+  --sidebar-text-other: #fff;
+  --profile-text-main: #fff;
+  --name-text-color: #fff;
+  --profile-text-user: rgba(250, 250, 250, 0.3);
+  --profile-text-categories:rgba(250, 250, 250, 0.3);
+  --month-day-background-accent: #3E85F3;
+  --month-day-background: #21222C;
+  --month-day-text: #3E85F3;
+  --month-day-text-accent: #fff;
+  --notes-background: #171820;
+  --bgColor-range-low:#72C2F8;
+  --bgColor-range-medium: #F3B249;
+  --bgColor-range-high: #EA3D65;
+}
+html[data-theme='light'] {
+  --sidebar: #fff;
+  --bgColor-secondary: #dcebf7;
+  --calendar: #fff;
+  --sidebar-accent: #e3f3ff;
+  --textColor-main: #fff;
+  --gooseTrack-color: #3e85f3;
+  --sidebar-text-panel: #7e7d82;
+  --sidebar-text-other: #84828a;
+  --profile-text-main: #111111;
+  --name-text-color: #343434;
+  --profile-text-user: #616161;
+  --profile-text-categories:#111111;
+  --month-day-background-accent: #CAE8FF;
+  --month-day-background: #E3F3FF;
+  --month-day-text: #3E85F3;
+  --month-day-text-accent: #3E85F3;
+  --notes-background: #F7F6F9;
+  --bgColor-range-low:#72C2F8;
+  --bgColor-range-medium: #F3B249;
+  --bgColor-range-high: #EA3D65;
+}
 * {
   font-family: 'Inter', sans-serif;
   margin: 0;
