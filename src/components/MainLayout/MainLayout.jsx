@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import Header from './../Header/Header';
 import Sidebar from './../Sidebar/Sidebar';
 import s from './MainLayout.module.scss';
 const MainLayout = () => {
-  const [menuActive, setActive] = useState();
+  const [menuActive, setActive] = useState(false);
   return (
     <>
       <div
@@ -13,7 +14,9 @@ const MainLayout = () => {
       </div>
       <div className={s.part__context}>
         <Header setActive={setActive} />
-        <div>UserProfile</div>
+        <main>
+          <Outlet />
+        </main>
       </div>
     </>
   );

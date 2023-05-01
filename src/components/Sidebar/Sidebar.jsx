@@ -5,7 +5,7 @@ import Logo from '../Logo/Logo';
 import s from './Sidebar.module.scss';
 const Sidebar = () => {
   return (
-    <div className={s.sectionSidebar}>
+    <aside className={s.sectionSidebar}>
       <div className={s.sectionSidebar__container}>
         <div className={s.sectionSidebar__content}>
           <Logo />
@@ -17,7 +17,7 @@ const Sidebar = () => {
           <LogoutBtn />
         </div>
       </div>
-    </div>
+    </aside>
   );
 };
 

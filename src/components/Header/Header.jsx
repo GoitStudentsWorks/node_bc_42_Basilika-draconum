@@ -5,7 +5,7 @@ const Header = ({ setActive }) => {
   return (
     <header className={s.header}>
       <div className={s.header__container}>
-        <button className={s.boxBtn__closeBtn}>
+        <button className={s.boxBtn__closeBtn} onClick={() => setActive(true)}>
           <svg className={s.boxBtn__closeIcon}>
             <use href={`${icon}#icon-burgerMenu`}></use>
           </svg>
@@ -22,4 +22,4 @@ const Header = ({ setActive }) => {
   );
 };
 export default Header;
-//onClick={() => setActive(false)}
+//onClick={() => setActive(true)}
