@@ -21,11 +21,11 @@ export const updateDataUserApi = async dataUser => {
 };
 
 export const getCurrentUserApi = async () => {
-  const { data } = await privateAPI.patch('api/auth/current');
+  const { data } = await privateAPI.get('api/auth/current');
   return data;
 };
 
 export const updateAvatarApi = async avatar => {
-  const { data } = await privateAPI.put('api/auth/avatar', avatar);
+  const { data } = await privateAPI.patch('api/auth/avatar', avatar);
   return data;
 };

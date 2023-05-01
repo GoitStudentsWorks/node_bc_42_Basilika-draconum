@@ -1,2 +1,2 @@
 export * from './StartPage/StartPage.jsx';
-export * from './AuthPage/AuthPage.jsx';
+export * from './AuthPage/RegisterPage.jsx';
