@@ -19,7 +19,7 @@
   --bgColor-range-low:#72C2F8;
   --bgColor-range-medium: #F3B249;
   --bgColor-range-high: #EA3D65;
-} */
+
 
 html[data-theme='dark'] {
   --sidebar: #13151a;
