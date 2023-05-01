@@ -9,6 +9,7 @@ import GooseRegister2x from 'images/goose-register@2x.png';
 // import { useNavigate } from "react-router-dom";
 
 import { registerThunk } from '../../redux/auth/authOperations';
+import { AuthNavigate } from 'components/AuthNavigate/AuthNavigate';
 const schema = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().email().required(),
@@ -87,12 +88,13 @@ export const RegisterForm = () => {
             />
 
             <button className={style.form_button} type="submit">
-              <span className={style.button_text}>Sign up</span>
+              <span className={style.button_text}>Sign Up</span>
               <svg className={style.svg}>
                 <use href={`${icons}#icon-log-in`} />
               </svg>
             </button>
           </Form>
+          <AuthNavigate route={"/login"} text="Log In" />
           <img
             className={style.img}
             srcSet={`${GooseRegister} 1x, ${GooseRegister2x} 2x`}
