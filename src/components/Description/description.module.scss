@@ -63,6 +63,8 @@ padding-bottom: 22px;
         height: 126px;
         font-style: normal;
         font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
         
     }
     .sidebarWrapper {
@@ -74,5 +76,7 @@ margin-bottom: 40px;
 @media screen and (min-width:1440px) {
     .part {
         display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
