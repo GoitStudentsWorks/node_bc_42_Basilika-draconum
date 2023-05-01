@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectArrTasks } from 'redux/tasks/tasksSelectors';
 import { fetchTasks } from 'redux/tasks/tasksOperations';
 import TasksColumnsList from './TasksColumnsList/TasksColumnsList';
-
+import s from './choosedDay.module.scss'
 
 const ChoosedDay = () => {
   const arrTasks = useSelector(selectArrTasks);
@@ -21,8 +21,11 @@ const ChoosedDay = () => {
   }, [currentDay, arrTasks, dispatch]);
 
   return (
-    // <DayCalendarHead/>
-    <TasksColumnsList />
+    <div className={s.wrapChooseDay}>
+      {/* <DayCalendarHead/> */}
+      <TasksColumnsList />
+    </div>
+    
   );
 };
 

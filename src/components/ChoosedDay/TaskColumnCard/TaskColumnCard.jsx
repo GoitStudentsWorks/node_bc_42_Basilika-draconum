@@ -45,7 +45,7 @@ const TaskColumnCard = () => {
           <div>TaskToolbar</div>
         </div>
       </div>
-      <div>TaskModal</div>
+      {/* <div>TaskModal</div> */}
     </>
   );
 };
