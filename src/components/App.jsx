@@ -15,14 +15,6 @@ import { StartPage } from './../pages/StartPage/StartPage';
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<PrivateRoute component={<MainLayout />} />}>
-        <Route path="/account" element={<AccountPage />} />
-        <Route path="/calendar" element={<CalendarPage />}>
-          <Route path="day/:currentDay" element={<ChoosedDay />} />
-          <Route path="month/:currentDay" element={<ChoosedMonth />} />
-        </Route>
-      </Route>
-
       <Route path="/" element={<PublicRoute component={<StartPage />} />} />
       <Route
         path="/login"
@@ -32,6 +24,14 @@ export const App = () => {
         path="/register"
         element={<PublicRoute component={<RegisterPage />} />}
       />
+      <Route path="/" element={<PrivateRoute component={<MainLayout />} />}>
+        <Route path="/account" element={<AccountPage />} />
+        <Route path="/calendar" element={<CalendarPage />}>
+          <Route path="day/:currentDay" element={<ChoosedDay />} />
+          <Route path="month/:currentDay" element={<ChoosedMonth />} />
+        </Route>
+      </Route>
+
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
