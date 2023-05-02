@@ -1,0 +1,107 @@
+.dayCalendarHeadList {
+  background-color: #ffffff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 19px;
+  margin-bottom: 14px;
+
+  border: 1px solid rgba(220, 227, 229, 0.5);
+  border-radius: 8px;
+
+  @media (min-width: 768px) {
+    padding: 10px 32px;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 10px 47px;
+  }
+}
+
+.dayCalendarHeadItem {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.daysOfWeek,
+.daysWeekend,
+.choosedDay,
+.dayCalendarHeadBtn {
+  background-color: #ffffff; // #22232D; dark
+  color: #616161; // #ffffff; dark
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.125;
+  text-transform: uppercase;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 6px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+
+    gap: 4px;
+  }
+}
+
+// .daysWeekend {
+//   color: #3e85f3;
+// }
+
+.dayCalendarHeadNumber {
+  font-weight: 600;
+  line-height: 18px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.dayCalendarHeadBtn,
+.choosedDay {
+  color: #343434;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.167;
+
+  padding: 4px 8px;
+  margin-bottom: 0;
+
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: #3e85f3;
+    color: white;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.125;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 4px 8px;
+  }
+}
+
+.choosedDay {
+  background-color: #3e85f3;
+  color: white;
+}
