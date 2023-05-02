@@ -4,6 +4,7 @@ import {
   loginThunk,
   registerThunk,
   updateUserInfoThunk,
+  logOutThunk,
 } from './authOperations';
 
 const initialState = {
@@ -79,6 +80,17 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(updateUserInfoThunk.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
+      })
+      //logoutUser
+      .addCase(logOutThunk.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(logOutThunk.fulfilled, state => {
+        return initialState;
+      })
+      .addCase(logOutThunk.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
       });

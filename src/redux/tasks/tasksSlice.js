@@ -6,7 +6,7 @@ import {
 } from './tasksOperations';
 
 const initialState = {
-  tasks: null,
+  tasks: [],
   isLoading: false,
   error: null,
   isModalEditShown: false,
