@@ -1,0 +1,43 @@
+.tasksCard {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--borderColor-colum);
+  border-radius: 8px;
+  background-color: var(--bgColor-task-cart);
+  &__text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.29;
+    margin-bottom: 28px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 32px;
+    }
+  }
+  &__bottomWrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  &__info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  &__avatar {
+    margin-right: 8px;
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+  }
+  &__riority {
+    padding: 4px 12px 4px 12px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--bgColor-task-cart);
+    border-radius: 4px;
+  }
+}

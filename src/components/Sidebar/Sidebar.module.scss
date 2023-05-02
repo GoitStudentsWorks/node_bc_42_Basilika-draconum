@@ -1,0 +1,48 @@
+.sectionSidebar {
+  box-sizing: border-box;
+  //height: 100vh;
+  background-color: aqua;
+  max-width: 225px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    max-width: 289px;
+  }
+
+  &__container {
+    padding: 24px 20px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media screen and (min-width: 768px) {
+      padding: 24px 32px;
+    }
+
+    // display: flex;
+    //justify-content: space-between;
+    //position: relative;
+  }
+  // &__content{}
+  // &__btn {
+  //     position: absolute;
+  //     bottom: 0;
+  //     left: 0;
+  //   }
+  &__title {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #7e7d82;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+      line-height: 1.21;
+      margin-bottom: 32px;
+    }
+  }
+}
