@@ -1,0 +1,65 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .name {
+    background-color: #3e85f3;
+    color: #ffffff;
+  
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.286;
+    text-align: center;
+    text-transform: uppercase;
+  
+    padding: 6px 12px;
+  
+    border-radius: 8px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .name {
+      font-size: 16px;
+      line-height: 1.125;
+  
+      padding: 6px 12px;
+      margin-right: 8px;
+    }
+  }
+  
+  .buttonsContainer {
+    display: flex;
+  }
+  
+  .button {
+    background-color: #ffffff; /* #21222C - dark */
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    padding: 7px 10px;
+  
+    border: 1px solid rgba(220, 227, 229, 0.5);
+  
+    cursor: pointer;
+  }
+  
+  .buttonRight,
+  .buttonLeft {
+    width: 36px;
+    height: 30px;
+  
+    border-radius: 0 8px 8px 0;
+  
+    background-image: url('../../../images/arrow-left.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+  
+  .buttonLeft {
+    transform: rotate(180deg);
+  }
+  
