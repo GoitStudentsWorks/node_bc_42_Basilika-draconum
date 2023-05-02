@@ -1,7 +1,8 @@
 import icon from '../../../images/svg.svg';
 import s from './addTaskBtn.module.scss'
 
-const AddTaskBtn = ({progressType}) => {
+const AddTaskBtn = ({ progressType }) => {
+  
   const openModal = () => {
     console.log('Open moddal');
   };

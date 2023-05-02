@@ -42,6 +42,7 @@ html[data-theme='dark'] {
   --bgColor-range-low:#72C2F8;
   --bgColor-range-medium: #F3B249;
   --bgColor-range-high: #EA3D65;
+  --borderColor-colum: rgba(220, 227, 229, 0.8);
 }
 html[data-theme='light'] {
   --sidebar: #fff;
@@ -64,6 +65,7 @@ html[data-theme='light'] {
   --bgColor-range-low:#72C2F8;
   --bgColor-range-medium: #F3B249;
   --bgColor-range-high: #EA3D65;
+  --borderColor-colum: rgba(220, 227, 229, 0.8);
 }
 * {
   font-family: 'Inter', sans-serif;

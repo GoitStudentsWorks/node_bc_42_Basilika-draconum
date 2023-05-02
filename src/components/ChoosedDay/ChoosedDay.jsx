@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
 
 import { selectArrTasks } from 'redux/tasks/tasksSelectors';
 import { fetchTasks } from 'redux/tasks/tasksOperations';
 import TasksColumnsList from './TasksColumnsList/TasksColumnsList';
+
 import s from './choosedDay.module.scss'
 
 const ChoosedDay = () => {
