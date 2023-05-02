@@ -8,7 +8,7 @@
   --bgColor-primary: #FFFFFF;
   --bgColor-secondary: #DCEBF7;
   --bgColor-table: #EAEAEA;
-  --bgColor-night-sidebar:#13151A;
+  --login-bgColor-night-sidebar:#13151A;
   --bgColor-night-main:#171820;
   --bgColor-night-calendar:#21222C;
   --color-accent: #3E85F3;
@@ -19,7 +19,7 @@
   --bgColor-range-low:#72C2F8;
   --bgColor-range-medium: #F3B249;
   --bgColor-range-high: #EA3D65;
-}*/
+} */
 
 html[data-theme='dark'] {
   --sidebar: #13151a;
