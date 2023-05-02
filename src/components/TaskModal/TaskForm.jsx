@@ -4,13 +4,13 @@ import dayjs from 'dayjs';
 import Notiflix from 'notiflix';
 import { isModalEditShownAction } from 'redux/tasks/tasksSlice';
 import { useDispatch, useSelector } from 'react-redux';
-// import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { selectArrTasks } from 'redux/tasks/tasksSelectors';
-// import Modal from './Modal';
+
 import style from './TaskForm.module.scss';
 import { addTask } from 'redux/auth/authOperations';
 
-function TaskPopUp({ task }) {
+function TaskPopUp({ task, closeModal}) {
   const format = 'H:mm';
   const [start, setStart] = useState(
     task ? task.start : dayjs('09:00', format)
@@ -55,6 +55,10 @@ function TaskPopUp({ task }) {
   const handleCancel = () => {
     isModalEditShownAction(false);
   };
+
+  const hadleCloseModal = () =>{
+    closeModal(false)
+  }
 
   return (
     <>
@@ -158,7 +162,7 @@ function TaskPopUp({ task }) {
               Edit
             </button>
           )}
-          <button type="button" className={style.closeButton}></button>
+          <button type="button" onClick={hadleCloseModal} className={style.closeButton}>X</button>
         </form>
         {/* </div>
       </div> */}
