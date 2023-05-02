@@ -1,10 +1,17 @@
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 import CalendarToolbar from 'components/CalendarToolbar/CalendarToolbar';
-import React from 'react';
+import css from './calendar-page.module.scss';
 
-export const CalendarPage = () => {
+const CalendarPage = () => {
   return (
-    <>
-    <CalendarToolbar/>
-    </>
+    <div className={css.calendarPageContainer}>
+      <CalendarToolbar />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
+    </div>
   );
 };
+
+export default CalendarPage;
