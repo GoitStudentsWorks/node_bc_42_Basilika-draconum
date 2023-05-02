@@ -3,6 +3,7 @@ import s from './Header.module.scss';
 import { useSelector } from 'react-redux';
 import { getUser } from 'redux/auth/authSelectors';
 import { getUserAvatar } from './../../redux/auth/authSelectors';
+import ThemeToggler from 'components/ThemeToggler/ThemeToggler';
 
 const Header = ({ setActive }) => {
   const userName = useSelector(getUser);
@@ -18,7 +19,8 @@ const Header = ({ setActive }) => {
           </svg>
         </button>
         <div className={s.boxContent}>
-          <div className={s.boxContent__thema}>Thema</div>
+          {/* <div className={s.boxContent__thema}>Thema</div> */}
+          <ThemeToggler/>
           <div className={s.boxContent__name}>{userName.name}</div>
           <div className={s.boxContent__avatar}>
             <img
