@@ -4,9 +4,10 @@ import {
   loginUserApi,
   registerUserApi,
   updateDataUserApi,
+  logoutApi,
 } from 'services/authService';
 
-import { setAuthHeader } from 'shared/http';
+import { clearAuthHeader, setAuthHeader } from 'shared/http';
 
 export const registerThunk = createAsyncThunk(
   'auth/register',
@@ -70,6 +71,18 @@ export const updateAvatarThunk = createAsyncThunk(
     try {
       const data = await updateDataUserApi(avatar);
       return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const logOutThunk = createAsyncThunk(
+  'auth/logout',
+  async (_, thunkAPI) => {
+    try {
+      await logoutApi();
+      clearAuthHeader();
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);
     }

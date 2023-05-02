@@ -8,9 +8,11 @@ const MainLayout = () => {
   return (
     <>
       <div
-        className={menuActive ? 's.part__sidebar active' : 's.part__sidebar'}
+        className={
+          menuActive ? `${s.part__sidebar} ${s.active}` : `${s.part__sidebar}`
+        }
       >
-        <Sidebar />
+        <Sidebar setActive={setActive} />
       </div>
       <div className={s.part__context}>
         <Header setActive={setActive} />
