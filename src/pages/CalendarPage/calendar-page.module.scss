@@ -1,0 +1,13 @@
+.calendarPageContainer {
+  background-color: #eaeaea;
+
+  padding: 24px 20px 52px;
+
+  @media (min-width: 768px) {
+    padding: 24px 32px 42px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 40px 32px 32px;
+  }
+}

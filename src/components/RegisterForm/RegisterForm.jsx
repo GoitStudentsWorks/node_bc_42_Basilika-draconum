@@ -8,6 +8,7 @@ import GooseRegister from 'images/goose-register.png';
 import GooseRegister2x from 'images/goose-register@2x.png';
 // import { useNavigate } from "react-router-dom";
 
+
 import { registerThunk } from '../../redux/auth/authOperations';
 import { AuthNavigate } from 'components/AuthNavigate/AuthNavigate';
 const schema = yup.object().shape({

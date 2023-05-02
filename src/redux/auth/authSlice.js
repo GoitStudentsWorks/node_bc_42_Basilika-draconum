@@ -1,14 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loginThunk, registerThunk } from './authOperations';
+import {
+  getCurrentUserThunk,
+  loginThunk,
+  registerThunk,
+  updateUserInfoThunk,
+  logOutThunk,
+} from './authOperations';
 
 const initialState = {
   isLoading: false,
   isLogin: false,
   error: null,
   user: null,
-
   token: null,
-
+  userData: {
+    avatar: '',
+    name: '',
+    email: '',
+    phone: '',
+    birthday: '',
+    skype: '',
+  },
 };
 
 const authSlice = createSlice({
@@ -42,10 +54,46 @@ const authSlice = createSlice({
       .addCase(loginThunk.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
-
       })
-    
-
+      // getCurrentUser
+      .addCase(getCurrentUserThunk.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(getCurrentUserThunk.fulfilled, (state, { payload }) => {
+        state.user = payload;
+        state.isLogin = true;
+        state.isLoading = false;
+      })
+      .addCase(getCurrentUserThunk.rejected, (state, { payload }) => {
+        state.isLogin = false;
+        state.isLoading = false;
+        state.error = payload;
+      })
+      // updateUser
+      .addCase(updateUserInfoThunk.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(updateUserInfoThunk.fulfilled, (state, { payload }) => {
+        state.userData = payload;
+        state.isLoading = false;
+      })
+      .addCase(updateUserInfoThunk.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
+      })
+      //logoutUser
+      .addCase(logOutThunk.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(logOutThunk.fulfilled, state => {
+        return initialState;
+      })
+      .addCase(logOutThunk.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
+      });
   },
 });
 export const authReducer = authSlice.reducer;

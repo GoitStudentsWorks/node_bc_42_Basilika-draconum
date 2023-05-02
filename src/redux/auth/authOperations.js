@@ -1,7 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { loginUserApi, registerUserApi } from 'services/authService';
+import {
+  getCurrentUserApi,
+  loginUserApi,
+  registerUserApi,
+  updateDataUserApi,
+  logoutApi,
+} from 'services/authService';
 
-import { setAuthHeader } from 'shared/http';
+import { clearAuthHeader, setAuthHeader } from 'shared/http';
 
 export const registerThunk = createAsyncThunk(
   'auth/register',
@@ -23,6 +29,60 @@ export const loginThunk = createAsyncThunk(
 
       setAuthHeader(data.token);
       return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getCurrentUserThunk = createAsyncThunk(
+  'auth/getCurrentUser',
+  async (_, thunkAPI) => {
+    // const state = thunkAPI.getState();
+    // const savedToken = state.auth.token; // accessToken?
+    // if (!savedToken) {
+    //   return thunkAPI.rejectWithValue();
+    // }
+    // setAuthHeader(savedToken);
+    try {
+      const data = await getCurrentUserApi();
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateUserInfoThunk = createAsyncThunk(
+  'auth/updateUser',
+  async (user, thunkAPI) => {
+    try {
+      const data = await updateDataUserApi(user);
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateAvatarThunk = createAsyncThunk(
+  'auth/updateAvatar',
+  async (avatar, thunkAPI) => {
+    try {
+      const data = await updateDataUserApi(avatar);
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const logOutThunk = createAsyncThunk(
+  'auth/logout',
+  async (_, thunkAPI) => {
+    try {
+      await logoutApi();
+      clearAuthHeader();
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);
     }

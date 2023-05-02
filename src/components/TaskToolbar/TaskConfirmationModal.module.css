@@ -1,0 +1,35 @@
+.confirmation__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 30%);
+    background: #fff;
+    border: 1px solid rgba(227, 243, 255, 1);
+    border-radius: 5px;
+    width: 147px;
+    height: 90px;
+    z-index: 1000;
+    box-shadow: 0px 4px 16px rgba(17, 17, 17, 0.1);
+    border-radius: 8px;                           
+}
+.confirmation__title{
+    text-align: center;
+}
+.confirmation__btnContainer{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;  
+}
+.confirmation__btn{
+    height: 30px;
+    width: 40px;
+    background-color: #3E85F3;
+    color: #fff;
+    border-radius: 5px;
+}
