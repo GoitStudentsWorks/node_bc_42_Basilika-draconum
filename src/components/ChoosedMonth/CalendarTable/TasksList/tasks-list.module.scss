@@ -1,0 +1,54 @@
+.tasksListStyle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+
+  > li {
+    width: 92%;
+
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: center;
+
+    padding: 2px 0;
+
+    border-radius: 8px;
+
+    transition: scale 250ms linear;
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      scale: 1.05;
+    }
+  }
+
+  .low {
+    background-color: #ceeefd;
+    color: #3e85f3;
+  }
+
+  .medium {
+    color: #f3b249;
+    background-color: #fcf0d4;
+  }
+
+  .high {
+    color: #ea3d65;
+    background-color: #ffd2dd;
+  }
+
+  @media (min-width: 768px) {
+    li {
+      font-size: 14px;
+      line-height: 1.286;
+    }
+  }
+  @media (min-width: 1440px) {
+    padding: 4px 0;
+  }
+}
