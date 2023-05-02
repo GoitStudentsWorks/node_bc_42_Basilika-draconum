@@ -1,19 +1,16 @@
-.part {
-    padding-top: 64px;
-    // background-color: brown;
+.section {
+    margin-top: 64px;
 }
 
-
-.number{
-
-
-color: var(--color-accent);
-font-style: normal;
-font-weight: 700;
-font-size: 80px;
-padding-bottom: 22px;
+.number {
+    color: var(--color-accent);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    padding-bottom: 14px;
 
 }
+
 .title {
     display: flex;
     align-items: center;
@@ -23,38 +20,39 @@ padding-bottom: 22px;
     font-size: 32px;
     line-height: 40px;
     height: 40px;
-        width: 214px;
-        height: 56px;
-        border-radius: 44px;
-        background-color: var(--bgColor-secondary);
+    width: 214px;
+    height: 56px;
+    border-radius: 44px;
+    background-color: var(--bgColor-secondary);
 
-       color: var(--color-accent);
-        
+    color: var(--color-accent);
+
 }
+
 .subtitle {
     font-family: Inter;
     font-style: Bold;
     font-size: 32px;
-    line-height: 40px;
-    //  Line height: 103%; 
+    line-height: 1.25;
     padding-top: 8px;
     padding-bottom: 14px;
 }
+
+.subtitleEven {
+    padding-top: 0;
+}
+
 .descript {
-    // display: block;
-    // font-style: Medium;
-    font-size: 14px; 
-    line-height: 18px; 
-      
+
+    font-size: 14px;
+    line-height: 1.2857;
     margin-bottom: 40px;
 }
+
 @media screen and (min-width: 768px) {
-    // .number {
-    //     margin-left: 461px;
-    // }
-    //     .subtitle {
-    //         margin-left: 461px;
-    //     }
+    .number {
+        padding-bottom: 14px;
+    }
 
     .descript {
         width: 275px;
@@ -63,12 +61,15 @@ padding-bottom: 22px;
         font-weight: 500;
         font-size: 14px;
         line-height: 18px;
-        
+
     }
-    .sidebarWrapper {
-margin-left: 461px;
-margin-bottom: 40px;
+
+    .partEven {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
+
 }
 
 @media screen and (min-width:1440px) {
@@ -79,14 +80,12 @@ margin-bottom: 40px;
         gap: 228px;
     }
 
-        .sidebarWrapper {
-            background-color: chartreuse;
-        }
-        .sidebar {
-            display: flex;
-        }
-                .descript {
-                    width: 275px;
-                    height: 90px;
-                }
+    .partEven {
+        flex-direction: row-reverse;
+    }
+
+    .descript {
+        width: 275px;
+        height: 90px;
+    }
 }

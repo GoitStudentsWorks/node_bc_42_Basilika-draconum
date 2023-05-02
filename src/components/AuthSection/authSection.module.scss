@@ -1,8 +1,6 @@
 .authSection {
-height: 100vh;
+    height: 100vh;
     background-color: var(--color-accent);
-    // width: 385px;
-
     padding: 232px 0 88px;
 }
 
@@ -42,14 +40,12 @@ gap: 208px;
     height: 46px;
     border-radius: 16px;
     border-color: transparent;
-    
     text-decoration: none;
     color: var(--color-accent);
 }
 
 .singup {
     color: white;
-    // margin-left: 166px;
     display: block;
     text-align: center;
 
@@ -57,7 +53,7 @@ gap: 208px;
     font-weight: 600;
     font-size: 12px;
     line-height: 14px;
-    /* identical to box height, or 117% */
+    
 
     text-decoration-line: underline;
 }
