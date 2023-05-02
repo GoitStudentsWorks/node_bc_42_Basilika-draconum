@@ -6,8 +6,9 @@ import { isModalEditShownAction } from 'redux/tasks/tasksSlice';
 import { useDispatch, useSelector } from 'react-redux';
 // import { createAsyncThunk } from '@reduxjs/toolkit';
 import { selectArrTasks } from 'redux/tasks/tasksSelectors';
-import Modal from './Modal';
+// import Modal from './Modal';
 import style from './TaskForm.module.scss';
+import { addTask } from 'redux/auth/authOperations';
 
 function TaskPopUp({ task }) {
   const format = 'H:mm';
@@ -17,7 +18,7 @@ function TaskPopUp({ task }) {
   const [end, setEnd] = useState(task ? task.end : dayjs('12:00', format));
   const [priority, setPriority] = useState(task ? task.priority : 'low');
   const [title, setTitle] = useState(task ? task.title : 'Enter text');
-  const [activateModal, setActivateModal] = useState(false);
+  
   const dispatch = useDispatch();
 
   const onChangeStart = (time, valueString) => {
@@ -57,7 +58,7 @@ function TaskPopUp({ task }) {
 
   return (
     <>
-      <Modal active={activateModal} setActive={setActivateModal}>
+      {/* <Modal active={activateModal} setActive={setActivateModal}> */}
         {/* <div className={style.backdrop}>
         <div className={style.popup}> */}
         <form action="" className={style.popupForm}>
@@ -161,7 +162,7 @@ function TaskPopUp({ task }) {
         </form>
         {/* </div>
       </div> */}
-      </Modal>
+      {/* </Modal> */}
     </>
   );
 }
