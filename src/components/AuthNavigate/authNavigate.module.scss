@@ -9,8 +9,8 @@
       0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
     &:hover,
     :focus {
-      color: var();
-      border-color: var();
+      color: var(--month-day-text-accent);
+      border-color: var(--month-day-text-accent);
     }
   
     @media (min-width: 768px) {
