@@ -10,8 +10,10 @@ import DaysWithTasks from './DaysWithTasks/DaysWithTasks';
 import css from './calendar-table.module.scss';
 
 const CalendarTable = ({ tasks, currentDate }) => {
-  const [isOpened, setOpening] = useState(false);
-  const [selectedTask, setSelectedTask] = useState(null);
+  //   const [isOpened, setOpening] = useState(false);
+  //   const [selectedTask, setSelectedTask] = useState(null);
+  const [setOpening] = useState(false);
+  const [setSelectedTask] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

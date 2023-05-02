@@ -2,9 +2,6 @@ import MainLayout from '../components/MainLayout/MainLayout';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { RegisterPage } from '../pages/AuthPage/RegisterPage';
 import { LoginPage } from 'pages/AuthPage/LoginPage';
-import CalendarPage from 'pages/CalendarPage/CalendarPage';
-import ChoosedMonth from 'components/ChoosedMonth/ChoosedMonth';
-import ChoosedDay from 'components/ChoosedDay/ChoosedDay';
 
 import PublicRoute from './PublicRoute/PublicRoute';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
