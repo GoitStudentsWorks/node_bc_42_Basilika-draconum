@@ -14,11 +14,11 @@ export const AuthSection = () => {
             G<span>oo</span>seTrack
           </h2>
           <div className={style.linkWrapper} >
-            <Link className={style.login} to="/register">
+            <Link className={style.login} to="/login">
               <span>Log in</span>
               <img src={authsvg} alt="auth" />
             </Link>
-            <Link className={style.singup} to="/login">
+            <Link className={style.singup} to="/register">
               Sing Up
               {/* <svgLogin>
               <use href={icon + '#icon-log-out'}></use>
