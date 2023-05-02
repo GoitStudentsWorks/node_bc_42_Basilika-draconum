@@ -4,7 +4,7 @@
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */ 
-:root {
+/* :root {
   --bgColor-primary: #FFFFFF;
   --bgColor-secondary: #DCEBF7;
   --bgColor-table: #EAEAEA;
@@ -19,6 +19,36 @@
   --bgColor-range-low:#72C2F8;
   --bgColor-range-medium: #F3B249;
   --bgColor-range-high: #EA3D65;
+} */
+
+:root {
+  --white-color: #ffffff;
+  --secondary-bgd-color: #eaeaea;
+  --register-bgd-color: #dcebf7;
+  --secondary-black-color: #13151a;
+  --dark-secondary-bgd-color: #21222c;
+  --button-bgd-color: #3e85f3;
+  --primary-black-color: #111111;
+  --secondary-text-color: #84828a;
+  --placeholder-text-color: #dce3e5;
+  --date-text-color: #343434;
+  --day-text-color: #616161;
+  --dark-day-text-color: #fafafa;
+  --low-priority-color: #72c2f8;
+  --medium-priority-color: #f3b249;
+  --high-priority-color: #ea3d65;
+  --high-priority-bgd: #ffd2dd;
+  --medium-priority-bgd: #fcf0d4;
+  --low-priority-bgd: #ceeefd;
+  --task-button-color: #e3f3ff;
+  --active-calendar-color: #cae8ff;
+  --normal-input-state: rgba(17, 17, 17, 0.15);
+  --error-input-state: #e74a3b;
+  --error-msg: #db1414;
+  --correct-input-state: #3cbc81;
+  --hover-bgc-submit: #2b78ef;
+  --task-sorting-button: #F7F6F9;
+
 }
 
 * {
