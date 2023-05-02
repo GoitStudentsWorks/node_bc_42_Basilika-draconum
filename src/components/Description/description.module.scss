@@ -2,9 +2,7 @@
     padding-top: 64px;
     // background-color: brown;
 }
-.sidebarWrapper {
-    background-color: chartreuse;
-}
+
 
 .number{
 
@@ -44,7 +42,7 @@ padding-bottom: 22px;
 }
 .descript {
     // display: block;
-    font-style: Medium;
+    // font-style: Medium;
     font-size: 14px; 
     line-height: 18px; 
       
@@ -78,5 +76,17 @@ margin-bottom: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 228px;
     }
+
+        .sidebarWrapper {
+            background-color: chartreuse;
+        }
+        .sidebar {
+            display: flex;
+        }
+                .descript {
+                    width: 275px;
+                    height: 90px;
+                }
 }
