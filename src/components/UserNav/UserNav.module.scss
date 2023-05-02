@@ -1,0 +1,47 @@
+.userNavLinks {
+  &__link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 16px 0 16px 20px;
+    color: #84828a;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+    @media screen and (min-width: 767px) {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    &:hover {
+      background-color: #e3f3ff;
+      border-radius: 8px;
+      color: #3e85f3;
+    }
+
+    &:hover &__icon {
+      stroke: #3e85f3;
+    }
+    &__text {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.18;
+    }
+    &__icon {
+      display: inline-block;
+      padding-right: 10px;
+      fill: transparent;
+      width: 24px;
+      height: 24px;
+      stroke-width: 1.0556640625em;
+      stroke: #84828a;
+      transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}
