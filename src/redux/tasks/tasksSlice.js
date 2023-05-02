@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchTasks, deleteTaskThunk, updateTaskStatusThunk } from './tasksOperations';
+import {
+  fetchTasks,
+  deleteTaskThunk,
+  updateTaskStatusThunk,
+} from './tasksOperations';
 
 const initialState = {
   tasks: null,
@@ -13,9 +17,9 @@ const tasksSlice = createSlice({
   initialState,
   reducers: {
     isModalEditShownAction: (state, { payload }) => {
-     state.isModalEditShown = payload;
-   },
- },
+      state.isModalEditShown = payload;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchTasks.pending, state => {
@@ -46,16 +50,16 @@ const tasksSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(updateTaskStatusThunk.fulfilled, (state, { payload }) => {
-        if (payload === undefined || payload === null){
-          console.log("UpdateTaskStatusThunk payload not object!");
+        if (payload === undefined || payload === null) {
+          console.log('UpdateTaskStatusThunk payload not object!');
           return;
         }
-        const {id, status} = payload;
+        const { id, status } = payload;
         state.isLoading = false;
         state.error = null;
         const index = state.tasks.findIndex(task => task.id === id);
         const task = state.tasks[index];
-        task.status = status; 
+        task.status = status;
       })
       .addCase(updateTaskStatusThunk.rejected, (state, { payload }) => {
         state.error = payload;
@@ -64,4 +68,4 @@ const tasksSlice = createSlice({
 });
 
 export const tasksReducer = tasksSlice.reducer;
-export const {isModalEditShownAction} = tasksSlice.actions;
+export const { isModalEditShownAction } = tasksSlice.actions;
