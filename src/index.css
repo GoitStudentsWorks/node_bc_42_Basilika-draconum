@@ -4,22 +4,16 @@
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }  */
-/* :root {
-  --bgColor-primary: #FFFFFF;
-  --bgColor-secondary: #DCEBF7;
-  --bgColor-table: #EAEAEA;
-  --bgColor-night-sidebar:#13151A;
-  --bgColor-night-main:#171820;
-  --bgColor-night-calendar:#21222C;
-  --color-accent: #3E85F3;
-  --textColor-primary: #111111;
-  --textColor-secondary: #616161;
-  --textColor-white: #FFFFFF;
-  --textColor-placeholder: #DCE3E5;
-  --bgColor-range-low:#72C2F8;
-  --bgColor-range-medium: #F3B249;
-  --bgColor-range-high: #EA3D65;
-}*/
+:root {
+  --notheme-bgColor-primary: #FFFFFF;
+  --notheme-bgColor-secondary: #DCEBF7;
+  --notheme-textColor-title:#171820;
+  --notheme-color-accent: #3E85F3;
+  --notheme-textColor-primary: #111111;
+  --notheme-textColor-reviews: #111111B2;
+  --notheme-textColor-white: #FFFFFF;
+  --notheme-textColor-placeholder: #DCE3E599;
+}
 
 html[data-theme='dark'] {
   --sidebar: #13151a;
