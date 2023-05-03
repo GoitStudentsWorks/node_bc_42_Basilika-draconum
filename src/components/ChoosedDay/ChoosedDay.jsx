@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectArrTasks } from 'redux/tasks/tasksSelectors';
-
+import { selectDate } from 'redux/date/dateSelectors';
 
 import TasksColumnsList from './TasksColumnsList/TasksColumnsList';
-
 import DayCalendarHead from './DayCalendarHead/DayCalendarHead';
+
 import s from './choosedDay.module.scss';
-import { selectDate } from 'redux/date/dateSelectors';
 
 const ChoosedDay = () => {
   const arrTasks = useSelector(selectArrTasks);
