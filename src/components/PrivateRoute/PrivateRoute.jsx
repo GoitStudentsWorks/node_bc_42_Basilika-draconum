@@ -4,7 +4,7 @@ import { getAccessToken } from '../../redux/auth/authSelectors';
 
 const PrivateRoute = ({ component }) => {
   const token = useSelector(getAccessToken);
-  return token ? component : <Navigate to={'/login'} />;
+  return token ? component : <Navigate to={'/'} />;
 };
 
 export default PrivateRoute;
