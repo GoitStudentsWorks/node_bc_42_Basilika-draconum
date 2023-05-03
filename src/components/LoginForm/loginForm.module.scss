@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--bgColor-secondary);
+  background-color: var(--notheme-bgColor-secondary);
 }
 
 .loginFormContainer{
@@ -21,7 +21,7 @@
     padding: 40px 24px;
     width: 335px;
     margin-bottom: 18px;
-    background-color: #fff;
+    background-color: var(--notheme-bgColor-primary);
     border-radius: 8px;
     @media (min-width: 768px) {
       padding: 40px;
@@ -36,7 +36,7 @@
   font-weight: 600;
   font-size: 1.125rem;
   line-height: 1.5rem;
-  color: var(--gooseTrack-color);
+  color: var(--notheme-color-accent);
   text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
     0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
   margin-bottom: 22px;
@@ -49,7 +49,7 @@
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
-  color: var(--profile-text-user);
+  color: var(--notheme-profile-text-user);
 }
 .login_paragraph{
  
@@ -59,7 +59,7 @@
     line-height: 15px;
     margin-top: 24px;
     margin-bottom: 8px;
-    color: var(--profile-text-main);
+    color: var(--notheme-textColor-primary);
     @media (min-width: 768px) {
       margin-top: 18px;
       font-size: 14px;
@@ -68,7 +68,7 @@
 }
 
 .login_input{
-    background-color: #ffffff;
+    background-color:  var(--notheme-bgColor-primary);
     outline: none;
     border: 1px solid rgba(220, 227, 229, 0.6);
     border-radius: 8px;
@@ -80,7 +80,7 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 18px;
-      color: #DCE3E5;
+      color: var(--notheme-bgColor-secondary);
     }
 }
 
@@ -93,11 +93,11 @@
   column-gap: 0.8125rem;
   padding: 14px;
   margin-top: 30px;
-  background: var(--gooseTrack-color);
+  background: var(--notheme-color-accent);
   box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
   border-radius: 16px;
   border: none;
-  color: #fff;
+  color: var(--notheme-bgColor-primary);
   cursor: pointer;
   &:hover,
   :focus {
@@ -116,7 +116,7 @@
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--notheme-bgColor-primary);
   @media (min-width: 768px) {
     font-size: 18px;
     line-height: 24px;
@@ -129,7 +129,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
-  color: red;
+  color:var(--notheme-warning-color);
 }
 .svg{
   width: 18px;

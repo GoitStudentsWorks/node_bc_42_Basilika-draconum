@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useEffect, useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
 
-import { selectArrTasks } from 'redux/tasks/tasksSelectors';
-import { fetchTasks } from 'redux/tasks/tasksOperations';
+// import { selectArrTasks } from 'redux/tasks/tasksSelectors';
+// import { fetchTasks } from 'redux/tasks/tasksOperations';
 import DayCalendarHead from './DayCalendarHead/DayCalendarHead';
 import TasksColumnsList from './TasksColumnsList/TasksColumnsList';
 import s from './choosedDay.module.scss';
 
 const ChoosedDay = () => {
-  const arrTasks = useSelector(selectArrTasks);
-  const dispatch = useDispatch();
+  // const arrTasks = useSelector(selectArrTasks);
+  // const dispatch = useDispatch();
 
   // const [tasksFilter, setTasksFilter] = useState();
 
-  const currentDay = '2023-04-28T00:00:00.000Z';
-  useEffect(() => {
-    dispatch(fetchTasks());
+  // const currentDay = '2023-04-28T00:00:00.000Z';
+  // useEffect(() => {
+  //   dispatch(fetchTasks());
 
-    console.log(arrTasks);
-  }, [currentDay, arrTasks, dispatch]);
+  //   console.log(arrTasks);
+  // }, [currentDay, arrTasks, dispatch]);
 
   return (
     <div className={s.wrapChooseDay}>

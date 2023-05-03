@@ -19,7 +19,7 @@ import { getCurrentUserThunk } from 'redux/auth/authOperations';
 export const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(getAccessToken);
-  
+
   useEffect(() => {
     token && dispatch(getCurrentUserThunk());
   }, [dispatch, token]);
