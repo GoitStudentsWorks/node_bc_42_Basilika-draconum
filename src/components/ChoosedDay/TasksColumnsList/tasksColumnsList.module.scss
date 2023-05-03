@@ -1,8 +1,5 @@
 .wrap {
   display: flex;
   flex-direction: row;
-  gap: 16px;
-  @media screen and (min-width: 768px) {
-    gap: 27px;
-  }
+
 }

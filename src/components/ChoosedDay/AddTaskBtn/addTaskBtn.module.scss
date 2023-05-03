@@ -4,9 +4,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: 48px;
   margin-top: 30px;
   padding: 11px 20px;
-  background: var(--month-day-background-accent);
+  background: var(--sidebar-accent);
   border: 1px dashed var(--gooseTrack-color);
   border-radius: 8px;
   cursor: pointer;
@@ -16,6 +17,7 @@
   }
   @media screen and (min-width: 768px) {
     min-width: 304px;
+    min-height: 52px;
     padding: 8px 20px;
     margin-top: 30px;
   }

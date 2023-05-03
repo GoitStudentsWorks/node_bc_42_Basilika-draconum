@@ -1,13 +1,28 @@
 .tasksColumnWrap {
-  min-width: 280px;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: calc(100% - 2px);
+  min-height: 155px;
+
+  margin-right: 20px;
   padding: 20px 18px 10px;
   background-color: var(--textColor-main);
   color: var(--profile-text-main);
   border: 1px solid var(--borderColor-colum);
   border-radius: 8px;
+  @media screen and (min-width: 375px) {
+    margin-right: 16px;
+  }
   @media screen and (min-width: 768px) {
+    min-width: calc((100% - 16px) / 2);
+    margin-right: 16px;
+    min-height: 165px;
+    padding: 20px 20px 28px;
+  }
+  @media screen and (min-width: 1440px) {
+    min-width: calc((100% - 54px) / 3);
+    margin-right: 27px;
     padding: 20px 20px 28px;
   }
 }
