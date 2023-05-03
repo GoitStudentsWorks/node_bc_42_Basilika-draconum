@@ -1,7 +1,7 @@
 .monthHeadList {
   list-style: none;
 
-  background-color: #ffffff; // #22232D; dark
+  background-color: var(var(--calendar)); // #22232D; dark
   color: #616161; // #ffffff; dark
 
   display: flex;

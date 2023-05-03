@@ -1,5 +1,5 @@
 .dayCalendarHeadList {
-  background-color: #ffffff;
+  background-color: var(--calendar);
 
   display: flex;
   justify-content: space-between;
@@ -33,7 +33,7 @@
 .daysWeekend,
 .choosedDay,
 .dayCalendarHeadBtn {
-  background-color: #ffffff; // #22232D; dark
+  background-color: var(--calendar); // #22232D; dark
   color: #616161; // #ffffff; dark
 
   font-weight: 600;
