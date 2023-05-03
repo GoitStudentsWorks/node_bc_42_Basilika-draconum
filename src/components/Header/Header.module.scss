@@ -1,15 +1,18 @@
 .header {
   width: 100%;
   background-color: green;
+
   &__container {
     padding: 24px 32px 64px 32px;
     display: flex;
     justify-content: space-between;
 
+
     @media screen and (min-width: 1440px) {
       padding: 40px 32px 32px 32px;
     }
   }
+
 }
 .boxBtn {
   &__closeBtn {

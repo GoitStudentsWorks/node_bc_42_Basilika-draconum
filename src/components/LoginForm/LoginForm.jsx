@@ -7,6 +7,7 @@ import GooseLogIn from 'images/goose-login.png';
 import GooseLogIn2x from 'images/goose-login@2x.png';
 
 import { loginThunk } from '../../redux/auth/authOperations';
+import { AuthNavigate } from 'components/AuthNavigate/AuthNavigate';
 const schema = yup.object().shape({
   email: yup.string().email().required(),
   password: yup.string().min(6).required(),
@@ -37,7 +38,7 @@ export const LoginForm = () => {
       <div className={style.wrapper}>
         <div className={style.loginFormContainer}>
           <Form className={style.form}>
-            <h1 className={style.form_title}>Log in</h1>
+            <h1 className={style.form_title}>Log In</h1>
             <label className={style.login_label}>
               <p className={style.login_paragraph}>Email</p>
             <Field
@@ -68,12 +69,13 @@ export const LoginForm = () => {
             />
 
             <button className={style.form_button} type="submit">
-              <span className={style.button_text}>Log in</span>
+              <span className={style.button_text}>Log In</span>
               <svg className={style.svg}>
                 <use href={`${icons}#icon-log-in`} />
               </svg>
             </button>
           </Form>
+          <AuthNavigate route={"/register"} text="Sign Up" />
           <img
             className={style.img}
             srcSet={`${GooseLogIn} 1x, ${GooseLogIn2x} 2x`}
