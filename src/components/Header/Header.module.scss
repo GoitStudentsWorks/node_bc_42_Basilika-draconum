@@ -1,7 +1,9 @@
 .header {
   width: 100%;
-  background-color: green;
+  background-color: var(--notes-background);
+
   &__container {
+    // padding: 24px 32px 0 32px;
     padding: 24px 32px 64px 32px;
     display: flex;
     justify-content: space-between;
@@ -10,86 +12,89 @@
       padding: 40px 32px 32px 32px;
     }
   }
-}
-.boxBtn {
-  &__closeBtn {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-  &__closeIcon {
-    display: block;
-    fill: transparent;
-    width: 24px;
-    height: 24px;
-    stroke-width: 0.9599609375em;
-    stroke: #343434;
 
-    @media screen and (min-width: 768px) {
-      width: 34px;
-      height: 34px;
+  .boxBtn {
+    &__closeBtn {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
     }
-    @media screen and (min-width: 1440px) {
-      display: none;
-    }
-  }
-}
-.boxContent {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
+    &__closeIcon {
+      display: block;
+      fill: transparent;
+      width: 24px;
+      height: 24px;
+      stroke-width: 0.9599609375em;
+      stroke: var(--name-text-color);
 
-  &__thema {
-    background-color: red;
-    box-sizing: border-box;
-    width: 24px;
-    height: 24px;
-
-    @media screen and (min-width: 768px) {
-      width: 32px;
-      height: 32px;
+      @media screen and (min-width: 768px) {
+        width: 34px;
+        height: 34px;
+      }
+      @media screen and (min-width: 1440px) {
+        display: none;
+      }
     }
   }
-  &__name {
-    font-family: 'Inter';
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.29;
-    color: #343434;
-    @media screen and (min-width: 768px) {
-      font-size: 18px;
-      line-height: 1;
-    }
-  }
-  &__avatar {
-    //background-image: url('');
-    // background-size: contain;
-    // background-repeat: no-repeat;
-    // background-position: center;
-    object-fit: contain;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 1.8px solid #3e85f3;
+  .boxContent {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
 
-    @media screen and (min-width: 768px) {
-      width: 44px;
-      height: 44px;
-    }
-    // &__img {
-    //   display: block;
+    // &__thema {
+    //   background-color: red;
     //   box-sizing: border-box;
-    //   width: 32px;
-    //   height: 32px;
-    //   border-radius: 50%;
-    //   overflow: hidden;
-    //   border: 1.8px solid #3e85f3;
+    //   width: 24px;
+    //   height: 24px;
 
     //   @media screen and (min-width: 768px) {
-    //     width: 44px;
-    //     height: 44px;
+    //     width: 32px;
+    //     height: 32px;
     //   }
+
+    &__name {
+      font-family: 'Inter';
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.29;
+      color: var(--name-text-color);
+      @media screen and (min-width: 768px) {
+        font-size: 18px;
+        line-height: 1;
+      }
+    }
+    &__avatar {
+      //background-image: url('');
+      // background-size: contain;
+      // background-repeat: no-repeat;
+      // background-position: center;
+      background-color: #343434;
+      object-fit: contain;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1.8px solid #3e85f3;
+
+      @media screen and (min-width: 768px) {
+        width: 44px;
+        height: 44px;
+      }
+    }
+    &__img {
+      display: block;
+      box-sizing: border-box;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1.8px solid #3e85f3;
+
+      @media screen and (min-width: 768px) {
+        width: 44px;
+        height: 44px;
+      }
+    }
   }
 }

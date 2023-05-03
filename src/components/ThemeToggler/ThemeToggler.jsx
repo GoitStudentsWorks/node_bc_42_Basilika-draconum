@@ -33,7 +33,7 @@ export default function ThemeToggler() {
       >
         <>
           <svg
-            className="changeTheme"
+            className={css.changeTheme}
             data-theme="light"
             width="32"
             height="32"
@@ -56,7 +56,7 @@ export default function ThemeToggler() {
       >
         <>
           <svg
-            className="changeTheme"
+            className={css.changeTheme}
             data-theme="dark"
             width="32"
             height="32"

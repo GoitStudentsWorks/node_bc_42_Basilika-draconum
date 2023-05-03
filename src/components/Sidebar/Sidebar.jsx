@@ -4,16 +4,17 @@ import UserNav from '../UserNav/UserNav';
 import Logo from '../Logo/Logo';
 import s from './Sidebar.module.scss';
 import icon from '../../images/sideBarIcon/SideBarIcon.svg';
-const Sidebar = ({ setActive }) => {
+const Sidebar = ({ setMenuActive }) => {
   return (
     <aside className={s.sectionSidebar}>
+      <div className={s.sectionSidebar__blur} />
       <div className={s.sectionSidebar__container}>
         <div className={s.sectionSidebar__content}>
           <div className={s.sectionSidebar__logoBtn}>
             <Logo />
             <button
               className={s.sectionSidebar__closeBtn}
-              onClick={() => setActive(false)}
+              onClick={() => setMenuActive(false)}
             >
               <svg className={s.sectionSidebar__closeBtn__closeIcon}>
                 <use href={`${icon}#icon-x-close`}></use>
@@ -33,3 +34,8 @@ const Sidebar = ({ setActive }) => {
 };
 
 export default Sidebar;
+{
+  /* <aside className={s.sectionSidebar}> */
+}
+/* <aside className={menuActive ? `${s.sectionSidebar} ${s.active}` : `s.sectionSidebar`}
+        onClick={() => setMenuActive(false)}> */

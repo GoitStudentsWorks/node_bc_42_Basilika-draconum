@@ -1,15 +1,25 @@
 .btnLight {
   background: transparent;
-  border:none;
+  border: none;
   // position: absolute;
   // top: 555px;
   display: block;
 }
 .btnDark {
   background: transparent;
-  border:none;
+  border: none;
   // position: absolute;
   // top: 555px;
   display: block;
-  
+}
+
+.changeTheme {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+
+  @media screen and (min-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
 }

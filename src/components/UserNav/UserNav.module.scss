@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     padding: 16px 0 16px 20px;
-    color: #84828a;
+    color: var(--sidebar-text-other);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
       border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -18,13 +18,13 @@
     }
 
     &:hover {
-      background-color: #e3f3ff;
+      background-color: var(--sidebar-hover-bg);
       border-radius: 8px;
-      color: #3e85f3;
+      color: var(--sidebar-hover-link);
     }
 
     &:hover &__icon {
-      stroke: #3e85f3;
+      stroke: var(--sidebar-hover-icon);
     }
     &__text {
       font-family: 'Inter';
@@ -40,7 +40,7 @@
       width: 24px;
       height: 24px;
       stroke-width: 1.0556640625em;
-      stroke: #84828a;
+      stroke: var(--sidebar-text-other);
       transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
