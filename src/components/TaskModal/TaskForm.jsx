@@ -9,7 +9,7 @@ import close from '../../images/close.svg'
 import { selectArrTasks } from 'redux/tasks/tasksSelectors';
 
 import style from './TaskForm.module.scss';
-import { addTask } from 'redux/auth/authOperations';
+import { addTask } from 'redux/tasks/tasksOperations';
 
 function TaskPopUp({ task, closeModal}) {
   const format = 'H:mm';
