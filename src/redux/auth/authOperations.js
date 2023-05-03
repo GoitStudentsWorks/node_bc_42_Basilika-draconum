@@ -18,7 +18,9 @@ export const registerThunk = createAsyncThunk(
       const data = await registerUserApi(credentials);
       return data;
     } catch (error) {
-      Notiflix.Notify.failure('Please check your email and password and try again');
+      Notiflix.Notify.failure(
+        'Please check your email or password and try again'
+      );
       thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -33,7 +35,7 @@ export const loginThunk = createAsyncThunk(
       setAuthHeader(data.token);
       return data;
     } catch (error) {
-      Notiflix.Notify.failure('Please change your email ore name and try again')
+      Notiflix.Notify.failure('Please change your email or name and try again');
       thunkAPI.rejectWithValue(error.message);
     }
   }
