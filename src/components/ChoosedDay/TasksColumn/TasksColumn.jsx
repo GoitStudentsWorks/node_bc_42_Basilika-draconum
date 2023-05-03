@@ -6,14 +6,24 @@ import AddTaskBtn from '../AddTaskBtn/AddTaskBtn';
 
 import s from './tasksColumn.module.scss'
 
-const TasksColumn = ({ title, tasks, getTask }) => {
-
+const TasksColumn = ({ title, tasks }) => {
+const chooseProgressType = title => {
+  if (title === "To do") {
+    return "toDo";
+  }
+  if (title === "In progress") {
+    return "inProgress";
+  }
+  if (title === 'high') {
+    return "Done";
+  }
+};
 
   return (
     <div className={s.tasksColumnWrap} >
-      <ColumnHeadBar title={title} />
-      <ColumnsTasksList />
-      <AddTaskBtn text={"Add task"} icon={"plus"} />
+      <ColumnHeadBar title={title} progressType={chooseProgressType} />
+      <ColumnsTasksList tasks={"tasks"} />
+      <AddTaskBtn text={"Add task"} icon={"plus"} progressType={chooseProgressType} />
     </div>
   );
 };

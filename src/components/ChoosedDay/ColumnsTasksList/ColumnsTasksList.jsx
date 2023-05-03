@@ -3,9 +3,10 @@ import s from './columnsTasksList.module.scss'
 
 
 
-const ColumnsTasksList = () => {
+const ColumnsTasksList = ({tasks}) => {
   return (
     <div className={s.taskslistSWrap}>
+      {/* {tasks && tasks.map(({ title, priority, _id }) => <TaskColumnCard key={_id} title={title} priority={priority} id={ _id} />)}  */}
       <TaskColumnCard />
     </div>
   
