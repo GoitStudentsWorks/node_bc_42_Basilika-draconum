@@ -7,13 +7,12 @@ import MonthCalendarHead from './MonthCalendarHead/MonthCalendarHead';
 import CalendarTable from './CalendarTable/CalendarTable';
 import css from './choosed-month.module.scss';
 
-import arrTasks from './arrTasks.json';
 
 const ChoosedMonth = () => {
   const currentDate = useSelector(selectDate);
 
-   //  const tasks = useSelector(selectArrTasks);
-  const tasks = arrTasks;
+    const tasks = useSelector(selectArrTasks);
+
 
   const { startMonth, endMonth } = useDaysOfMonth(currentDate);
 
