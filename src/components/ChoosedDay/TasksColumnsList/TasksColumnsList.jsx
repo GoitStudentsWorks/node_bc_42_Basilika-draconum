@@ -1,6 +1,6 @@
 import TasksColumn from '../TasksColumn/TasksColumn';
 
-import s from './tasksColumnsList.module.scss'
+import s from './tasksColumnsList.module.scss';
 
 const TasksColumnsList = ({ tasks }) => {
 
@@ -16,7 +16,7 @@ const TasksColumnsList = ({ tasks }) => {
       <TasksColumn title={"In progress"} />
       <TasksColumn title={"Done"}  />
     </div>
-  )
-}
+  );
+};
 
-export default TasksColumnsList
+export default TasksColumnsList;

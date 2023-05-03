@@ -5,6 +5,7 @@ import { fetchTasks } from 'redux/tasks/tasksOperations';
 
 import TasksColumnsList from './TasksColumnsList/TasksColumnsList';
 
+import DayCalendarHead from './DayCalendarHead/DayCalendarHead';
 import s from './choosedDay.module.scss';
 
 const ChoosedDay = () => {
@@ -23,7 +24,7 @@ const ChoosedDay = () => {
 
   return (
     <div className={s.wrapChooseDay}>
-      {/* <DayCalendarHead/> */}
+    <DayCalendarHead />
       <TasksColumnsList tasks={tasksFilter} />
     </div>
   );
