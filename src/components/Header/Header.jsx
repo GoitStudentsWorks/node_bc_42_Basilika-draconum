@@ -8,7 +8,7 @@ import ThemeToggler from 'components/ThemeToggler/ThemeToggler';
 const Header = ({ setActive }) => {
   const userName = useSelector(getUser);
   const userAvatar = useSelector(getUserAvatar);
-  console.log(userAvatar);
+  // console.log(userAvatar);
 
   return (
     <header className={s.header}>
@@ -20,7 +20,7 @@ const Header = ({ setActive }) => {
         </button>
         <div className={s.boxContent}>
           {/* <div className={s.boxContent__thema}>Thema</div> */}
-          <ThemeToggler/>
+          <ThemeToggler />
           <div className={s.boxContent__name}>{userName.name}</div>
           <div className={s.boxContent__avatar}>
             <img

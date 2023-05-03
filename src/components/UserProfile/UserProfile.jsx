@@ -7,7 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { FiPlus, FiChevronDown } from 'react-icons/fi';
 import { AiOutlineUser } from 'react-icons/ai';
 
-import { selectUser } from 'redux/auth/authSelectors';
+import { getUser } from 'redux/auth/authSelectors';
 import {
   getCurrentUserThunk,
   updateAvatarThunk,
@@ -17,6 +17,7 @@ import {
 import css from './UserProfile.module.scss';
 import './DatePickerStyles.scss';
 
+// Calendar
 const isWeekendDay = date => {
   const day = date.getDay();
   return day === 0 || day === 6; // Sunday or Saturday
@@ -45,17 +46,19 @@ const profileSchema = Yup.object({
 const UserProfile = () => {
   const [newAvatar, setNewAvatar] = useState(null);
   const [newBirthday, setNewBirthday] = useState(new Date());
-  const [updatedProfile, setUpdatedProfile] = useState(false);
+  const [isUpdatedProfile, setIsUpdatedProfile] = useState(false);
 
-  const userData = useSelector(selectUser);
+  const user = useSelector(getUser);
   const dispatch = useDispatch();
 
+  console.log(user);
+
   useEffect(() => {
-    if (updatedProfile) {
+    if (isUpdatedProfile) {
       dispatch(getCurrentUserThunk());
-      setUpdatedProfile(false);
+      setIsUpdatedProfile(false);
     }
-  }, [dispatch, updatedProfile]);
+  }, [dispatch, isUpdatedProfile]);
 
   const handleSubmit = (values, { resetForm }) => {
     const profileData = {
@@ -64,50 +67,35 @@ const UserProfile = () => {
       email: values.email,
       skype: values.skype,
       birthday: values.birthday,
-      avatarURL: newAvatar,
+      // avatarURL: newAvatar,
     };
-    // const profileData = new FormData();
-    // profileData.append('name', values.name);
-    // profileData.append('email', values.email);
-    // if (values.phone) {
-    //   profileData.append('phone', values.phone);
-    // }
-    // if (values.skype) {
-    //   profileData.append('skype', values.skype);
-    // }
-    // profileData.append('birthday', values.birthday);
-    // if (newAvatar) {
-    //   profileData.append('avatar', newAvatar);
-    // }
-    // console.log(...profileData);
-    console.log(profileData);
-    console.log(newAvatar);
-    dispatch(updateUserInfoThunk(profileData));
-    dispatch(updateAvatarThunk(newAvatar));
-    resetForm();
-  };
 
-  const uploadImage = e => {
-    setNewAvatar(e.target.files[0]);
+    const avatarData = {
+      avatar: newAvatar,
+    };
+
+    // console.log(profileData);
+    console.log(avatarData);
+    // dispatch(updateUserInfoThunk(profileData));
+    dispatch(updateAvatarThunk(avatarData));
+    setIsUpdatedProfile(true);
+    resetForm();
   };
 
   return (
     <div className={css.wrapper}>
       <Formik
         initialValues={{
-          name: '',
-          phone: '',
-          birthday: '',
-          skype: '',
-          email: '',
+          name: user ? user.name : '',
+          phone: user ? user.phone : '',
+          birthday: newBirthday
+            ? newBirthday
+            : user
+            ? new Date(user.birthday)
+            : new Date(),
+          skype: user ? user.skype : '',
+          email: user ? user.email : '',
         }}
-        // initialValues={{
-        //   name: user.name || '',
-        //   phone: user.phone || '',
-        //   birthday: user.birthday || '',
-        //   skype: user.skype || '',
-        //   email: user.email || '',
-        // }}
         validationSchema={profileSchema}
         onSubmit={handleSubmit}
       >
@@ -119,11 +107,12 @@ const UserProfile = () => {
                   <img
                     src={URL.createObjectURL(newAvatar)}
                     className={css.avatarImage}
+                    accept="image/*,.png,.jpg,.gif,.web"
                     alt="avatar"
                   />
-                ) : userData?.avatarURL ? (
+                ) : user?.avatarURL ? (
                   <img
-                    src={userData?.avatarURL}
+                    src={user?.avatarURL}
                     className={css.avatarImage}
                     alt="avatar"
                   />
@@ -140,14 +129,19 @@ const UserProfile = () => {
                     className={css.inputUpload}
                     id="avatar"
                     type="file"
-                    onChange={uploadImage}
+                    onChange={e => {
+                      setNewAvatar(e.target.files[0]);
+                      console.log(e.target.files);
+                    }}
                     accept="image/*,.png,.jpg,.gif,.web"
                     name="avatar"
                   ></input>
                 </label>
               </div>
 
-              <h3 className={css.avatarName}>Polly Mango</h3>
+              <h3 className={css.avatarName}>
+                {user.name ? user.name : 'My name'}
+              </h3>
               <span className={css.avatarRole}>User</span>
             </div>
             <div className={css.formCenter}>
