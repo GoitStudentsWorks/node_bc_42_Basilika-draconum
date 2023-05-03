@@ -4,27 +4,32 @@
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }  */
-/* :root {
-  --bgColor-primary: #FFFFFF;
-  --bgColor-secondary: #DCEBF7;
-  --bgColor-table: #EAEAEA;
-  --nothema-bgColor-night-sidebar:#13151A;
-  --bgColor-night-main:#171820;
-  --bgColor-night-calendar:#21222C;
-  --color-accent: #3E85F3;
-  --textColor-primary: #111111;
-  --textColor-secondary: #616161;
-  --textColor-white: #FFFFFF;
-  --textColor-placeholder: #DCE3E5;
-  --bgColor-range-low:#72C2F8;
-  --bgColor-range-medium: #F3B249;
-  --bgColor-range-high: #EA3D65;
-}*/
+:root {
+  --notheme-bgColor-primary: #FFFFFF;
+  --notheme-bgColor-secondary: #DCEBF7;
+  --notheme-textColor-title:#171820;
+  --notheme-color-accent: #3E85F3;
+  --notheme-textColor-primary: #111111;
+  --notheme-textColor-reviews: #111111B2;
+  --notheme-textColor-white: #FFFFFF;
+  --notheme-textColor-placeholder: #DCE3E599;
+  --notheme-textColor-description: #111111E5;
+  --notheme-profile-text-user: #616161;
+  --notheme-warning-color: red
+}
 
 html[data-theme='dark'] {
   --sidebar: #13151a;
   --bgColor-secondary: #171820;
   --calendar: #21222c;
+  --paginator-text-color: #ffffff;
+  --paginator-bg-color: #3e85f3;
+  --paginator-border-color: rgba(255, 255, 255, 0.15);
+  --type-select-bg-color: #21222c;
+  --type-select-color: #3e85f3;
+  --type-select-border-color: rgba(255, 255, 255, 0.15);
+  --type-select-active-bg-color: #3E85F3;
+  --type-select-active-color: #ffffff;
   --sidebar-accent: #3e85f3;
   --textColor-main: #111111;
   --gooseTrack-color: #e3f3ff;
@@ -47,6 +52,14 @@ html[data-theme='light'] {
   --sidebar: #fff;
   --bgColor-secondary: #dcebf7;
   --calendar: #fff;
+  --paginator-text-color: #ffffff;
+  --paginator-bg-color: #3e85f3;
+  --paginator-border-color: rgba(220, 227, 229, 0.5);
+  --type-select-bg-color: #E3F3FF;
+  --type-select-color: #3e85f3;
+  --type-select-border-color: rgba(62, 133, 243, 0.2);
+  --type-select-active-bg-color: #cae8ff;
+  --type-select-active-color: #3E85F3;
   --sidebar-accent: #e3f3ff;
   --textColor-main: #fff;
   --gooseTrack-color: #3e85f3;
