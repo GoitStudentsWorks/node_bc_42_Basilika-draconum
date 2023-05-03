@@ -3,13 +3,12 @@ import icon from '../../../images/svg.svg';
 import s from './addTaskBtn.module.scss'
 import TaskPopUp from 'components/TaskModal/TaskForm';
 import Modal from 'components/TaskModal/Modal';
-// import Modal from 'components/TaskModal/Modal';
 
 
 
 const AddTaskBtn = ({progressType}) => {
   const [activateModal, setActivateModal] = useState(false);
-const AddTaskBtn = () => {
+
   
   const openModal = () => {
     setActivateModal(true);
