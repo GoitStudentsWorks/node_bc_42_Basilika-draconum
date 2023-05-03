@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 import Notiflix from 'notiflix';
 import { isModalEditShownAction } from 'redux/tasks/tasksSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import close from '../../images/close.svg';
 
 import { selectArrTasks } from 'redux/tasks/tasksSelectors';
 
@@ -167,7 +168,7 @@ function TaskPopUp({ task, closeModal }) {
           onClick={hadleCloseModal}
           className={style.closeButton}
         >
-          X
+          <img src={close} alt="close" />
         </button>
       </form>
       {/* </div>
