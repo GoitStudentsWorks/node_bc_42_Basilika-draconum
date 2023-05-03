@@ -1,3 +1,4 @@
+import { TaskToolbar } from 'components/TaskToolbar/TaskToolbar';
 import s from './taskColumnCard.module.scss';
 
 const maxLengthTitle = 30;
@@ -37,7 +38,7 @@ const TaskColumnCard = ({ task }) => {
             >
               {task?.priority}
           </span>
-          {/* <TaskToolbar task={task} /> */}
+          <TaskToolbar task={task} />
         </div>
       </div>
 

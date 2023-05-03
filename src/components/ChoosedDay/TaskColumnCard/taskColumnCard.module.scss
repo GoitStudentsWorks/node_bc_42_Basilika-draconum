@@ -1,10 +1,11 @@
 .tasksCard {
   width: 100%;
   min-height: 108px;
+  position: relative;
   padding: 14px 18px;
   border: 1px solid var(--borderColor-colum);
   border-radius: 8px;
-  background-color: var(--bgColor-task-cart);
+  background-color: var(--notes-background);
   @media screen and (min-width: 768px) {
     margin-bottom: 30px;
     min-height: 112px;
