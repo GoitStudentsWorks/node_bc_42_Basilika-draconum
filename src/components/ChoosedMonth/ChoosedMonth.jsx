@@ -12,8 +12,8 @@ import arrTasks from './arrTasks.json';
 const ChoosedMonth = () => {
   const currentDate = useSelector(selectDate);
 
-   //  const tasks = useSelector(selectArrTasks);
-  const tasks = arrTasks;
+    const tasks = useSelector(selectArrTasks);
+//   const tasks = arrTasks;
 
   const { startMonth, endMonth } = useDaysOfMonth(currentDate);
 
