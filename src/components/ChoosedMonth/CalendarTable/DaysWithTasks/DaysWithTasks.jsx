@@ -7,12 +7,7 @@ const DaysWithTasks = ({ day, setOpening, currentTask, handleClick }) => {
   const printTask =
     day.tasks.length > 0 &&
     day.tasks.map((task, index) => {
-
-      return index >= 3 ? (
-        index === -2 ? (
-          <span>tasks</span>
-        ) : null
-      ) : (
+      return index >= 3 ? null : (
         <div key={index}>
           <TasksList
             tasks={task}
