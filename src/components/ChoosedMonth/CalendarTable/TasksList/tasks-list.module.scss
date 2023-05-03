@@ -1,4 +1,6 @@
 .tasksListStyle {
+  list-style: none;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,10 +23,20 @@
 
     cursor: pointer;
 
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+
     &:hover,
     &:focus {
       scale: 1.05;
     }
+  }
+
+  .low,
+  .medium,
+  .high {
+    padding: 3px;
   }
 
   .low {
@@ -33,13 +45,13 @@
   }
 
   .medium {
-    color: #f3b249;
     background-color: #fcf0d4;
+    color: #f3b249;
   }
 
   .high {
-    color: #ea3d65;
     background-color: #ffd2dd;
+    color: #ea3d65;
   }
 
   @media (min-width: 768px) {
@@ -48,6 +60,7 @@
       line-height: 1.286;
     }
   }
+
   @media (min-width: 1440px) {
     padding: 4px 0;
   }
