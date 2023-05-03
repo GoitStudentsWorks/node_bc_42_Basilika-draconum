@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import './Modal.css';
-const body = document.querySelector('body');
-const Modal = ({ children, active, setActive }) => {
 
+const body = document.querySelector('body');
+
+const Modal = ({ children, active, setActive }) => {
   useEffect(() => {
     const handleEscapeClose = event => {
       if (event.code === 'Escape') {
@@ -16,7 +17,7 @@ const Modal = ({ children, active, setActive }) => {
       window.removeEventListener('keydown', handleEscapeClose);
       body.classList.toggle('no-scroll');
     };
-  },[setActive]);
+  }, [setActive]);
 
   return (
     <div
