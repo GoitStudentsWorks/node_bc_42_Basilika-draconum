@@ -5,8 +5,8 @@
   }
   
   .name {
-    background-color: #3e85f3;
-    color: #ffffff;
+    background-color: var(--paginator-bg-color);
+    color: var(--paginator-text-color);
   
     font-weight: 700;
     font-size: 14px;
@@ -34,7 +34,7 @@
   }
   
   .button {
-    background-color: #ffffff; /* #21222C - dark */
+    background-color: var(--calendar); /* #21222C - dark */
   
     display: flex;
     justify-content: center;
@@ -42,7 +42,7 @@
   
     padding: 7px 10px;
   
-    border: 1px solid rgba(220, 227, 229, 0.5);
+    border: 1px solid var(--paginator-border-color);
   
     cursor: pointer;
   }

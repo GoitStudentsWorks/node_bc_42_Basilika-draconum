@@ -21,7 +21,9 @@ const CalendarTable = ({ tasks, currentDate }) => {
 
   const daysWithTasks = daysOfMonth.map(day => ({
     date: format(day, 'yyyy-MM-dd'),
-    tasks: tasks.filter(task => task.date === format(day, 'yyyy-MM-dd')),
+    tasks: tasks.filter(
+      task => task.date.start === day.toISOString().slice(0, 19) + 'Z'
+    ),
   }));
 
   const handleClick = (e, date) => {
@@ -37,7 +39,6 @@ const CalendarTable = ({ tasks, currentDate }) => {
   //     if (selectedTask) {
   //       const date = new Date(selectedTask.date);
   //       const formattedDate = format(date, 'yyyy-MM-dd');
-
   //       return formattedDate;
   //     }
   //   };
