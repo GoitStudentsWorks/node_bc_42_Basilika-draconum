@@ -34,8 +34,3 @@ const Sidebar = ({ setMenuActive }) => {
 };
 
 export default Sidebar;
-{
-  /* <aside className={s.sectionSidebar}> */
-}
-/* <aside className={menuActive ? `${s.sectionSidebar} ${s.active}` : `s.sectionSidebar`}
-        onClick={() => setMenuActive(false)}> */

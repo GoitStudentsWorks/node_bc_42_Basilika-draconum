@@ -39,4 +39,3 @@ const Header = ({ setMenuActive }) => {
   );
 };
 export default Header;
-//onClick={() => setActive(true)}

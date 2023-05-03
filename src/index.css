@@ -15,7 +15,8 @@
   --notheme-textColor-placeholder: #DCE3E599;
   --notheme-textColor-description: #111111E5;
   --notheme-profile-text-user: #616161;
-  --notheme-warning-color: red
+  --notheme-warning-color: red;
+  --notheme-hover-btn: #2b78ef;
 }
 
 html[data-theme='dark'] {
@@ -52,6 +53,7 @@ html[data-theme='dark'] {
   --sidebar-hover-bg: #3E85F3;
   
   --borderColor-colum: rgba(220, 227, 229, 0.8);
+  --border-shadow-btn: rgba(136, 165, 191, 0.48);
 }
 html[data-theme='light'] {
   --sidebar: #fff;
@@ -87,6 +89,7 @@ html[data-theme='light'] {
   --sidebar-hover-bg: #E3F3FF;
   
   --borderColor-colum: rgba(220, 227, 229, 0.8);
+  --border-shadow-btn: rgba(136, 165, 191, 0.3);;
 }
 * {
   font-family: 'Inter', sans-serif;
