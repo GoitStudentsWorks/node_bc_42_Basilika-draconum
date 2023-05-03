@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getTaskAllApi, deleteTaskApi, updateTaskStatusApi } from '../../services/tasksService';
+import { getTaskAllApi, deleteTaskApi, updateTaskStatusApi, addTaskApi } from '../../services/tasksService';
 
 export const fetchTasks = createAsyncThunk(
   'tasks/fetchTasks',
@@ -36,6 +36,18 @@ export const updateTaskStatusThunk = createAsyncThunk(
       return data;
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const addTask = createAsyncThunk(
+  'task/addTask',
+  async (tasksData, thunkAPI) => {
+    try {
+      const data = await addTaskApi(tasksData);
+      return data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
   }
 );
