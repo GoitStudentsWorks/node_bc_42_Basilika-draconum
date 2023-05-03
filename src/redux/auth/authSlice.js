@@ -84,7 +84,6 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = payload;
       })
-<<<<<<< HEAD
       // updateAvatar
       .addCase(updateAvatarThunk.pending, state => {
         state.isLoading = true;
@@ -95,7 +94,10 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(updateAvatarThunk.rejected, (state, { payload }) => {
-=======
+        state.isLoading = false;
+        state.error = payload;
+      })
+
       //logoutUser
       .addCase(logOutThunk.pending, state => {
         state.isLoading = true;
@@ -104,7 +106,6 @@ const authSlice = createSlice({
         return initialState;
       })
       .addCase(logOutThunk.rejected, (state, { payload }) => {
->>>>>>> dev
         state.isLoading = false;
         state.error = payload;
       });
