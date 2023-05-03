@@ -11,8 +11,19 @@ import ChoosedMonth from './ChoosedMonth/ChoosedMonth';
 import ChoosedDay from './ChoosedDay/ChoosedDay';
 import CalendarPage from './../pages/CalendarPage/CalendarPage';
 import { StartPage } from './../pages/StartPage/StartPage';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAccessToken } from 'redux/auth/authSelectors';
+import { getCurrentUserThunk } from 'redux/auth/authOperations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  const token = useSelector(getAccessToken);
+
+  useEffect(() => {
+    token && dispatch(getCurrentUserThunk());
+  }, [dispatch, token]);
+
   return (
     <Routes>
       <Route path="/" element={<PublicRoute component={<StartPage />} />} />

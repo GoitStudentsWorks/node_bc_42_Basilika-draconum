@@ -1,8 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import Notiflix from 'notiflix';
 import {
   getCurrentUserApi,
   loginUserApi,
   registerUserApi,
+  updateAvatarApi,
   updateDataUserApi,
   logoutApi,
 } from 'services/authService';
@@ -35,20 +37,37 @@ export const loginThunk = createAsyncThunk(
   }
 );
 
+// export const getCurrentUserThunk = createAsyncThunk(
+//   'auth/getCurrentUser',
+//   async (_, thunkAPI) => {
+//     // const state = thunkAPI.getState();
+//     // const savedToken = state.auth.token; // accessToken?
+//     // if (!savedToken) {
+//     //   return thunkAPI.rejectWithValue();
+//     // }
+//     // setAuthHeader(savedToken);
+//     try {
+//       const data = await getCurrentUserApi();
+//       return data;
+//     } catch (error) {
+//       thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
+
 export const getCurrentUserThunk = createAsyncThunk(
   'auth/getCurrentUser',
-  async (_, thunkAPI) => {
-    // const state = thunkAPI.getState();
-    // const savedToken = state.auth.token; // accessToken?
-    // if (!savedToken) {
-    //   return thunkAPI.rejectWithValue();
-    // }
-    // setAuthHeader(savedToken);
+  async (_, { rejectWithValue, getState }) => {
     try {
-      const data = await getCurrentUserApi();
-      return data;
+      const token = getState().auth.token;
+      if (!token) {
+        return rejectWithValue('no token');
+      }
+      setAuthHeader(token);
+      return await getCurrentUserApi();
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      Notiflix.Notify.failure(`${error.message}`);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -69,7 +88,7 @@ export const updateAvatarThunk = createAsyncThunk(
   'auth/updateAvatar',
   async (avatar, thunkAPI) => {
     try {
-      const data = await updateDataUserApi(avatar);
+      const data = await updateAvatarApi(avatar);
       return data;
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);

@@ -10,11 +10,19 @@ import { AiOutlineUser } from 'react-icons/ai';
 import { selectUser } from 'redux/auth/authSelectors';
 import {
   getCurrentUserThunk,
+  updateAvatarThunk,
   updateUserInfoThunk,
 } from 'redux/auth/authOperations';
 
 import css from './UserProfile.module.scss';
-import photo from './images/cat.jpg';
+import './DatePickerStyles.scss';
+
+const isWeekendDay = date => {
+  const day = date.getDay();
+  return day === 0 || day === 6; // Sunday or Saturday
+};
+
+const weekendDayClassName = 'weekend-day';
 
 // Validation Schema
 const profileSchema = Yup.object({
@@ -36,7 +44,7 @@ const profileSchema = Yup.object({
 // UserProfile
 const UserProfile = () => {
   const [newAvatar, setNewAvatar] = useState(null);
-  const [newBirthday, setNewBirthday] = useState(null);
+  const [newBirthday, setNewBirthday] = useState(new Date());
   const [updatedProfile, setUpdatedProfile] = useState(false);
 
   const userData = useSelector(selectUser);
@@ -50,11 +58,13 @@ const UserProfile = () => {
   }, [dispatch, updatedProfile]);
 
   const handleSubmit = (values, { resetForm }) => {
-    const simpleData = {
+    const profileData = {
       name: values.name,
       phone: values.phone,
       email: values.email,
       skype: values.skype,
+      birthday: values.birthday,
+      avatarURL: newAvatar,
     };
     // const profileData = new FormData();
     // profileData.append('name', values.name);
@@ -70,7 +80,10 @@ const UserProfile = () => {
     //   profileData.append('avatar', newAvatar);
     // }
     // console.log(...profileData);
-    dispatch(updateUserInfoThunk(simpleData));
+    console.log(profileData);
+    console.log(newAvatar);
+    dispatch(updateUserInfoThunk(profileData));
+    dispatch(updateAvatarThunk(newAvatar));
     resetForm();
   };
 
@@ -108,9 +121,9 @@ const UserProfile = () => {
                     className={css.avatarImage}
                     alt="avatar"
                   />
-                ) : userData?.avatar ? (
+                ) : userData?.avatarURL ? (
                   <img
-                    src={userData?.avatar}
+                    src={userData?.avatarURL}
                     className={css.avatarImage}
                     alt="avatar"
                   />
@@ -185,37 +198,25 @@ const UserProfile = () => {
                 <label className={css.formLabel} htmlFor="birthday">
                   Birthday
                 </label>
-                {/* <input
-                  type="date"
-                  name="birthday"
-                  id="birthday"
-                  className={css.formInput}
-                  // value={values.phone ? values.phone : ''}
-                  value={values.birthday}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="birthday"
-                ></input> */}
                 <DatePicker
                   type="date"
                   name="birthday"
                   id="birthday"
                   input={true}
+                  formatWeekDay={nameOfDay => nameOfDay.slice(0, 1)}
+                  dayClassName={date =>
+                    isWeekendDay(date) ? weekendDayClassName : undefined
+                  }
                   className={css.formInput}
-                  maxDate={new Date()}
-                  selected={values.birthday}
+                  calendarClassName={css.customCalendarStyle}
+                  selected={newBirthday}
                   onChange={date => {
                     setNewBirthday(date);
                   }}
-                  placeholder="Birthday"
                   dateFormat="dd/MM/yyyy"
                   calendarStartDay={1}
                   closeOnScroll={e => e.target === document}
                 />
-                {/* 
-          <VectorPng>
-            <use href={Icon + '#icon-chevron-right-new'}></use>
-          </VectorPng> */}
                 <ErrorMessage className={css.formError} name="birthday" />
               </div>
 
