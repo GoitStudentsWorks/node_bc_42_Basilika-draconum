@@ -64,6 +64,8 @@ gap: 208px;
     }
     .logotitle {
         margin-bottom: 40px;
+        font-size: 120px;
+            line-height: 1.25;
     }
     .linkWrapper {
         flex-direction: row-reverse;
@@ -77,4 +79,8 @@ gap: 208px;
     .authSection {
         padding: 200px 0;
     }
+        .logotitle {
+font-size: 120px;
+    line-height: 1.25;
+        }
 }
