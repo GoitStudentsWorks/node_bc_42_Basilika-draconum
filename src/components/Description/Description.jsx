@@ -21,17 +21,17 @@ export const Description = () => {
             </div>
             <picture>
               <source
-                srcset={require('images/deskcalendar.png')}
+                srcSet={require('images/deskcalendar.png')}
                 media="(min-width: 1440px)"
                 type="image/png"
               />
               <source
-                srcset={require('images/tabcalendar.png')}
+                srcSet={require('images/tabcalendar.png')}
                 media="(min-width: 768px)"
                 type="image/png"
               />
               <source
-                srcset={require('images/mobcalendar.png')}
+                srcSet={require('images/mobcalendar.png')}
                 media="(max-width: 767px)"
                 type="image/png"
               />
@@ -61,17 +61,17 @@ export const Description = () => {
            
             <picture>
               <source
-                srcset={require('images/desksaidbar.png')}
+                srcSet={require('images/desksaidbar.png')}
                 media="(min-width: 1440px)"
                 type="image/png"
               />
               <source
-                srcset={require('images/tabsidebar.png')}
+                srcSet={require('images/tabsidebar.png')}
                 media="(min-width: 768px)"
                 type="image/png"
               />
               <source
-                srcset={require('images/mobsidebar.png')}
+                srcSet={require('images/mobsidebar.png')}
                 media="(max-width: 767px)"
                 type="image/png"
               />
@@ -96,17 +96,17 @@ export const Description = () => {
               </div>
               <picture>
                 <source
-                  srcset={require('images/deskall.png')}
+                  srcSet={require('images/deskall.png')}
                   media="(min-width: 1440px)"
                   type="image/png"
                 />
                 <source
-                  srcset={require('images/tabone.png')}
+                  srcSet={require('images/tabone.png')}
                   media="(min-width: 768px)"
                   type="image/png"
                 />
                 <source
-                  srcset={require('images/mobone.png')}
+                  srcSet={require('images/mobone.png')}
                   media="(max-width: 767px)"
                   type="image/png"
                 />

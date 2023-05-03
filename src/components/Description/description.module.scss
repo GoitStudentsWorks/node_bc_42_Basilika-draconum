@@ -3,7 +3,7 @@
 }
 
 .number {
-    color: var(--color-accent);
+    color: var(--notheme-color-accent);
     font-style: normal;
     font-weight: 700;
     font-size: 80px;
@@ -23,9 +23,9 @@
     width: 214px;
     height: 56px;
     border-radius: 44px;
-    background-color: var(--bgColor-secondary);
+    background-color: var(--notheme-bgColor-secondary);
 
-    color: var(--color-accent);
+    color: var(--notheme-color-accent);
 
 }
 
@@ -36,6 +36,7 @@
     line-height: 1.25;
     padding-top: 8px;
     padding-bottom: 14px;
+    color: var(--notheme-textColor-title);
 }
 
 .subtitleEven {
@@ -47,6 +48,7 @@
     font-size: 14px;
     line-height: 1.2857;
     margin-bottom: 40px;
+    color: var(--notheme-textColor-description);
 }
 
 @media screen and (min-width: 768px) {

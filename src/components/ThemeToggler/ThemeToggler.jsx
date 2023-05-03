@@ -7,9 +7,7 @@ export default function ThemeToggler() {
   useEffect(() => {
     const themeToggleLight = document.getElementById('light-theme-toggle');
     const themeToggleDark = document.getElementById('dark-theme-toggle');
-    console.log(themeToggleLight);
     const dataValue = localStorage.getItem('app-theme');
-    console.log(dataValue);
     if (dataValue === 'light') {
       themeToggleLight.style.display = 'none';
       themeToggleDark.style.display = 'block';

@@ -7,15 +7,12 @@
     display: flex;
     justify-content: space-between;
 
+
     @media screen and (min-width: 1440px) {
       padding: 40px 32px 32px 32px;
     }
   }
 
-//   //???
-//     @media screen and (min-width: 1440px) {
-//       padding: 40px 32px 32px 32px;
-//     }
 }
 .boxBtn {
   &__closeBtn {
@@ -69,10 +66,11 @@
     }
   }
   &__avatar {
-    background-image: url('');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    //background-image: url('');
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    object-fit: contain;
     width: 32px;
     height: 32px;
     border-radius: 50%;
