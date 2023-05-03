@@ -1,7 +1,8 @@
 import icon from '../../../images/svg.svg';
 import s from './addTaskBtn.module.scss'
 
-const AddTaskBtn = ({progressType}) => {
+const AddTaskBtn = () => {
+  
   const openModal = () => {
     console.log('Open moddal');
   };
@@ -17,7 +18,3 @@ const AddTaskBtn = ({progressType}) => {
 };
 
 export default AddTaskBtn;
-// ???1. Компонент отримує в пропсах id групи завдань
-// 3. Клік по кнопці відкриває модалку TaskModal для створення нового завдання в поточній колонці
-
-// +2. Компонент рендерить блок розмітки кнопки.

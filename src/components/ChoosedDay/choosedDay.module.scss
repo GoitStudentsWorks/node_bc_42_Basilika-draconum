@@ -1,4 +1,27 @@
 .wrapChooseDay {
-  padding: 40px 32px 50px;
-  background-color: var(--bgColor-task-cart);
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    height: 14px;
+    width: 360px;
+    display: true;
+    background: #f2f2f2;
+    border-radius: 12px;
+    overflow: auto;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #e7e5e5;
+    border-radius: 12px;
+  }
+  @media screen and (min-width: 768px) {
+    &::-webkit-scrollbar-thumb {
+      :hover,
+      :focus {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    overflow-y: hidden;
+  }
 }
