@@ -16,8 +16,8 @@
   .activeLinkMonth,
   .navLinkDay,
   .activeLinkDay {
-    background-color: #e3f3ff; /* #21222C - dark */
-    color: #3e85f3;
+    background-color: var(--type-select-bg-color); /* #21222C - dark */
+    color: var(--type-select-color);
   
     font-weight: 500;
     font-size: 14px;
@@ -33,7 +33,7 @@
   .navLinkMonth,
   .activeLinkMonth {
     padding: 8px 16px;
-    border-right: 1px solid rgba(62, 133, 243, 0.2); /* 1px solid rgba(255, 255, 255, 0.15); - dark */
+    border-right: 1px solid var(--type-select-border-color); /* 1px solid rgba(255, 255, 255, 0.15); - dark */
     border-radius: 8px 0px 0px 8px;
   }
   
@@ -46,8 +46,8 @@
   
   .activeLinkMonth,
   .activeLinkDay {
-    background-color: #cae8ff; /* #3E85F3 - dark */
-    /* color: #FFFFFF; - dark */
+    background-color: var(--type-select-active-bg-color); /* #3E85F3 - dark */
+    color: var(--type-select-active-color); /* color: #FFFFFF; - dark */
   }
   
   @media screen and (min-width: 768px) {

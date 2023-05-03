@@ -3,6 +3,7 @@ import {
   getCurrentUserThunk,
   loginThunk,
   registerThunk,
+  updateAvatarThunk,
   updateUserInfoThunk,
   logOutThunk,
 } from './authOperations';
@@ -14,7 +15,7 @@ const initialState = {
   user: null,
   token: null,
   userData: {
-    avatar: '',
+    avatarURL: '',
     name: '',
     email: '',
     phone: '',
@@ -83,6 +84,20 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = payload;
       })
+      // updateAvatar
+      .addCase(updateAvatarThunk.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(updateAvatarThunk.fulfilled, (state, { payload }) => {
+        state.userData.avatar = payload;
+        state.isLoading = false;
+      })
+      .addCase(updateAvatarThunk.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
+      })
+
       //logoutUser
       .addCase(logOutThunk.pending, state => {
         state.isLoading = true;
