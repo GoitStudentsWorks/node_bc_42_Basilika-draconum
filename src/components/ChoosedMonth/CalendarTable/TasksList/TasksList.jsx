@@ -1,11 +1,11 @@
-import { useWindowSize } from 'hooks/useWindowSize';
+import { useMediaQuery } from '@mui/material';
 import css from './tasks-list.module.scss';
 
 const TasksList = ({ tasks, openModal, currentTask }) => {
-  const size = useWindowSize();
+  const screenMobile = useMediaQuery('(max-width: 767.9px)');
 
   const truncateString = str => {
-    if (size.width < 767.9) {
+    if (screenMobile) {
       return str.substring(0, 3) + '...';
     }
     if (str.length > 7) {
@@ -14,25 +14,24 @@ const TasksList = ({ tasks, openModal, currentTask }) => {
     return str;
   };
 
+  console.log(tasks)
+
   return (
     <ul className={css.tasksListStyle}>
-      {tasks.map((task, index) => {
-        if (index >= 2) {
-          return null;
+      <li
+        key={tasks.owner}
+        className={
+          (tasks.priority === 'low' && css.low) ||
+          (tasks.priority === 'medium' && css.medium) ||
+          (tasks.priority === 'high' && css.high)
         }
-        return (
-          <li
-            key={task._id}
-            className={task.priority}
-            onClick={() => {
-              openModal(true);
-              currentTask(task);
-            }}
-          >
-            {truncateString(task.title)}
-          </li>
-        );
-      })}
+        onClick={() => {
+          openModal(true);
+          currentTask(tasks);
+        }}
+      >
+        {truncateString(tasks.title)}
+      </li>
     </ul>
   );
 };

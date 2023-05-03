@@ -4,23 +4,28 @@ import TasksList from '../TasksList/TasksList';
 import css from './days-tasks.module.scss';
 
 const DaysWithTasks = ({ day, setOpening, currentTask, handleClick }) => {
+  const printTask =
+    day.tasks.length > 0 &&
+    day.tasks.map((task, index) => {
+
+      return index >= 2 ? (
+        index === -2 ? (
+          <span>tasks</span>
+        ) : null
+      ) : (
+        <div key={index}>
+          <TasksList
+            tasks={task}
+            openModal={setOpening}
+            currentTask={currentTask}
+          />
+        </div>
+      );
+    });
+
   return (
     <td className={css.styledTd} onClick={e => handleClick(e, day.date)}>
-      {day.tasks.length > 0 &&
-        day.tasks.map(({ tasks }, index) => {
-          return (
-            <div key={index}>
-              <TasksList
-                tasks={tasks}
-                openModal={setOpening}
-                currentTask={currentTask}
-              />
-              {tasks.length > 2 && (
-                <span className={css.span}>+{tasks.length - 2} tasks</span>
-              )}
-            </div>
-          );
-        })}
+      {printTask}
       <p
         className={
           isToday(parseISO(day.date)) ? css.today : css.styledNumberDay
