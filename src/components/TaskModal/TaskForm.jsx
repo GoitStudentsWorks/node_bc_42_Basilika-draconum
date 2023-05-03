@@ -41,7 +41,7 @@ function TaskPopUp({ task, closeModal}) {
   const filterTasks = useSelector(selectArrTasks);
   const handleAdd = e => {
     e.preventDefault();
-    const data = { start, end, priority, title };
+    const data = {date:{start, end}, priority, title };
     if (
       filterTasks.find(task => task.title.toLowerCase() === title.toLowerCase())
     ) {
