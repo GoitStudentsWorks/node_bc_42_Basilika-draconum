@@ -1,7 +1,7 @@
 import icon from '../../../images/svg.svg';
 import s from './columnHeadBar.module.scss'
 
-const ColumnHeadBar = ({ title, progressType }) => {
+const ColumnHeadBar = ({ title }) => {
   
     const openModal = () => {
     console.log('Open moddal');
@@ -20,9 +20,3 @@ const ColumnHeadBar = ({ title, progressType }) => {
 };
 
 export default ColumnHeadBar;
-
-// "1. Компонент отримує в пропсах заголовок колонки групи та
-// ?????ідентифікатор ступеню виконання задач в цій колонці(To do | In progress | Done)
-// 2. Компонент рендерить блок розмітки
-//  - з заголовком колонки,
-//  - кнопкою для створення нової задачі, що відкриває модалку для створення задачі."
