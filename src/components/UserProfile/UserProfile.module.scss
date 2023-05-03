@@ -280,3 +280,17 @@
 }
 @media screen and (min-width: 1440px) {
 }
+
+.customStyle {
+  background-color: #3e85f3;
+  border-radius: 16px;
+}
+
+.customCalendarStyle {
+  background-color: #3e85f3;
+  border-radius: 16px;
+  border: none;
+  overflow: hidden;
+  color: #ffffff;
+  padding: 10px;
+}

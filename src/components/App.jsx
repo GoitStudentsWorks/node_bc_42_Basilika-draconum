@@ -11,6 +11,7 @@ import ChoosedMonth from './ChoosedMonth/ChoosedMonth';
 import ChoosedDay from './ChoosedDay/ChoosedDay';
 import CalendarPage from './../pages/CalendarPage/CalendarPage';
 import { StartPage } from './../pages/StartPage/StartPage';
+import UserProfile from './UserProfile/UserProfile';
 
 export const App = () => {
   return (

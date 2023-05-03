@@ -3,6 +3,7 @@ import {
   getCurrentUserApi,
   loginUserApi,
   registerUserApi,
+  updateAvatarApi,
   updateDataUserApi,
 } from 'services/authService';
 
@@ -68,7 +69,7 @@ export const updateAvatarThunk = createAsyncThunk(
   'auth/updateAvatar',
   async (avatar, thunkAPI) => {
     try {
-      const data = await updateDataUserApi(avatar);
+      const data = await updateAvatarApi(avatar);
       return data;
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);
