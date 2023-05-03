@@ -1,7 +1,7 @@
 .authSection {
     height: 100vh;
     background-color: var(--notheme-color-accent);
-    padding: 232px 0 88px;
+    padding: 232px 0px 88px;
 }
 
 .authConteiner {
@@ -26,14 +26,16 @@
     }
 }
 .linkWrapper{
-display: flex;
-flex-direction: column;
-gap: 208px;
+    display: flex;
+    flex-direction: column;
+    gap: 208px;
 }
 .login {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 14px;
+    line-height: 1.2857;
     gap: 6px;
     background-color: var(--notheme-bgColor-primary);
     width: 131px;
@@ -48,13 +50,10 @@ gap: 208px;
     color: var(--notheme-textColor-white);
     display: block;
     text-align: center;
-
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
     line-height: 14px;
-    
-
     text-decoration-line: underline;
 }
 
@@ -65,7 +64,7 @@ gap: 208px;
     .logotitle {
         margin-bottom: 40px;
         font-size: 120px;
-            line-height: 1.25;
+        line-height: 1.25;
     }
     .linkWrapper {
         flex-direction: row-reverse;
@@ -73,6 +72,13 @@ gap: 208px;
         align-items: center;
         justify-content: center;
     }
+    .login{
+        font-size: 14px;
+        line-height: 1.2857;
+    }
+    .singup{
+        font-size: 14px;
+        line-height: 1.2857;}
 }
 
 @media screen and (min-width:1440px) {
