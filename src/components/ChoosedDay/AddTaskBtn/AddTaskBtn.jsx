@@ -9,6 +9,8 @@ import Modal from 'components/TaskModal/Modal';
 
 const AddTaskBtn = ({progressType}) => {
   const [activateModal, setActivateModal] = useState(false);
+const AddTaskBtn = () => {
+  
   const openModal = () => {
     setActivateModal(true);
     
@@ -28,7 +30,3 @@ const AddTaskBtn = ({progressType}) => {
 };
 
 export default AddTaskBtn;
-// ???1. Компонент отримує в пропсах id групи завдань
-// 3. Клік по кнопці відкриває модалку TaskModal для створення нового завдання в поточній колонці
-
-// +2. Компонент рендерить блок розмітки кнопки.

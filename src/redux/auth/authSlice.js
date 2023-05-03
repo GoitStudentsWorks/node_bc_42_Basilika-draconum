@@ -12,10 +12,18 @@ const initialState = {
   isLoading: false,
   isLogin: false,
   error: null,
-  user: null,
+  // user: null,
   token: null,
-  userData: {
+  user: {
     avatarURL: '',
+    name: '',
+    email: '',
+    phone: '',
+    birthday: '',
+    skype: '',
+  },
+  userData: {
+    avatar: '',
     name: '',
     email: '',
     phone: '',
@@ -77,7 +85,7 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(updateUserInfoThunk.fulfilled, (state, { payload }) => {
-        state.userData = payload;
+        state.user = payload;
         state.isLoading = false;
       })
       .addCase(updateUserInfoThunk.rejected, (state, { payload }) => {
@@ -90,7 +98,7 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(updateAvatarThunk.fulfilled, (state, { payload }) => {
-        state.userData.avatar = payload;
+        state.user.avatar = payload;
         state.isLoading = false;
       })
       .addCase(updateAvatarThunk.rejected, (state, { payload }) => {

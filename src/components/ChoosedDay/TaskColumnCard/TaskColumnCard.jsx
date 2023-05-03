@@ -1,14 +1,12 @@
 import s from './taskColumnCard.module.scss';
 
-
 const maxLengthTitle = 30;
 
-
 const truncateString = (str) => {
-  if (str.length <= maxLengthTitle) {
+  if (str?.length <= maxLengthTitle) {
     return str;
   } else {
-    return str.slice(0, maxLengthTitle) + '...';
+    return str?.slice(0, maxLengthTitle) + '...';
   }
 };
 
@@ -24,38 +22,27 @@ const choosePriorityTextColor = priority => {
   }
 };
 
-const TaskColumnCard = () => {
-  const priority = 'medium';
-  const description = truncateString(priority)
-  const priorityBackgroundColor = choosePriorityTextColor(priority);
+const TaskColumnCard = ({ task }) => {
+
+  const  titleWithThreeDots = truncateString(task?.title)
+  const priorityBackgroundColor = choosePriorityTextColor(task?.priority);
   return (
     <>
       <div className={s.tasksCard}>
-        <p className={s.tasksCard__text}>{description}</p>
+        <p className={s.tasksCard__text}>{titleWithThreeDots}</p>
         <div className={s.tasksCard__bottomWrap}>
-          <div className={s.tasksCard__info}>
-          
             <span
               style={{ backgroundColor: priorityBackgroundColor }}
               className={s.tasksCard__riority}
             >
-              {priority}
-            </span>
-          </div>
-          <div>TaskToolbar</div>
+              {task?.priority}
+          </span>
+          {/* <TaskToolbar task={task} /> */}
         </div>
       </div>
-      {/* <div>TaskModal</div> */}
+
     </>
   );
 };
 
 export default TaskColumnCard;
-// 1. Компонент отримує в пропсах дані необхідні для створення картки.
-// 2. Компонент підписаний на url аватару юзера
-// 3. Компонент рендерить блоки:
-//  - розмітку з описом завдання, який має фіксовану висоту і текст з описом, якщо той не вміщається, обрізається та показуються три крапки.
-//  - аватар юзера.
-//  - пріоритет завдання, з фоном відповідного кольору.
-//  - TaskToolbar - інетрфейс для роботи з карткою
-//  - TaskModal - модалка з формою для редагування завдання."
