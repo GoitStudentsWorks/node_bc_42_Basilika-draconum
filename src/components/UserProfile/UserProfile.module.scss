@@ -4,11 +4,9 @@
 
 .wrapper {
   position: relative;
-  background-color: #fff;
-  border: 2px solid lightgrey;
+  background-color: var(--calendar);
   border-radius: 16px;
   padding: 135px 18px 40px;
-  margin-top: 60px;
 
   @media screen and (min-width: 768px) {
     padding: 40px 175px;
@@ -116,7 +114,7 @@
       font-weight: 700;
       font-size: 14px;
       line-height: 1.29;
-      color: #343434;
+      color: var(--name-text-color);
       margin-top: 18px;
       margin-bottom: 4px;
 
@@ -133,7 +131,7 @@
       font-weight: 600;
       font-size: 12px;
       line-height: 1.17;
-      color: #616161;
+      color: var(--profile-text-user);
 
       @media screen and (min-width: 768px) {
         font-size: 14px;
@@ -173,6 +171,7 @@
         font-weight: 400;
         font-size: 12px;
         line-height: 1.17;
+        color: var(--profile-text-categories);
         margin-bottom: 8px;
 
         @media screen and (min-width: 768px) {
@@ -193,7 +192,7 @@
         &:hover,
         &:active,
         &:focus {
-          border-color: #111111;
+          border-color: var(--profile-text-main);
         }
 
         @media screen and (min-width: 768px) {
@@ -210,7 +209,7 @@
     align-items: center;
     width: 195px;
     height: 46px;
-    background: #3e85f3;
+    background-color: var(--gooseTrack-color);
     color: #fff;
     font-family: 'Inter';
     font-weight: 600;
@@ -218,14 +217,12 @@
     line-height: 1.29;
     border: none;
     border-radius: 16px;
-    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
     cursor: pointer;
     margin: 40px auto 0;
 
     &:hover,
     &:active {
-      background: #2b78ef;
-      box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+      background-color: #2b78ef;
     }
 
     @media screen and (min-width: 768px) {
@@ -261,31 +258,11 @@
   position: absolute;
   font-size: 12px;
   line-height: 1.17;
-  color: #da1414;
+  color: var(--bgColor-range-high);
   margin: 5px 0 0 18px;
 }
 
 // Date Picker
-.reactDatePicker {
-  background-color: #3e85f3;
-}
-
-.react-datepicker {
-  background-color: #3e85f3;
-}
-
-@media screen and (min-width: 768px) {
-  /* width: 704px;
-    height: 854px; */
-}
-@media screen and (min-width: 1440px) {
-}
-
-.customStyle {
-  background-color: #3e85f3;
-  border-radius: 16px;
-}
-
 .customCalendarStyle {
   background-color: #3e85f3;
   border-radius: 16px;
@@ -293,4 +270,11 @@
   overflow: hidden;
   color: #ffffff;
   padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  /* width: 704px;
+    height: 854px; */
+}
+@media screen and (min-width: 1440px) {
 }

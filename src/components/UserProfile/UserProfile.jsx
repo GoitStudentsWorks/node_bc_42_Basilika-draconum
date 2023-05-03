@@ -198,17 +198,6 @@ const UserProfile = () => {
                 <label className={css.formLabel} htmlFor="birthday">
                   Birthday
                 </label>
-                {/* <input
-                  type="date"
-                  name="birthday"
-                  id="birthday"
-                  className={css.formInput}
-                  // value={values.phone ? values.phone : ''}
-                  value={values.birthday}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="birthday"
-                ></input> */}
                 <DatePicker
                   type="date"
                   name="birthday"
@@ -228,24 +217,6 @@ const UserProfile = () => {
                   calendarStartDay={1}
                   closeOnScroll={e => e.target === document}
                 />
-                <DatePicker
-                  // type="date"
-                  // name="birthday"
-                  // id="birthday"
-                  // input={true}
-                  // className={css.formInput}
-                  selected={newBirthday}
-                  onChange={date => {
-                    setNewBirthday(date);
-                  }}
-                  dateFormat="dd/MM/yyyy"
-                  calendarStartDay={1}
-                  closeOnScroll={e => e.target === document}
-                  // className={css.customStyle}
-                  // calendarClassName={css.customCalendarStyle}
-                  // dayClassName={css.customDayStyle}
-                />
-
                 <ErrorMessage className={css.formError} name="birthday" />
               </div>
 

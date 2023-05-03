@@ -12,18 +12,13 @@
   color: #fff;
 }
 
-.react-datepicker__header * {
-  color: #fff;
-}
-
+.react-datepicker__header *,
 .react-datepicker__month * {
   color: #fff;
 }
 
 .react-datepicker__day:hover {
   color: #3e85f3;
-  // border: 1px solid #fff;
-  // background-color: #3e85f3;
 }
 
 .react-datepicker__day--selected {
