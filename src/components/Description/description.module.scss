@@ -3,7 +3,7 @@
 }
 
 .number {
-    color: var(--color-accent);
+    color: var(--gooseTrack-color);
     font-style: normal;
     font-weight: 700;
     font-size: 80px;
@@ -25,7 +25,7 @@
     border-radius: 44px;
     background-color: var(--bgColor-secondary);
 
-    color: var(--color-accent);
+    color: var(--gooseTrack-color);
 
 }
 
@@ -47,6 +47,7 @@
     font-size: 14px;
     line-height: 1.2857;
     margin-bottom: 40px;
+    color: var(--textColor-main 90%);
 }
 
 @media screen and (min-width: 768px) {

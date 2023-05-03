@@ -1,6 +1,6 @@
 .authSection {
     height: 100vh;
-    background-color: var(--color-accent);
+    background-color: var(--notheme-color-accent);
     padding: 232px 0 88px;
 }
 
@@ -17,7 +17,7 @@
 
 .logotitle {
     // font-family: "Coolvetica";
-    color: white;
+    color: var(--notheme-textColor-white);
     margin-bottom: 32px;
     text-align: center;
 
@@ -35,17 +35,17 @@ gap: 208px;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    background-color: var(--bgColor-primary);
+    background-color: var(--notheme-bgColor-primary);
     width: 131px;
     height: 46px;
     border-radius: 16px;
     border-color: transparent;
     text-decoration: none;
-    color: var(--color-accent);
+    color: var(--notheme-color-accent);
 }
 
 .singup {
-    color: white;
+    color: var(--notheme-textColor-white);
     display: block;
     text-align: center;
 
