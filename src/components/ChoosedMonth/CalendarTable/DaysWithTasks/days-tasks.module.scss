@@ -6,7 +6,7 @@
 
   text-align: center;
 
-  border: 1px solid var(--paginator-border-color); // 1px solid rgba(255, 255, 255, 0.15); dark
+  border: 1px solid rgba(220, 227, 229, 0.5); // 1px solid rgba(255, 255, 255, 0.15); dark
 
   transition: border 250ms linear;
 
@@ -39,7 +39,7 @@
   top: 8px;
   right: 10px;
 
-  color: var(--name-text-color); // #FFFFFF; dark
+  color: #343434; // #FFFFFF; dark
 
   font-weight: 700;
   font-size: 12px;
