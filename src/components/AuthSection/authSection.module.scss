@@ -1,10 +1,17 @@
 .authSection {
-    height: 812px;
+    height: 100vh;
     background-color: var(--notheme-color-accent);
-    padding: 232px 0px 88px;
+    padding: 32px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .authConteiner {
+    max-height: 440px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,10 +20,15 @@
 
 .logofoto {
     margin-bottom: 2px;
+    width: 142px;
+    height: 142px;
 }
 
 .logotitle {
     // font-family: "Coolvetica";
+    font-weight: 400;
+        font-size: 44px;
+        line-height: 48px;
     color: var(--notheme-textColor-white);
     margin-bottom: 32px;
     text-align: center;
@@ -26,10 +38,15 @@
     }
 }
 .linkWrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 208px;
-}
+        display: flex;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: space-between;
+            align-items: center;
+            max-height: 268px;
+            height: 100%;
+        }
+
 .login {
     display: flex;
     align-items: center;
@@ -44,6 +61,7 @@
     border-color: transparent;
     text-decoration: none;
     color: var(--notheme-color-accent);
+    
 }
 
 .singup {
@@ -55,16 +73,29 @@
     font-size: 12px;
     line-height: 14px;
     text-decoration-line: underline;
+
+    
+
 }
 
 @media screen and (min-width: 768px) {
     // .authSection{
     //     // padding: 320px 0;
     // }
+.logofoto {
+   margin-bottom: 0;
+    width: 150px;
+    height: 149px;
+}
+
     .logotitle {
-        margin-bottom: 40px;
-        font-size: 120px;
-        line-height: 1.25;
+        // margin-bottom: 40px;
+        // font-size: 120px;
+        // line-height: 1.25;
+        font-weight: 400;
+            font-size: 44px;
+            line-height: 48px;
+            margin-bottom: 32px;
     }
     .linkWrapper {
         flex-direction: row-reverse;
@@ -74,8 +105,27 @@
     }
     .login{
         font-size: 14px;
-        line-height: 1.2857;
+        // line-height: 1.2857;
+        padding: 14px 33.5px;
+
+        display: flex;
+        gap: 6px;
+
+        background: #FFFFFF;
+            box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+            border-radius: 16px;
     }
+        .logSpan {
+            font-weight: 600;
+                font-size: 14px;
+                line-height: 18px;
+                letter-spacing: -0.02em;
+        }
+        .logIcon {
+            width: 13.5px;
+            height: 13.5px;
+
+        }
     .singup{
         font-size: 14px;
         line-height: 1.2857;}
@@ -86,7 +136,9 @@
         padding: 200px 0;
     }
         .logotitle {
-font-size: 120px;
-    line-height: 1.25;
+
+    margin-bottom: 40px;
+        font-size: 120px;
+        line-height: 1.25;
         }
 }
