@@ -1,6 +1,6 @@
 .sectionSidebar {
   box-sizing: border-box;
-  height: 100vh;
+  height: 100%;
   background-color: var(--sidebar);
   max-width: 225px;
   width: 100%;
@@ -11,24 +11,24 @@
 
   @media screen and (min-width: 1440px) {
     display: block;
-    //z-index: 10;
   }
 
-  // &__blur {
-  //   //width: calc(100vw - 225px);
-  //   width: 100%;
-  //   height: 100%;
-  //   backdrop-filter: blur(2px);
-  //   position: absolute;
+  &__blur {
+    width: calc(100vw - 225px);
+    //width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    position: absolute;
+    left: 225px;
 
-  //   @media screen and (min-width: 768px) {
-  //     //width: calc(100vw - 300px);
-  //     left: 225px;
-  //   }
-  //   @media screen and (min-width: 1440px) {
-  //     display: none;
-  //   }
-  // }
+    @media screen and (min-width: 768px) {
+      width: calc(100vw - 289px);
+      left: 289px;
+    }
+    @media screen and (min-width: 1440px) {
+      display: none;
+    }
+  }
 
   &__container {
     padding: 24px 20px;
