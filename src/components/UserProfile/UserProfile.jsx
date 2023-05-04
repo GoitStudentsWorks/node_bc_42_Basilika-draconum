@@ -51,8 +51,6 @@ const UserProfile = () => {
   const user = useSelector(getUser);
   const dispatch = useDispatch();
 
-  console.log(user);
-
   useEffect(() => {
     if (isUpdatedProfile) {
       dispatch(getCurrentUserThunk());
@@ -67,16 +65,17 @@ const UserProfile = () => {
       email: values.email,
       skype: values.skype,
       birthday: values.birthday,
-      // avatarURL: newAvatar,
     };
 
-    const avatarData = {
-      avatar: newAvatar,
-    };
+    const avatarData = new FormData();
+    if (newAvatar) {
+      avatarData.append('avatar', newAvatar);
+    }
 
     // console.log(profileData);
-    console.log(avatarData);
-    // dispatch(updateUserInfoThunk(profileData));
+    // console.log(avatarData);
+
+    dispatch(updateUserInfoThunk(profileData));
     dispatch(updateAvatarThunk(avatarData));
     setIsUpdatedProfile(true);
     resetForm();
@@ -131,7 +130,6 @@ const UserProfile = () => {
                     type="file"
                     onChange={e => {
                       setNewAvatar(e.target.files[0]);
-                      console.log(e.target.files);
                     }}
                     accept="image/*,.png,.jpg,.gif,.web"
                     name="avatar"
