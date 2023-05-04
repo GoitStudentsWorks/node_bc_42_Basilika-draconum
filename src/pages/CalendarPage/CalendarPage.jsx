@@ -8,10 +8,10 @@ import { getUser } from 'redux/auth/authSelectors';
 
 const CalendarPage = () => {
   const dispatch = useDispatch();
-  const isUser  = useSelector(getUser);
+  const isUser = useSelector(getUser);
 
   useEffect(() => {
-    if (!isUser)  return 
+    if (!isUser) return;
     dispatch(fetchTasks());
   }, [dispatch, isUser]);
 

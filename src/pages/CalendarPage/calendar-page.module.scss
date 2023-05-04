@@ -3,16 +3,13 @@
   padding: 40px 32px 50px;
   background-color: var(--notes-background);
 
-  //   padding: 24px 20px 52px;
   padding: 0 20px 52px;
 
   @media (min-width: 768px) {
-    //  padding: 24px 32px 42px;
     padding: 0 32px 42px;
   }
 
   @media (min-width: 1440px) {
-    //  padding: 40px 32px 32px;
     padding: 0 32px 32px;
   }
 }

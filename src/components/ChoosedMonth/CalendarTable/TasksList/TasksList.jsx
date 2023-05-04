@@ -14,23 +14,25 @@ const TasksList = ({ tasks, openModal, currentTask }) => {
     return str;
   };
 
-  console.log(tasks)
-
   return (
     <ul className={css.tasksListStyle}>
       <li
-        key={tasks.owner}
-        className={
-          (tasks.priority === 'low' && css.low) ||
-          (tasks.priority === 'medium' && css.medium) ||
-          (tasks.priority === 'high' && css.high)
-        }
+        key={tasks._id}
+        className={css.tasksListItem}
         onClick={() => {
           openModal(true);
           currentTask(tasks);
         }}
       >
-        {truncateString(tasks.title)}
+        <p
+          className={
+            (tasks.priority === 'low' && css.low) ||
+            (tasks.priority === 'medium' && css.medium) ||
+            (tasks.priority === 'high' && css.high)
+          }
+        >
+          {truncateString(tasks.title)}
+        </p>
       </li>
     </ul>
   );

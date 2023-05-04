@@ -11,7 +11,6 @@ const ChoosedMonth = () => {
   const currentDate = useSelector(selectDate);
 
   const tasks = useSelector(selectArrTasks);
-  // const tasks = arrTasks;
 
   const { startMonth, endMonth } = useDaysOfMonth(currentDate);
 
@@ -21,10 +20,12 @@ const ChoosedMonth = () => {
   });
 
   return (
-    <div className={css.choosedMonthWrapper}>
+    <>
       <MonthCalendarHead />
-      <CalendarTable tasks={filteredDates} currentDate={currentDate} />
-    </div>
+      <div className={css.choosedMonthWrapper}>
+        <CalendarTable tasks={filteredDates} currentDate={currentDate} />
+      </div>
+    </>
   );
 };
 

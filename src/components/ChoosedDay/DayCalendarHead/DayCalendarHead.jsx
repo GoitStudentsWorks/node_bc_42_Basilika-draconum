@@ -39,7 +39,13 @@ const DayCalendarHead = () => {
         {dates.map(day => {
           return (
             <li key={day} className={css.dayCalendarHeadItem}>
-              <p className={css.daysOfWeek}>
+              <p
+                className={
+                  format(day, 'eee').slice(0, 1) === 'S'
+                    ? css.daysWeekend
+                    : css.daysOfWeek
+                }
+              >
                 {screenMobile
                   ? format(day, 'eee').slice(0, 1)
                   : format(day, 'eee').toUpperCase()}
