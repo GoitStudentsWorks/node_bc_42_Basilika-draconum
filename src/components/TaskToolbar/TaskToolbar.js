@@ -2,7 +2,7 @@ import css from './TaskToolbar.module.css';
 import {  useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
 import {TaskConfirmationModal} from './TaskConfirmationModal';
-import { TaskEditModal } from './TaskEditModal';
+import { TaskForm } from '../TaskModal/TaskForm';
 import { isModalEditShownAction } from 'redux/tasks/tasksSlice';
 import { selectIsModalEditShown } from 'redux/tasks/tasksSelectors';
 import { updateTaskStatusThunk } from 'redux/tasks/tasksOperations';
@@ -74,7 +74,7 @@ export const TaskToolbar = ({ task }) => {
               <use xlinkHref={icon + '#icon-pencil'}></use>
             </svg>
           </button> 
-          {isModalEdit && <TaskEditModal task={task}/>}
+          {isModalEdit && <TaskForm task={task}/>}
 
           <button className={css.toolbar__btn} onClick={confirmationModalOpen}>
             <svg className={css.toolbar__svg}>
