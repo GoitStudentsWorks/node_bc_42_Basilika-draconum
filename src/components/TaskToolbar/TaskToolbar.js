@@ -40,7 +40,7 @@ export const TaskToolbar = ({ task }) => {
       dispatch(isModalEditShownAction(!isModalEdit)); 
     };
   
-    const confirmationModalOpen = id => {
+    const confirmationModalOpen = () => {
       setIsModalStatus(false);
       dispatch(isModalEditShownAction(false));
       setIsModalConfirmation(prev => !prev);      
@@ -93,7 +93,7 @@ export const TaskToolbar = ({ task }) => {
               <use xlinkHref={icon + '#icon-trash'}></use>
             </svg>
           </button>
-          {isModalConfirmation && <TaskConfirmationModal confirmationModalOpen={confirmationModalOpen}/>}
+          {isModalConfirmation && <TaskConfirmationModal confirmationModalOpen={confirmationModalOpen} task={task}/>}
         </div>
       </>
     );
