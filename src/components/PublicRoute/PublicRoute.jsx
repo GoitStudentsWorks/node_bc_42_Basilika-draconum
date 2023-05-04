@@ -4,8 +4,7 @@ import { getAccessToken } from '../../redux/auth/authSelectors';
 
 const PublicRoute = ({ component }) => {
   const token = useSelector(getAccessToken);
-  console.log(token);
-  return token ? <Navigate to={'/account'} /> : component;
+  return token ? <Navigate to={'/calendar'} /> : component;
 };
 
 export default PublicRoute;

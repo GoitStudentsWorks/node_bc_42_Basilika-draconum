@@ -1,9 +1,8 @@
 import icon from '../../../images/svg.svg';
-import s from './columnHeadBar.module.scss'
+import s from './columnHeadBar.module.scss';
 
-const ColumnHeadBar = ({ title }) => {
-  
-    const openModal = () => {
+const ColumnHeadBar = ({ title, progressType }) => {
+  const openModal = () => {
     console.log('Open moddal');
   };
 
@@ -11,9 +10,9 @@ const ColumnHeadBar = ({ title }) => {
     <div className={s.columnHeadBar}>
       <h3 className={s.columnHeadBar__Text}>{title}</h3>
       <button className={s.addTaskBtnIcon} onClick={openModal}>
-          <svg className={s.addTaskBtnIcon__icon} alt="open modal for add task">
-            <use href={`${icon}#roundPlus`}></use>
-          </svg>
+        <svg className={s.addTaskBtnIcon__icon} alt="open modal for add task">
+          <use href={`${icon}#roundPlus`}></use>
+        </svg>
       </button>
     </div>
   );
