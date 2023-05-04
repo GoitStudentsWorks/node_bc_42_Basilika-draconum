@@ -1,18 +1,18 @@
 .wrap {
   display: flex;
   flex-direction: row;
-
+  height: 100%;
   overflow-y: auto;
+  list-style: none;
   &::-webkit-scrollbar {
     height: 14px;
     width: 360px;
-    display: true;
-    background: #f2f2f2;
+    background: var(--color-owerflow-background);
     border-radius: 12px;
     overflow: auto;
   }
   &::-webkit-scrollbar-thumb {
-    background: #e7e5e5;
+    background: var(--color-owerflow-tumb);
     border-radius: 12px;
   }
   @media screen and (min-width: 768px) {
@@ -25,6 +25,6 @@
   }
 
   @media screen and (min-width: 1440px) {
-    overflow-y: hidden;
+    overflow: hidden;
   }
 }
