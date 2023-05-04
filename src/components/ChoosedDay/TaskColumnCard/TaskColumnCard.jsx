@@ -27,7 +27,6 @@ const TaskColumnCard = ({ task }) => {
   const titleWithThreeDots = truncateString(task?.title);
   const priorityBackgroundColor = choosePriorityTextColor(task?.priority);
   return (
-    <>
       <li className={s.tasksCard}>
         <p className={s.tasksCard__text}>{titleWithThreeDots}</p>
         <div className={s.tasksCard__bottomWrap}>
@@ -40,7 +39,6 @@ const TaskColumnCard = ({ task }) => {
           <TaskToolbar task={task} />
         </div>
       </li>
-    </>
   );
 };
 
