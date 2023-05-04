@@ -1,7 +1,6 @@
 .wrap {
   display: flex;
   flex-direction: row;
-
   overflow-y: auto;
   &::-webkit-scrollbar {
     height: 14px;
@@ -25,6 +24,6 @@
   }
 
   @media screen and (min-width: 1440px) {
-    overflow-y: hidden;
+    overflow: hidden;
   }
 }
