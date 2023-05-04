@@ -45,6 +45,7 @@ html[data-theme='dark'] {
   --month-day-text: #3e85f3;
   --month-day-text-accent: #fff;
   --notes-background: #171820;
+  --list-status: #171820;
   --bgColor-range-low:#72C2F8;
   --bgColor-range-medium: #F3B249;
   --bgColor-range-high: #EA3D65;
@@ -87,6 +88,7 @@ html[data-theme='light'] {
   --month-day-text: #3e85f3;
   --month-day-text-accent: #3e85f3;
   --notes-background: #f7f6f9;
+  --list-status: #ffffff;
   --bgColor-range-low: #72c2f8;
   --bgColor-range-medium: #f3b249;
   --bgColor-range-high: #ea3d65;
