@@ -9,8 +9,7 @@ import { updateTaskStatusThunk } from 'redux/tasks/tasksOperations';
 import icon from '../../images/icons.svg';
 import Notiflix from 'notiflix';
   
-export const TaskToolbar = ({ task }) => { 
-    console.log(task);  
+export const TaskToolbar = ({ task }) => {     
     const [isModalStatus, setIsModalStatus] = useState(false);
      
     const [isModalConfirmation, setIsModalConfirmation] = useState(false);   
@@ -47,6 +46,13 @@ export const TaskToolbar = ({ task }) => {
     };
   
     const handleStatusChange = status => {
+      if (status === 'To do'){
+        status = 'toDo';
+      }else{
+        if (status === 'In progress'){
+          status = 'inProgress';
+        }
+      };
       dispatch(updateTaskStatusThunk({status, id: task._id}));
       Notiflix.Notify.success(`Status changed to "${status}"`);
       setIsModalStatus(false);

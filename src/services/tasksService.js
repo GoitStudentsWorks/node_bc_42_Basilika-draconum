@@ -21,6 +21,7 @@ export const updateTaskByIdApi = async id => {
 };
 
 export const updateTaskStatusApi = async dataTask => {
+  console.log(dataTask);
   const { data } = await privateAPI.patch(
     `api/tasks/${dataTask.id}/status`,
     dataTask.status
