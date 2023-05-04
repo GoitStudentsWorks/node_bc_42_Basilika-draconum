@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 
+// Validation schema
 export const profileSchema = Yup.object({
   name: Yup.string().max(16, 'Must be 16 characters or less').required(),
   phone: Yup.string().matches(
