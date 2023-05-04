@@ -16,6 +16,7 @@
   --notheme-textColor-description: #111111e5;
   --notheme-profile-text-user: #616161;
   --notheme-warning-color: red;
+  --notheme-hover-btn: #2b78ef;
 }
 
 html[data-theme='dark'] {
@@ -44,9 +45,14 @@ html[data-theme='dark'] {
   --month-day-text: #3e85f3;
   --month-day-text-accent: #fff;
   --notes-background: #171820;
-  --bgColor-range-low: #72c2f8;
-  --bgColor-range-medium: #f3b249;
-  --bgColor-range-high: #ea3d65;
+  --list-status: #171820;
+  --bgColor-range-low:#72C2F8;
+  --bgColor-range-medium: #F3B249;
+  --bgColor-range-high: #EA3D65;
+  --sidebar-hover-icon:#FFFFFF;
+  --sidebar-hover-link: #FFFFFF;
+  --sidebar-hover-bg: #3E85F3;
+  --border-shadow-btn: rgba(136, 165, 191, 0.48);
   --borderColor-colum: rgba(220, 227, 229, 0.8);
   --borderColor-input-profile: rgba(255, 255, 255, 0.15);
 }
@@ -70,16 +76,24 @@ html[data-theme='light'] {
   --profile-text-main: #111111;
   --name-text-color: #343434;
   --profile-text-user: #616161;
-  --profile-text-categories: #111111;
+  --profile-text-categories:#111111;
+  --sidebar-hover-icon: #3E85F3;
+  --sidebar-hover-link: #3e85f3;
+  --sidebar-hover-bg: #E3F3FF;
+  --border-shadow-btn: rgba(136, 165, 191, 0.3);;
   --month-day-background-accent: #cae8ff;
   --month-day-background: #e3f3ff;
   --month-day-text: #3e85f3;
   --month-day-text-accent: #3e85f3;
   --notes-background: #f7f6f9;
+  --list-status: #ffffff;
   --bgColor-range-low: #72c2f8;
   --bgColor-range-medium: #f3b249;
   --bgColor-range-high: #ea3d65;
   --borderColor-colum: rgba(220, 227, 229, 0.8);
+  --add-button-color-hover: #CAE8FF;
+  --color-owerflow-background: #f2f2f2;
+  --color-owerflow-tumb: #e7e5e5;
   --borderColor-input-profile: rgba(17, 17, 17, 0.15);
 }
 * {

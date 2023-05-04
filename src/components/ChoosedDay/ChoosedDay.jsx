@@ -21,10 +21,10 @@ const ChoosedDay = () => {
   }, [dayFromParams, arrTasks]);
 
   return (
-    <div className={s.wrapChooseDay}>
+    <section className={s.wrapChooseDay}>
       <DayCalendarHead />
       <TasksColumnsList tasks={tasksFilter} />
-    </div>
+    </section>
   );
 };
 
