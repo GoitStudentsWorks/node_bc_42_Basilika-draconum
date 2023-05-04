@@ -148,7 +148,7 @@ function TaskPopUp({ task, closeModal }) {
 							className={style.submitButton}
 							onClick={handleAdd}
 						>
-							<span></span>Add
+							<span className={style.plus}>+</span>Add
 						</button>
 						<button
 							type="button"

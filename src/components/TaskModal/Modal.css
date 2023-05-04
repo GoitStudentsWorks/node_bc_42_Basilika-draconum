@@ -21,7 +21,7 @@
 }
 
 .modal {
-	padding: 18px;
+	padding: 40px 18px;
 	border-radius: 8px;
 	background-color: #fff;
 	width: 303px;
@@ -29,6 +29,12 @@
 	transform: scale(0.5);
 	transition: 0.4s all;
 	box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.4);
+
+	@media screen and (min-width: 768px) {
+		width: 396px;
+		height: 360px;
+		padding: 40px 28px;
+	}
 }
 
 .modal.active {
