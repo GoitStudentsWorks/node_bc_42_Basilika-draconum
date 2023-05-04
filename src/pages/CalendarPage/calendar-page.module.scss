@@ -1,15 +1,19 @@
 .calendarPageContainer {
-  height: 100vh;
-  padding: 40px 32px 50px;
+  height: calc(100vh - 120px);
+  padding: 0 20px 52px;
   background-color: var(--notes-background);
 
-  padding: 0 20px 52px;
+  //   padding: 0 20px 52px;
 
   @media (min-width: 768px) {
-    padding: 0 32px 42px;
+    height: calc(100vh - 132px);
+
+    //  padding: 0 32px 42px;
   }
 
   @media (min-width: 1440px) {
-    padding: 0 32px 32px;
+    height: calc(100vh - 116px);
+
+    //  padding: 0 32px 32px;
   }
 }

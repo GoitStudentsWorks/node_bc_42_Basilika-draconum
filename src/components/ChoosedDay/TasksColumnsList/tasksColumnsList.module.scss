@@ -1,30 +1,32 @@
 .wrap {
   display: flex;
   flex-direction: row;
-
-  overflow-y: auto;
+  height: 100%;
+  list-style: none;
+  overflow-y: hidden;
+  overflow-x: auto;
   &::-webkit-scrollbar {
     height: 14px;
-    width: 360px;
-    display: true;
-    background: #f2f2f2;
+    max-width: 360px;
+    // width: 360px;
+    background: var(--color-owerflow-background);
     border-radius: 12px;
     overflow: auto;
   }
   &::-webkit-scrollbar-thumb {
-    background: #e7e5e5;
+    background: var(--color-owerflow-tumb);
     border-radius: 12px;
   }
-  @media screen and (min-width: 768px) {
-    &::-webkit-scrollbar-thumb {
-      :hover,
-      :focus {
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      }
-    }
-  }
+  // @media screen and (min-width: 768px) {
+  //   &::-webkit-scrollbar-thumb {
+  //     :hover,
+  //     :focus {
+  //       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  //     }
+  //   }
+  // }
 
   @media screen and (min-width: 1440px) {
-    overflow-y: hidden;
+    // overflow: hidden;
   }
 }

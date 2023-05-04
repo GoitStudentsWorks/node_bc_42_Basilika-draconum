@@ -34,7 +34,6 @@ const DayCalendarHead = () => {
   };
 
   return (
-    <>
       <ul className={css.dayCalendarHeadList}>
         {dates.map(day => {
           return (
@@ -66,7 +65,6 @@ const DayCalendarHead = () => {
           );
         })}
       </ul>
-    </>
   );
 };
 
