@@ -12,18 +12,9 @@ const initialState = {
   isLoading: false,
   isLogin: false,
   error: null,
-  // user: null,
   token: null,
   user: {
     avatarURL: '',
-    name: '',
-    email: '',
-    phone: '',
-    birthday: '',
-    skype: '',
-  },
-  userData: {
-    avatar: '',
     name: '',
     email: '',
     phone: '',
