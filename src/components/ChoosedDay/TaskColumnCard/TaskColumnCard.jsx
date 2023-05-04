@@ -3,7 +3,7 @@ import s from './taskColumnCard.module.scss';
 
 const maxLengthTitle = 30;
 
-const truncateString = (str) => {
+const truncateString = str => {
   if (str?.length <= maxLengthTitle) {
     return str;
   } else {
@@ -24,24 +24,22 @@ const choosePriorityTextColor = priority => {
 };
 
 const TaskColumnCard = ({ task }) => {
-
-  const  titleWithThreeDots = truncateString(task?.title)
+  const titleWithThreeDots = truncateString(task?.title);
   const priorityBackgroundColor = choosePriorityTextColor(task?.priority);
   return (
     <>
-      <div className={s.tasksCard}>
+      <li className={s.tasksCard}>
         <p className={s.tasksCard__text}>{titleWithThreeDots}</p>
         <div className={s.tasksCard__bottomWrap}>
-            <span
-              style={{ backgroundColor: priorityBackgroundColor }}
-              className={s.tasksCard__riority}
-            >
-              {task?.priority}
+          <span
+            style={{ backgroundColor: priorityBackgroundColor }}
+            className={s.tasksCard__riority}
+          >
+            {task?.priority}
           </span>
           <TaskToolbar task={task} />
         </div>
-      </div>
-
+      </li>
     </>
   );
 };

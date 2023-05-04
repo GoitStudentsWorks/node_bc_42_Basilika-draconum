@@ -47,7 +47,10 @@ html[data-theme='dark'] {
   --bgColor-range-low:#72C2F8;
   --bgColor-range-medium: #F3B249;
   --bgColor-range-high: #EA3D65;
-  --borderColor-colum: rgba(220, 227, 229, 0.8);
+  --borderColor-colum: rgba(255, 255, 255, 0.15);
+  --add-button-color-hover: #387ee8;
+  --color-owerflow-background:#21222C;
+  --color-owerflow-tumb: #2D3037;
 }
 html[data-theme='light'] {
   --sidebar: #fff;
@@ -79,6 +82,9 @@ html[data-theme='light'] {
   --bgColor-range-medium: #F3B249;
   --bgColor-range-high: #EA3D65;
   --borderColor-colum: rgba(220, 227, 229, 0.8);
+  --add-button-color-hover: #CAE8FF;
+  --color-owerflow-background: #f2f2f2;
+  --color-owerflow-tumb: #e7e5e5;
 }
 * {
   font-family: 'Inter', sans-serif;

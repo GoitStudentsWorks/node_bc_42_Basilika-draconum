@@ -7,10 +7,13 @@
   height: fit-content;
   margin-right: 20px;
   padding: 20px 18px 10px;
-  background-color: var(--textColor-main);
+  background-color: var(--calendar);
   color: var(--profile-text-main);
   border: 1px solid var(--borderColor-colum);
   border-radius: 8px;
+  &:last-child {
+    margin-right: 0;
+  }
   @media screen and (min-width: 375px) {
     margin-right: 16px;
   }
