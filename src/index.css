@@ -52,7 +52,7 @@ html[data-theme='dark'] {
   --sidebar-hover-link: #FFFFFF;
   --sidebar-hover-bg: #3E85F3;
   --border-shadow-btn: rgba(136, 165, 191, 0.48);
-  --borderColor-colum: rgba(220, 227, 229, 0.8);
+  --borderColor-colum: rgba(255, 255, 255, 0.15);
   --borderColor-input-profile: rgba(255, 255, 255, 0.15);
 }
 html[data-theme='light'] {

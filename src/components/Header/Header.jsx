@@ -11,8 +11,10 @@ const Header = ({ setMenuActive }) => {
   const userAvatar = useSelector(getUserAvatar);
   const params = useParams();
 
-  console.log(userAvatar);
-
+  console.log(userAvatar); //undefined
+  //console.log(userAvatar === undefined);
+  const avatarName = userName.name.slice(0, 1).toUpperCase();
+  console.log(avatarName);
   return (
     <header className={s.header}>
       <div className={s.header__container}>
@@ -38,23 +40,26 @@ const Header = ({ setMenuActive }) => {
               <p className={s.header__boxPage__message}>
                 <span className={s.header__boxPage__message__textBlue}>
                   Let go
-                </span>{' '}
+                </span>
                 of the past and focus on the present!
               </p>
             )}
           </div>
         </div>
         <div className={s.boxContent}>
-          {/* <div className={s.boxContent__thema}></div> */}
           <ThemeToggler />
 
           <div className={s.boxContent__name}>{userName.name}</div>
           <div className={s.boxContent__avatar}>
-            <img
-              src={userAvatar}
-              alt="Avatar"
-              className={s.boxContent__avatar__img}
-            />
+            {userAvatar ? (
+              <img
+                src={userAvatar}
+                alt="Avatar"
+                className={s.boxContent__avatar__img}
+              />
+            ) : (
+              <p className={s.boxContent__avatar__title}>{avatarName}</p>
+            )}
           </div>
         </div>
       </div>

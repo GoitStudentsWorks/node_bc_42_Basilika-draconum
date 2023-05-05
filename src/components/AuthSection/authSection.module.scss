@@ -1,92 +1,93 @@
 .authSection {
-    height: 100vh;
-    background-color: var(--notheme-color-accent);
-    padding: 232px 0px 88px;
+  height: 100vh;
+  background-color: var(--notheme-color-accent);
+  padding: 232px 0px 88px;
 }
 
 .authConteiner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .logofoto {
-    margin-bottom: 2px;
+  margin-bottom: 2px;
 }
 
 .logotitle {
-    // font-family: "Coolvetica";
-    color: var(--notheme-textColor-white);
-    margin-bottom: 32px;
-    text-align: center;
+  // font-family: "Coolvetica";
+  color: var(--notheme-textColor-white);
+  margin-bottom: 32px;
+  text-align: center;
 
-    & span {
-        font-style: italic;
-    }
+  & span {
+    font-style: italic;
+  }
 }
-.linkWrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 208px;
+.linkWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 208px;
 }
 .login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    line-height: 1.2857;
-    gap: 6px;
-    background-color: var(--notheme-bgColor-primary);
-    width: 131px;
-    height: 46px;
-    border-radius: 16px;
-    border-color: transparent;
-    text-decoration: none;
-    color: var(--notheme-color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1.2857;
+  gap: 6px;
+  background-color: var(--notheme-bgColor-primary);
+  width: 131px;
+  height: 46px;
+  border-radius: 16px;
+  border-color: transparent;
+  text-decoration: none;
+  color: var(--notheme-color-accent);
 }
 
 .singup {
-    color: var(--notheme-textColor-white);
-    display: block;
-    text-align: center;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 14px;
-    text-decoration-line: underline;
+  color: var(--notheme-textColor-white);
+  display: block;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  text-decoration-line: underline;
 }
 
 @media screen and (min-width: 768px) {
-    // .authSection{
-    //     // padding: 320px 0;
-    // }
-    .logotitle {
-        margin-bottom: 40px;
-        font-size: 120px;
-        line-height: 1.25;
-    }
-    .linkWrapper {
-        flex-direction: row-reverse;
-        gap: 24px;
-        align-items: center;
-        justify-content: center;
-    }
-    .login{
-        font-size: 14px;
-        line-height: 1.2857;
-    }
-    .singup{
-        font-size: 14px;
-        line-height: 1.2857;}
+  // .authSection{
+  //     // padding: 320px 0;
+  // }
+  .logotitle {
+    margin-bottom: 40px;
+    font-size: 120px;
+    line-height: 1.25;
+  }
+  .linkWrapper {
+    flex-direction: row-reverse;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+  .login {
+    font-size: 14px;
+    line-height: 1.2857;
+  }
+  .singup {
+    font-size: 14px;
+    line-height: 1.2857;
+  }
 }
 
-@media screen and (min-width:1440px) {
-    .authSection {
-        padding: 200px 0;
-    }
-        .logotitle {
-font-size: 120px;
+@media screen and (min-width: 1440px) {
+  .authSection {
+    padding: 200px 0;
+  }
+  .logotitle {
+    font-size: 120px;
     line-height: 1.25;
-        }
+  }
 }
