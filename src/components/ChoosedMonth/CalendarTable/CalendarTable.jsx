@@ -6,14 +6,14 @@ import { format } from 'date-fns';
 import { useDaysOfMonth } from 'hooks/useDaysOfMonth';
 import { setDate } from 'redux/date/dateSlice';
 import DaysWithTasks from './DaysWithTasks/DaysWithTasks';
-// import { TaskModal } from '.';
+// import Modal from 'components/TaskModal/Modal';
 import css from './calendar-table.module.scss';
 
 const CalendarTable = ({ tasks, currentDate }) => {
-  //   const [isOpened, setOpening] = useState(false);
-  //   const [selectedTask, setSelectedTask] = useState(null);
-  const [setOpening] = useState(false);
-  const [setSelectedTask] = useState(null);
+  // eslint-disable-next-line no-unused-vars
+  const [isOpened, setOpening] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [selectedTask, setSelectedTask] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ const CalendarTable = ({ tasks, currentDate }) => {
   const daysWithTasks = daysOfMonth.map(day => ({
     date: format(day, 'yyyy-MM-dd'),
     tasks: tasks.filter(
-      task => task.date.start === day.toISOString().slice(0, 19) + 'Z'
+      task => task.date.start.slice(0, 10) === format(day, 'yyyy-MM-dd')
     ),
   }));
 
@@ -35,17 +35,17 @@ const CalendarTable = ({ tasks, currentDate }) => {
     }
   };
 
-  //   const formattedDate = () => {
-  //     if (selectedTask) {
-  //       const date = new Date(selectedTask.date);
-  //       const formattedDate = format(date, 'yyyy-MM-dd');
-  //       return formattedDate;
-  //     }
-  //   };
+  const formattedDate = () => {
+    if (selectedTask) {
+      const date = new Date(selectedTask.date);
+      const formatDate = format(date, 'yyyy-MM-dd');
+      return formatDate;
+    }
+  };
 
-  //   const handleToggleModal = () => {
-  //     setOpening(!isOpened);
-  //   };
+  const handleToggleModal = () => {
+    setOpening(!isOpened);
+  };
 
   const currentTask = data => {
     setSelectedTask(data);
@@ -87,11 +87,11 @@ const CalendarTable = ({ tasks, currentDate }) => {
       </div>
 
       {/* {isOpened && (
-        <TaskModal
+        <Modal
           date={formattedDate()}
           type="Edit"
           onCloseModal={handleToggleModal}
-          category={selectedTask.category}
+          status={selectedTask.status}
           id={selectedTask._id}
           title={selectedTask.title}
           priority={selectedTask.priority}
