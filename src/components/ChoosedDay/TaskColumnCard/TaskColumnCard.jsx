@@ -1,7 +1,7 @@
 import { TaskToolbar } from 'components/TaskToolbar/TaskToolbar';
 import s from './taskColumnCard.module.scss';
 
-const maxLengthTitle = 30;
+const maxLengthTitle = 25;
 
 const truncateString = str => {
   if (str?.length <= maxLengthTitle) {
