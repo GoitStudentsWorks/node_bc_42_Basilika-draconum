@@ -7,7 +7,7 @@ import authsvg from '../../images/Icon.png';
 export const AuthSection = () => {
   return (
     <section className={style.authSection}>
-      <div className="container">
+      {/* <div className="container"> */}
         <div className={style.authConteiner}>
           <img className={style.logofoto} src={logo} alt="goose" />
           <h2 className={style.logotitle}>
@@ -15,8 +15,8 @@ export const AuthSection = () => {
           </h2>
           <div className={style.linkWrapper}>
             <Link className={style.login} to="/login">
-              <span>Log in</span>
-              <img src={authsvg} alt="auth" />
+              <span className={style.logSpan}>Log in</span>
+              <img className={style.logIcon} src={authsvg} alt="auth" />
             </Link>
             <Link className={style.singup} to="/register">
               Sign Up
@@ -24,7 +24,7 @@ export const AuthSection = () => {
               <use href={icon + '#icon-log-out'}></use>
             </svgLogin> */}
             </Link>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </section>
