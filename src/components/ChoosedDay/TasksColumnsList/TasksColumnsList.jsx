@@ -6,11 +6,13 @@ const TasksColumnsList = ({ tasks }) => {
   const filterInProgress = tasks?.filter(task => task.status === 'inProgress');
   const filterDone = tasks?.filter(task => task.status === 'done');
   return (
-    <ul className={s.wrap}>
+    <div className={s.wrap}>
+    <ul className={s.list}>
       <TasksColumn title={'To do'} tasks={filterTodo} />
       <TasksColumn title={'In progress'} tasks={filterInProgress} />
       <TasksColumn title={'Done'} tasks={filterDone} />
-    </ul>
+      </ul>
+      </div>
   );
 };
 
