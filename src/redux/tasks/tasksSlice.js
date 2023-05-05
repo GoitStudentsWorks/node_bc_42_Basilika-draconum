@@ -3,6 +3,7 @@ import {
   fetchTasks,
   deleteTaskThunk,
   updateTaskStatusThunk,
+  addTask,
 } from './tasksOperations';
 
 const initialState = {
@@ -41,7 +42,7 @@ const tasksSlice = createSlice({
       .addCase(deleteTaskThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        state.tasks = state.tasks.filter(task => task.id !== payload);
+        state.tasks = state.tasks.filter(task => task._id !== payload);
       })
       .addCase(deleteTaskThunk.rejected, (state, { payload }) => {
         state.error = payload;
@@ -57,12 +58,24 @@ const tasksSlice = createSlice({
         const { id, status } = payload;
         state.isLoading = false;
         state.error = null;
-        const index = state.tasks.findIndex(task => task.id === id);
+        const index = state.tasks.findIndex(task => task._id === id);
         const task = state.tasks[index];
         task.status = status;
       })
       .addCase(updateTaskStatusThunk.rejected, (state, { payload }) => {
         state.error = payload;
+      })
+      .addCase(addTask.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(addTask.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.tasks = [...state.tasks, payload];
+        state.error = null;
+      })
+      .addCase(addTask.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.isLoading = false;
       });
   },
 });

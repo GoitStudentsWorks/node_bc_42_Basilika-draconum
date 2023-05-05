@@ -1,3 +1,15 @@
 .choosedMonthWrapper {
-//   height: 100%;
+  height: 100%;
+
+  overflow-block: auto;
+  overflow: auto;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    height: 720px;
+  }
+
+  @media (min-width: 1440px) {
+    height: 625px;
+  }
 }

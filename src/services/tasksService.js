@@ -21,9 +21,10 @@ export const updateTaskByIdApi = async id => {
 };
 
 export const updateTaskStatusApi = async dataTask => {
+  console.log(dataTask);
   const { data } = await privateAPI.patch(
     `api/tasks/${dataTask.id}/status`,
-    dataTask.status
+    {status: dataTask.status}
   );
   return data;
 };
@@ -31,7 +32,7 @@ export const updateTaskStatusApi = async dataTask => {
 export const updateTaskPriorityApi = async dataTask => {
   const { data } = await privateAPI.patch(
     `api/tasks/${dataTask.id}/priority`,
-    dataTask.priority
+    {priority: dataTask.priority}
   );
   return data;
 };

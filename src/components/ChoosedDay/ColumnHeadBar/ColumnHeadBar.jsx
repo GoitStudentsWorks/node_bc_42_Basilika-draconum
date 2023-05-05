@@ -1,12 +1,20 @@
+import { useState } from 'react';
 import icon from '../../../images/svg.svg';
+
+import TaskPopUp from 'components/TaskModal/TaskForm';
+import Modal from 'components/TaskModal/Modal';
+
 import s from './columnHeadBar.module.scss';
 
 const ColumnHeadBar = ({ title, progressType }) => {
+   const [activateModal, setActivateModal] = useState(false);
+
   const openModal = () => {
-    console.log('Open moddal');
+    setActivateModal((pS)=>!pS);
   };
 
-  return (
+  return (<>
+    
     <div className={s.columnHeadBar}>
       <h3 className={s.columnHeadBar__Text}>{title}</h3>
       <button className={s.addTaskBtnIcon} onClick={openModal}>
@@ -15,6 +23,11 @@ const ColumnHeadBar = ({ title, progressType }) => {
         </svg>
       </button>
     </div>
+     <Modal active={activateModal} setActive={setActivateModal} >
+        <TaskPopUp closeModal={setActivateModal} type={ progressType } />
+      </Modal>
+  </>
+     
   );
 };
 

@@ -4,7 +4,9 @@
   width: 48px;
   height: 94px;
 
-  text-align: center;
+  vertical-align: middle;
+
+  padding: 36px 5px 5px;
 
   border: 1px solid rgba(220, 227, 229, 0.5); // 1px solid rgba(255, 255, 255, 0.15); dark
 
@@ -19,18 +21,24 @@
 
   .today {
     background-color: #3e85f3;
-    color: white;
+    color: #ffffff;
   }
 
   @media (min-width: 768px) {
-    height: 144px;
     width: 100px;
+    height: 144px;
   }
 
   @media (min-width: 1440px) {
-    height: 125px;
     width: 156px;
+    height: 125px;
   }
+}
+
+.styledModalTd {
+   position: absolute;
+   top: 50%;
+   left: 50%;
 }
 
 .styledNumberDay,
@@ -39,7 +47,7 @@
   top: 8px;
   right: 10px;
 
-  color: #343434; // #FFFFFF; dark
+  color: var(--name-text-color); // #FFFFFF; dark
 
   font-weight: 700;
   font-size: 12px;
@@ -58,14 +66,21 @@
   }
 }
 
-.span {
-  // color: ;
+.burgerListTasks {
+  color: #3e85f3;
 
   font-weight: 700;
   font-size: 10px;
   line-height: 1.4;
 
   flex-grow: 1;
+
+  transition: scale 250ms linear;
+
+  &:hover,
+  &:focus {
+    scale: 1.05;
+  }
 
   @media (min-width: 768px) {
     font-size: 14px;
@@ -74,6 +89,6 @@
 }
 
 .today {
-  color: white;
+  color: #ffffff;
   background-color: #3e85f3;
 }
