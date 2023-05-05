@@ -9,7 +9,7 @@ const CalendarToolbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const formattedCurrentDate = format(new Date(), 'MMMM');
+  const formattedCurrentDate = format(new Date(), 'yyyy-MM-dd');
 
   useEffect(() => {
     if (location.pathname === '/calendar') {
