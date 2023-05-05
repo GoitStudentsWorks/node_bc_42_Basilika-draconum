@@ -17,6 +17,7 @@
   --notheme-profile-text-user: #616161;
   --notheme-warning-color: red;
   --notheme-hover-btn: #2b78ef;
+  --notheme-bgColor-avatar: #f8f8f8;
 }
 
 html[data-theme='dark'] {

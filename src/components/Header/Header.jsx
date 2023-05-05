@@ -10,11 +10,8 @@ const Header = ({ setMenuActive }) => {
   const userName = useSelector(getUser);
   const userAvatar = useSelector(getUserAvatar);
   const params = useParams();
-
-  console.log(userAvatar); //undefined
-  //console.log(userAvatar === undefined);
   const avatarName = userName.name.slice(0, 1).toUpperCase();
-  console.log(avatarName);
+
   return (
     <header className={s.header}>
       <div className={s.header__container}>
@@ -40,7 +37,7 @@ const Header = ({ setMenuActive }) => {
               <p className={s.header__boxPage__message}>
                 <span className={s.header__boxPage__message__textBlue}>
                   Let go
-                </span>
+                </span>{' '}
                 of the past and focus on the present!
               </p>
             )}
