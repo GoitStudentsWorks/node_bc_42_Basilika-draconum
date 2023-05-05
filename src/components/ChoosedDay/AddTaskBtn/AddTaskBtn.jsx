@@ -1,23 +1,31 @@
-import icon from '../../../images/svg.svg';
-import s from './addTaskBtn.module.scss'
+import { useState } from 'react';
 
-const AddTaskBtn = ({progressType}) => {
+import TaskPopUp from 'components/TaskModal/TaskForm';
+import Modal from 'components/TaskModal/Modal';
+import icon from '../../../images/svg.svg';
+
+import s from './addTaskBtn.module.scss';
+
+const AddTaskBtn = ({ progressType }) => {
+  const [activateModal, setActivateModal] = useState(false);
+
   const openModal = () => {
-    console.log('Open moddal');
+    setActivateModal(true);
   };
 
   return (
+    <>
+      <Modal active={activateModal} setActive={setActivateModal}>
+        <TaskPopUp closeModal={setActivateModal} />
+      </Modal>
       <button className={s.addTaskBtn} onClick={openModal}>
-          <svg className={s.addTaskBtn__icon} alt="plus">
-            <use href={`${icon}#plus`}></use>
-          </svg>
-      <span className={s.addTaskBtn__text} >Add task</span>
-    </button>
+        <svg className={s.addTaskBtn__icon} alt="plus">
+          <use href={`${icon}#plus`}></use>
+        </svg>
+        <span className={s.addTaskBtn__text}>Add task</span>
+      </button>
+    </>
   );
 };
 
 export default AddTaskBtn;
-// ???1. Компонент отримує в пропсах id групи завдань
-// 3. Клік по кнопці відкриває модалку TaskModal для створення нового завдання в поточній колонці
-
-// +2. Компонент рендерить блок розмітки кнопки.

@@ -1,13 +1,15 @@
 .calendarPageContainer {
-  background-color: #eaeaea;
-
-  padding: 24px 20px 52px;
+  height: calc(100vh - 120px);
+  padding: 0 20px 52px;
+  background-color: var(--notes-background);
 
   @media (min-width: 768px) {
-    padding: 24px 32px 42px;
+    height: calc(100vh - 132px);
+    padding: 0 32px 42px;
   }
 
   @media (min-width: 1440px) {
-    padding: 40px 32px 32px;
+    height: calc(100vh - 116px);
+    padding: 0 32px 32px;
   }
 }

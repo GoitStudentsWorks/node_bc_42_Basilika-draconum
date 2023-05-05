@@ -2,13 +2,13 @@ import css from './TaskConfirmationModal.module.css';
 import { useDispatch } from 'react-redux';
 import { deleteTaskThunk } from 'redux/tasks/tasksOperations';
 
-export const TaskConfirmationModal = ({confirmationModalOpen}) => {
+export const TaskConfirmationModal = ({confirmationModalOpen, task}) => {
   const dispatch = useDispatch();
 
   const handleClick = (evt) =>{
     const {id} = evt.currentTarget;
     if (id === 'yes'){    
-      dispatch(deleteTaskThunk(id));
+      dispatch(deleteTaskThunk(task._id));
     }
     confirmationModalOpen();
   };

@@ -3,6 +3,7 @@ import {
   fetchTasks,
   deleteTaskThunk,
   updateTaskStatusThunk,
+  addTask,
 } from './tasksOperations';
 
 const initialState = {
@@ -63,6 +64,18 @@ const tasksSlice = createSlice({
       })
       .addCase(updateTaskStatusThunk.rejected, (state, { payload }) => {
         state.error = payload;
+      })
+      .addCase(addTask.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(addTask.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.tasks = [...state.tasks, payload];
+        state.error = null;
+      })
+      .addCase(addTask.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.isLoading = false;
       });
   },
 });

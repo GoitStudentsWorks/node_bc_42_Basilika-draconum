@@ -3,21 +3,23 @@ import { Outlet } from 'react-router-dom';
 import Header from './../Header/Header';
 import Sidebar from './../Sidebar/Sidebar';
 import s from './MainLayout.module.scss';
+
 const MainLayout = () => {
-  const [menuActive, setActive] = useState(false);
+  const [menuActive, setMenuActive] = useState(false);
   return (
     <>
       <div
         className={
-          menuActive ? `${s.part__sidebar} ${s.active}` : `${s.part__sidebar}`
+          menuActive ? `${s.part__sidebar} ${s.active}` : `s.part__sidebar`
         }
+        onClick={() => setMenuActive(false)}
       >
-        <Sidebar setActive={setActive} />
+        <Sidebar setMenuActive={setMenuActive} menuActive={menuActive} />
       </div>
       <div className={s.part__context}>
-        <Header setActive={setActive} />
+        <Header setMenuActive={setMenuActive} />
         <main>
-          <Outlet />
+          <Outlet onClick={e => e.stopPropagation()} />
         </main>
       </div>
     </>
@@ -25,6 +27,3 @@ const MainLayout = () => {
 };
 
 export default MainLayout;
-
-/* className={menuActive ? 's.part__sidebar active' : 's.part__sidebar'} */
-/* className={s.part__sidebar} */

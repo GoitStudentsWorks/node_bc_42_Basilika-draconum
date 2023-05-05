@@ -5,9 +5,9 @@
     gap: 10px;
     position: absolute;
     top: 10%;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, 30%);
-    background: #fff;
+    background-color: var(--list-status);
     border: 1px solid rgba(227, 243, 255, 1);
     border-radius: 5px;
     width: 147px;
@@ -18,6 +18,8 @@
 }
 .confirmation__title{
     text-align: center;
+    font-size: 14px;
+    color: var(--profile-text-main);
 }
 .confirmation__btnContainer{
     display: flex;
@@ -32,4 +34,5 @@
     background-color: #3E85F3;
     color: #fff;
     border-radius: 5px;
+    cursor: pointer;
 }

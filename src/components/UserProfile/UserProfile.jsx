@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Formik, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import { Formik, ErrorMessage, Form } from 'formik';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FiPlus, FiChevronDown } from 'react-icons/fi';
 import { AiOutlineUser } from 'react-icons/ai';
 
-import { selectUser } from 'redux/auth/authSelectors';
+import { getUser } from 'redux/auth/authSelectors';
 import {
   getCurrentUserThunk,
   updateAvatarThunk,
@@ -16,46 +15,23 @@ import {
 
 import css from './UserProfile.module.scss';
 import './DatePickerStyles.scss';
-
-const isWeekendDay = date => {
-  const day = date.getDay();
-  return day === 0 || day === 6; // Sunday or Saturday
-};
-
-const weekendDayClassName = 'weekend-day';
-
-// Validation Schema
-const profileSchema = Yup.object({
-  name: Yup.string().max(16, 'Must be 16 characters or less').required(),
-  phone: Yup.string()
-    .matches(
-      /(?=.*\+[0-9]{3}\s?[0-9]{2}\s?[0-9]{3}\s?[0-9]{4,5}$)/,
-      'invalid phone number format'
-    )
-    .required('Required'),
-  birthday: Yup.date().default(() => new Date()),
-  email: Yup.string().email('Invalid email address').required('Required'),
-  skype: Yup.string()
-    .min(6, 'Must be 6 characters or more')
-    .max(16, 'Must be 16 characters or less')
-    .required(),
-});
+import { profileSchema } from './ValidationSchemaProfile';
+import { isWeekendDay, weekendDayClassName } from './DatePickerCalendar';
 
 // UserProfile
 const UserProfile = () => {
   const [newAvatar, setNewAvatar] = useState(null);
-  const [newBirthday, setNewBirthday] = useState(new Date());
-  const [updatedProfile, setUpdatedProfile] = useState(false);
+  const [isUpdated, setIsUpdated] = useState(null);
 
-  const userData = useSelector(selectUser);
+  const user = useSelector(getUser);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (updatedProfile) {
+    if (isUpdated) {
       dispatch(getCurrentUserThunk());
-      setUpdatedProfile(false);
+      setIsUpdated(false);
     }
-  }, [dispatch, updatedProfile]);
+  }, [dispatch, isUpdated]);
 
   const handleSubmit = (values, { resetForm }) => {
     const profileData = {
@@ -64,92 +40,78 @@ const UserProfile = () => {
       email: values.email,
       skype: values.skype,
       birthday: values.birthday,
-      avatarURL: newAvatar,
     };
-    // const profileData = new FormData();
-    // profileData.append('name', values.name);
-    // profileData.append('email', values.email);
-    // if (values.phone) {
-    //   profileData.append('phone', values.phone);
-    // }
-    // if (values.skype) {
-    //   profileData.append('skype', values.skype);
-    // }
-    // profileData.append('birthday', values.birthday);
-    // if (newAvatar) {
-    //   profileData.append('avatar', newAvatar);
-    // }
-    // console.log(...profileData);
-    console.log(profileData);
-    console.log(newAvatar);
-    dispatch(updateUserInfoThunk(profileData));
-    dispatch(updateAvatarThunk(newAvatar));
-    resetForm();
-  };
 
-  const uploadImage = e => {
-    setNewAvatar(e.target.files[0]);
+    console.log(values.birthday);
+
+    if (newAvatar) {
+      const avatarData = new FormData();
+      avatarData.append('avatar', newAvatar);
+      dispatch(updateAvatarThunk(avatarData));
+    }
+
+    dispatch(updateUserInfoThunk(profileData));
+    setIsUpdated(true);
+    resetForm();
   };
 
   return (
     <div className={css.wrapper}>
       <Formik
+        enableReinitialize
         initialValues={{
-          name: '',
-          phone: '',
-          birthday: '',
-          skype: '',
-          email: '',
+          name: user.name || '',
+          phone: user.phone ? user.phone : '',
+          birthday: user.birthday ? new Date(user.birthday) : new Date(),
+          skype: user ? user.skype : '',
+          email: user ? user.email : '',
         }}
-        // initialValues={{
-        //   name: user.name || '',
-        //   phone: user.phone || '',
-        //   birthday: user.birthday || '',
-        //   skype: user.skype || '',
-        //   email: user.email || '',
-        // }}
         validationSchema={profileSchema}
         onSubmit={handleSubmit}
       >
         {({ values, handleChange, handleBlur, handleSubmit }) => (
-          <form autoComplete="off" className={css.form} onSubmit={handleSubmit}>
+          <Form autoComplete="off" className={css.form} onSubmit={handleSubmit}>
             <div className={css.formAvatar}>
               <div className={css.containerAvatar}>
                 {newAvatar ? (
                   <img
                     src={URL.createObjectURL(newAvatar)}
                     className={css.avatarImage}
+                    accept="image/*,.png,.jpg,.gif,.web"
                     alt="avatar"
                   />
-                ) : userData?.avatarURL ? (
+                ) : user?.avatarURL ? (
                   <img
-                    src={userData?.avatarURL}
+                    src={user?.avatarURL}
                     className={css.avatarImage}
                     alt="avatar"
                   />
                 ) : (
                   <AiOutlineUser className={css.avatarIcon} />
                 )}
-
                 <label htmlFor="avatar">
                   <button className={css.btnUpload}>
                     <FiPlus />
                   </button>
-
                   <input
                     className={css.inputUpload}
                     id="avatar"
                     type="file"
-                    onChange={uploadImage}
+                    onChange={e => {
+                      setNewAvatar(e.target.files[0]);
+                    }}
                     accept="image/*,.png,.jpg,.gif,.web"
                     name="avatar"
                   ></input>
                 </label>
               </div>
 
-              <h3 className={css.avatarName}>Polly Mango</h3>
+              <h3 className={css.avatarName}>
+                {user.name ? user.name : 'My name'}
+              </h3>
               <span className={css.avatarRole}>User</span>
             </div>
+
             <div className={css.formCenter}>
               <div className={css.formRow}>
                 <label className={css.formLabel} htmlFor="name">
@@ -209,12 +171,18 @@ const UserProfile = () => {
                   }
                   className={css.formInput}
                   calendarClassName={css.customCalendarStyle}
-                  selected={newBirthday}
+                  selected={values.birthday}
                   onChange={date => {
-                    setNewBirthday(date);
+                    handleChange({
+                      target: { name: 'birthday', value: date },
+                    });
                   }}
                   dateFormat="dd/MM/yyyy"
                   calendarStartDay={1}
+                  peekNextMonth
+                  showMonthDropdown
+                  showYearDropdown
+                  dropdownMode="select"
                   closeOnScroll={e => e.target === document}
                 />
                 <ErrorMessage className={css.formError} name="birthday" />
@@ -265,7 +233,7 @@ const UserProfile = () => {
             <button className={css.formBtn} type="submit">
               Save changes
             </button>
-          </form>
+          </Form>
         )}
       </Formik>
     </div>

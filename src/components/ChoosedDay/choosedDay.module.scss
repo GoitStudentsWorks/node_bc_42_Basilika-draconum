@@ -1,4 +1,8 @@
 .wrapChooseDay {
-  padding: 40px 32px 50px;
-  background-color: var(--bgColor-task-cart);
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 72px);
+  @media screen and (min-width: 768px) {
+    height: calc(100% - 39px);
+  }
 }
