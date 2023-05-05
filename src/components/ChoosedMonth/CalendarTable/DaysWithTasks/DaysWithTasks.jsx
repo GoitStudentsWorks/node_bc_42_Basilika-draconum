@@ -77,10 +77,11 @@ const DaysWithTasks = ({ day, setOpening, currentTask, handleClick }) => {
           ) : null}
         </>
       ) : null}
-
-      {openModal && (
-        <ModalTaskList closeModalList={closeModalList} taskList={day} />
-      )}
+      <div className={css.styledModalTd}>
+        {openModal && (
+          <ModalTaskList closeModalList={closeModalList} taskList={day} />
+        )}
+      </div>
     </td>
   );
 };

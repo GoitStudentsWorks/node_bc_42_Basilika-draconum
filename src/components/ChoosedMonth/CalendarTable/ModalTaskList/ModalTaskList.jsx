@@ -8,41 +8,36 @@ const ModalTaskList = ({ closeModalList, taskList }) => {
   const screenMobile = useMediaQuery('(max-width: 767.9px)');
   const [openModal] = useState(false);
 
-  const template = (
-    <div className={css.overlay} onClick={closeModalList}>
+  return (
+    <>
+      <div className={css.overlay} onClick={closeModalList}></div>
       <div className={css.modalWrapper}>
-        <button onClick={closeModalList} className={css.modalBtnClose} />
+        {/* <button onClick={closeModalList} className={css.modalBtnClose} /> */}
         <div className={css.modalBox}>
-        {taskList.tasks.map((task, index) => {
-          return (
-            <div key={index}>
-              {screenMobile
-                ? index > 0 && (
-                    <TasksList
-                      tasks={task}
-                      // openModal={setOpening}
-                      // currentTask={currentTask}
-                    />
-                  )
-                : index > 1 && (
-                    <TasksList
-                      tasks={task}
-                      // openModal={setOpening}
-                      // currentTask={currentTask}
-                    />
-                  )}
-            </div>
-          );
-        })}
+          {taskList.tasks.map((task, index) => {
+            return (
+              <div key={index}>
+                {screenMobile
+                  ? index > 0 && (
+                      <TasksList
+                        tasks={task}
+                        // openModal={setOpening}
+                        // currentTask={currentTask}
+                      />
+                    )
+                  : index > 1 && (
+                      <TasksList
+                        tasks={task}
+                        // openModal={setOpening}
+                        // currentTask={currentTask}
+                      />
+                    )}
+              </div>
+            );
+          })}
         </div>
       </div>
-    </div>
-  );
-
-  return !openModal ? (
-    createPortal(template, document.getElementById('modal'))
-  ) : (
-    <></>
+    </>
   );
 };
 
