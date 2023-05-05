@@ -35,6 +35,12 @@
   }
 }
 
+.posFlex {
+   position: absolute;
+   top: 0;
+   left: 0l
+}
+
 .styledNumberDay,
 .today {
   position: absolute;
@@ -85,4 +91,8 @@
 .today {
   color: #ffffff;
   background-color: #3e85f3;
+}
+
+.modalBox {
+   // position: absolute;
 }
