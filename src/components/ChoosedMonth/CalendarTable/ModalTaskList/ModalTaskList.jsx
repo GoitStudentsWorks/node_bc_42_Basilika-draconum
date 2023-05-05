@@ -9,9 +9,10 @@ const ModalTaskList = ({ closeModalList, taskList }) => {
   const [openModal] = useState(false);
 
   const template = (
-   //  <div className={css.overlay} onClick={closeModalList}>
+    <div className={css.overlay} onClick={closeModalList}>
       <div className={css.modalWrapper}>
         <button onClick={closeModalList} className={css.modalBtnClose} />
+        <div className={css.modalBox}>
         {taskList.tasks.map((task, index) => {
           return (
             <div key={index}>
@@ -33,8 +34,9 @@ const ModalTaskList = ({ closeModalList, taskList }) => {
             </div>
           );
         })}
+        </div>
       </div>
-   //  </div>
+    </div>
   );
 
   return !openModal ? (
