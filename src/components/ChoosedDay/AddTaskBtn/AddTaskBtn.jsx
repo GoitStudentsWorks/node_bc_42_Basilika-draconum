@@ -10,13 +10,13 @@ const AddTaskBtn = ({ progressType }) => {
   const [activateModal, setActivateModal] = useState(false);
 
   const openModal = () => {
-    setActivateModal(true);
+    setActivateModal((pS)=>!pS);
   };
 
   return (
     <>
-      <Modal active={activateModal} setActive={setActivateModal}>
-        <TaskPopUp closeModal={setActivateModal} />
+      <Modal active={activateModal} setActive={setActivateModal} >
+        <TaskPopUp closeModal={setActivateModal} type={ progressType } />
       </Modal>
       <button className={s.addTaskBtn} onClick={openModal}>
         <svg className={s.addTaskBtn__icon} alt="plus">
