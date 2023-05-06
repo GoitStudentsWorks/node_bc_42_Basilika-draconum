@@ -8,9 +8,9 @@ import { getCurrentUserThunk } from 'redux/auth/authOperations';
 import PublicRoute from './PublicRoute/PublicRoute';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
-import ChoosedMonth from './ChoosedMonth/ChoosedMonth';
-import ChoosedDay from './ChoosedDay/ChoosedDay';
-import CalendarPage from './../pages/CalendarPage/CalendarPage';
+const ChoosedMonth = lazy(() => import('./ChoosedMonth/ChoosedMonth'));
+const ChoosedDay = lazy(() => import('./ChoosedDay/ChoosedDay'));
+const CalendarPage = lazy(() => import('./../pages/CalendarPage/CalendarPage'));
 
 const RegisterPage = lazy(() => import('../pages/AuthPage/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/AuthPage/LoginPage'));
