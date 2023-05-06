@@ -1,12 +1,9 @@
-import { useState } from 'react';
-import { createPortal } from 'react-dom';
 import { useMediaQuery } from '@mui/material';
 import TasksList from '../TasksList/TasksList';
 import css from './modal-task.module.scss';
 
 const ModalTaskList = ({ closeModalList, taskList }) => {
   const screenMobile = useMediaQuery('(max-width: 767.9px)');
-  const [openModal] = useState(false);
 
   return (
     <>
@@ -18,20 +15,8 @@ const ModalTaskList = ({ closeModalList, taskList }) => {
             return (
               <div key={index}>
                 {screenMobile
-                  ? index > 0 && (
-                      <TasksList
-                        tasks={task}
-                        // openModal={setOpening}
-                        // currentTask={currentTask}
-                      />
-                    )
-                  : index > 1 && (
-                      <TasksList
-                        tasks={task}
-                        // openModal={setOpening}
-                        // currentTask={currentTask}
-                      />
-                    )}
+                  ? index > 0 && <TasksList task={task} />
+                  : index > 1 && <TasksList task={task} />}
               </div>
             );
           })}
