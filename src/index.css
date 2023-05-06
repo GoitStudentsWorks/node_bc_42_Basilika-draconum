@@ -17,6 +17,7 @@
   --notheme-profile-text-user: #616161;
   --notheme-warning-color: red;
   --notheme-hover-btn: #2b78ef;
+  --notheme-bgColor-avatar: #f8f8f8;
 }
 
 html[data-theme='dark'] {
@@ -53,7 +54,7 @@ html[data-theme='dark'] {
   --sidebar-hover-link: #FFFFFF;
   --sidebar-hover-bg: #3E85F3;
   --border-shadow-btn: rgba(136, 165, 191, 0.48);
-  --borderColor-colum: rgba(220, 227, 229, 0.15);
+  --borderColor-colum: rgba(255, 255, 255, 0.15);
   --color-owerflow-background: #21222C;
   --color-owerflow-tumb: #2D3037;
   --borderColor-input-profile: rgba(255, 255, 255, 0.15);
@@ -93,7 +94,7 @@ html[data-theme='light'] {
   --bgColor-range-medium: #f3b249;
   --bgColor-range-high: #ea3d65;
   --borderColor-colum: rgba(220, 227, 229, 0.8);
-  --add-button-color-hover: #CAE8FF;
+  --add-button-color-hover: #CAE8FF; /* не змінний*/
   --color-owerflow-background: #f2f2f2;
   --color-owerflow-tumb: #e7e5e5;
   --borderColor-input-profile: rgba(17, 17, 17, 0.15);

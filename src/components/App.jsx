@@ -40,7 +40,7 @@ export const App = () => {
         <Route path="/" element={<PrivateRoute component={<MainLayout />} />}>
           <Route path="/account" element={<AccountPage />} />
           <Route path="/calendar" element={<CalendarPage />}>
-            <Route path="month/:currentDay" element={<ChoosedMonth />} />
+            <Route path="month/:currentDate" element={<ChoosedMonth />} />
             <Route path="day/:currentDay" element={<ChoosedDay />} />
           </Route>
         </Route>
