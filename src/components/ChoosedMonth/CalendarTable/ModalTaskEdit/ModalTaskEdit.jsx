@@ -21,12 +21,12 @@ const ModalTaskEdit = ({ task, closeModal }) => {
     setTitle(e.target.value);
   };
 
-  const onChangeStart = (time, valueString) => {
-    setStartDate(dayjs(valueString, 'H:mm'));
+  const onChangeStart = time => {
+    setStartDate(dayjs(time, 'H:mm'));
   };
 
-  const onChangeEnd = (time, valueString) => {
-    setEndDate(dayjs(valueString, 'H:mm'));
+  const onChangeEnd = time => {
+    setEndDate(dayjs(time, 'H:mm'));
   };
 
   const onChangePriority = e => {
