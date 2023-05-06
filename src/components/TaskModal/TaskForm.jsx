@@ -11,7 +11,8 @@ import { selectArrTasks } from 'redux/tasks/tasksSelectors';
 import style from './TaskForm.module.scss';
 import { addTask } from 'redux/tasks/tasksOperations';
 
-function TaskPopUp({ task, closeModal }) {
+function TaskPopUp({ task, closeModal, type }) {
+
   const format = 'H:mm';
   const [start, setStart] = useState(
     task ? task.start : dayjs('09:00', format)
@@ -21,6 +22,18 @@ function TaskPopUp({ task, closeModal }) {
   const [title, setTitle] = useState(task ? task.title : '');
 
   const dispatch = useDispatch();
+
+    const chooseProgressType = type => {
+    if (type === 'To do') {
+      return 'toDo';
+    }
+    if (type === 'In progress') {
+      return 'inProgress';
+    }
+    if (type === 'Done') {
+      return 'done';
+    }
+  };
 
   const onChangeStart = (time, valueString) => {
     setStart(dayjs(valueString, format));
@@ -41,7 +54,8 @@ function TaskPopUp({ task, closeModal }) {
   const filterTasks = useSelector(selectArrTasks);
   const handleAdd = e => {
     e.preventDefault();
-    const data = { date: { start, end }, priority, title };
+    const status = chooseProgressType(type);
+    const data = { date: { start, end }, priority, title, status };
     if (
       filterTasks.find(task => task.title.toLowerCase() === title.toLowerCase())
     ) {

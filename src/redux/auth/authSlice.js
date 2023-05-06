@@ -76,7 +76,7 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(updateUserInfoThunk.fulfilled, (state, { payload }) => {
-        state.user = payload;
+        state.user = payload.user;
         state.isLoading = false;
       })
       .addCase(updateUserInfoThunk.rejected, (state, { payload }) => {

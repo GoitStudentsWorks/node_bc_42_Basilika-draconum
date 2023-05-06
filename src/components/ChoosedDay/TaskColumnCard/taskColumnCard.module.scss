@@ -1,6 +1,7 @@
 .tasksCard {
   width: 100%;
   min-height: 108px;
+  height: 100%;
   position: relative;
   padding: 14px 18px;
   border: 1px solid var(--borderColor-colum);
@@ -11,6 +12,9 @@
   }
 
   &__text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.29;

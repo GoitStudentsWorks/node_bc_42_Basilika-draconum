@@ -17,11 +17,6 @@ const LoginPage = lazy(() => import('../pages/AuthPage/LoginPage'));
 const AccountPage = lazy(() => import('../pages/AccountPage/AccountPage'));
 const StartPage = lazy(() => import('../pages/StartPage/StartPage'));
 
-// import RegisterPage from '../pages/AuthPage/RegisterPage';
-// import LoginPage from '../pages/AuthPage/LoginPage';
-// import AccountPage from '../pages/AccountPage/AccountPage';
-// import StartPage from '../pages/StartPage/StartPage';
-
 export const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(getAccessToken);
@@ -45,7 +40,7 @@ export const App = () => {
         <Route path="/" element={<PrivateRoute component={<MainLayout />} />}>
           <Route path="/account" element={<AccountPage />} />
           <Route path="/calendar" element={<CalendarPage />}>
-            <Route path="month/:currentDay" element={<ChoosedMonth />} />
+            <Route path="month/:currentDate" element={<ChoosedMonth />} />
             <Route path="day/:currentDay" element={<ChoosedDay />} />
           </Route>
         </Route>
