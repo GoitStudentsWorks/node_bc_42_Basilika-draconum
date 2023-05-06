@@ -17,11 +17,6 @@ const LoginPage = lazy(() => import('../pages/AuthPage/LoginPage'));
 const AccountPage = lazy(() => import('../pages/AccountPage/AccountPage'));
 const StartPage = lazy(() => import('../pages/StartPage/StartPage'));
 
-// import RegisterPage from '../pages/AuthPage/RegisterPage';
-// import LoginPage from '../pages/AuthPage/LoginPage';
-// import AccountPage from '../pages/AccountPage/AccountPage';
-// import StartPage from '../pages/StartPage/StartPage';
-
 export const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(getAccessToken);
