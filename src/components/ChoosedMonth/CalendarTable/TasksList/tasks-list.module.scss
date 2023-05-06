@@ -7,7 +7,7 @@
   align-items: center;
   gap: 2px;
 
-  > li {
+  .tasksListItem {
     width: 95%;
 
     font-weight: 700;
@@ -37,6 +37,11 @@
     padding: 3px 7px;
 
     border-radius: 8px;
+
+    @media (min-width: 768px) {
+      font-size: 14px;
+      line-height: 1.286;
+    }
   }
 
   .low {

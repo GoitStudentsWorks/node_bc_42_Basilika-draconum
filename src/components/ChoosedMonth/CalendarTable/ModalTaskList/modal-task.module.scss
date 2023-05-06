@@ -15,7 +15,10 @@
 .modalWrapper {
   position: absolute;
 
-  width: 100px;
+  width: 120px;
+  max-height: 150px;
+
+  overflow-y: auto;
 
   background-color: rgba(146, 143, 143, 0.9);
 

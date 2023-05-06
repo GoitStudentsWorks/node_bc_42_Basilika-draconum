@@ -6,7 +6,7 @@ import TasksList from '../TasksList/TasksList';
 import ModalTaskList from '../ModalTaskList/ModalTaskList';
 import css from './days-tasks.module.scss';
 
-const DaysWithTasks = ({ day, setOpening, currentTask, handleClick }) => {
+const DaysWithTasks = ({ day, handleClick }) => {
   const screenMobile = useMediaQuery('(max-width: 767.9px)');
   const [openModal, setOpenModal] = useState(false);
 
@@ -50,16 +50,12 @@ const DaysWithTasks = ({ day, setOpening, currentTask, handleClick }) => {
                 {screenMobile
                   ? index === 0 && (
                       <TasksList
-                        tasks={task}
-                        openModal={setOpening}
-                        currentTask={currentTask}
+                        task={task}
                       />
                     )
                   : index <= 1 && (
                       <TasksList
-                        tasks={task}
-                        openModal={setOpening}
-                        currentTask={currentTask}
+                        task={task}
                       />
                     )}
               </div>
@@ -77,11 +73,13 @@ const DaysWithTasks = ({ day, setOpening, currentTask, handleClick }) => {
           ) : null}
         </>
       ) : null}
-      <div className={css.styledModalTd}>
-        {openModal && (
+
+      {openModal && (
+        <div className={css.styledModalTd}>
           <ModalTaskList closeModalList={closeModalList} taskList={day} />
-        )}
-      </div>
+        </div>
+      )}
+      {/* </div> */}
     </td>
   );
 };

@@ -15,8 +15,8 @@ export const addTaskApi = async dataTask => {
   return data;
 };
 
-export const updateTaskByIdApi = async id => {
-  const { data } = await privateAPI.put(`api/tasks/${id}`);
+export const updateTaskByIdApi = async (id, dataTask) => {
+  const { data } = await privateAPI.put(`api/tasks/${id}`, dataTask);
   return data;
 };
 

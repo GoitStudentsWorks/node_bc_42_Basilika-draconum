@@ -6,7 +6,6 @@ import { format } from 'date-fns';
 import { useDaysOfMonth } from 'hooks/useDaysOfMonth';
 import { setDate } from 'redux/date/dateSlice';
 import DaysWithTasks from './DaysWithTasks/DaysWithTasks';
-// import Modal from 'components/TaskModal/Modal';
 import css from './calendar-table.module.scss';
 
 const CalendarTable = ({ tasks, currentDate }) => {
@@ -35,17 +34,17 @@ const CalendarTable = ({ tasks, currentDate }) => {
     }
   };
 
-  const formattedDate = () => {
-    if (selectedTask) {
-      const date = new Date(selectedTask.date);
-      const formatDate = format(date, 'yyyy-MM-dd');
-      return formatDate;
-    }
-  };
+//   const formattedDate = () => {
+//     if (selectedTask) {
+//       const date = new Date(selectedTask.date);
+//       const formatDate = format(date, 'yyyy-MM-dd');
+//       return formatDate;
+//     }
+//   };
 
-  const handleToggleModal = () => {
-    setOpening(!isOpened);
-  };
+//   const handleToggleModal = () => {
+//     setOpening(!isOpened);
+//   };
 
   const currentTask = data => {
     setSelectedTask(data);
@@ -87,7 +86,7 @@ const CalendarTable = ({ tasks, currentDate }) => {
       </div>
 
       {/* {isOpened && (
-        <Modal
+        <ModalTaskEdit
           date={formattedDate()}
           type="Edit"
           onCloseModal={handleToggleModal}
