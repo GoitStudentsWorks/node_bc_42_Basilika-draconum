@@ -23,6 +23,15 @@ export const TaskToolbar = ({ task }) => {
     if (status === 'inProgress'){
       return status = 'In progress';        
     }
+    if (status === 'done'){
+      return status = 'Done';        
+    }
+    if (status === 'To do'){
+      return status = 'toDo';
+    }
+    if (status === 'In progress'){
+      return status = 'inProgress'; 
+    }
     if (status === 'Done'){
       return status = 'done';        
     }
