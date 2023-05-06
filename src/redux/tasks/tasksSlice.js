@@ -41,7 +41,7 @@ const tasksSlice = createSlice({
       })
       .addCase(deleteTaskThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.error = null;
+        state.error = null;        
         state.tasks = state.tasks.filter(task => task._id !== payload);
       })
       .addCase(deleteTaskThunk.rejected, (state, { payload }) => {
@@ -55,10 +55,10 @@ const tasksSlice = createSlice({
           console.log('UpdateTaskStatusThunk payload not object!');
           return;
         }
-        const { id, status } = payload;
+        const { _id, status } = payload;
         state.isLoading = false;
         state.error = null;
-        const index = state.tasks.findIndex(task => task._id === id);
+        const index = state.tasks.findIndex(task => task._id === _id);
         const task = state.tasks[index];
         task.status = status;
       })

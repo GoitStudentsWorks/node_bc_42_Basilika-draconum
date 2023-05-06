@@ -1,20 +1,19 @@
 import css from './TaskToolbar.module.css';
 import {  useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'; 
+import { useDispatch} from 'react-redux'; 
 import {TaskConfirmationModal} from './TaskConfirmationModal';
-import TaskPopUp from '../TaskModal/TaskForm';
-import { isModalEditShownAction } from 'redux/tasks/tasksSlice';
-import { selectIsModalEditShown } from 'redux/tasks/tasksSelectors';
+import ModalTaskEdit from '../ChoosedMonth/CalendarTable/ModalTaskEdit/ModalTaskEdit';
 import { updateTaskStatusThunk } from 'redux/tasks/tasksOperations';
 import icon from '../../images/icons.svg';
 import Notiflix from 'notiflix';
   
 export const TaskToolbar = ({ task }) => {     
   const [isModalStatus, setIsModalStatus] = useState(false);
-   
+  const [openModal, setOpenModal] = useState(false);
+         
   const [isModalConfirmation, setIsModalConfirmation] = useState(false);   
   const dispatch = useDispatch(); 
-  const isModalEdit = useSelector(selectIsModalEditShown);       
+
   const statusArray = ['To do', 'In progress', 'Done'];    
   const changeStatus = (status) => {
     if (status === 'toDo'){
@@ -42,20 +41,25 @@ export const TaskToolbar = ({ task }) => {
                     
   const toggleModal = () => {     
     setIsModalConfirmation(false);
-    dispatch(isModalEditShownAction(false));
+    setOpenModal(false);
     setIsModalStatus(prev => !prev);   
   };
        
   const openTaskModal = id => { 
     setIsModalConfirmation(false);
     setIsModalStatus(false);     
-    dispatch(isModalEditShownAction(!isModalEdit)); 
+    setOpenModal((pS)=>!pS);
   };
   
   const confirmationModalOpen = () => {
     setIsModalStatus(false);
-    dispatch(isModalEditShownAction(false));
+    setOpenModal(false);
     setIsModalConfirmation(prev => !prev);      
+  };
+  const closeModalEdit = ({ target, currentTarget }) => {
+    if (target === currentTarget) {
+      setOpenModal(!openModal);
+    }
   };
 
   const handleStatusChange = status => {
@@ -97,7 +101,8 @@ export const TaskToolbar = ({ task }) => {
             <use xlinkHref={icon + '#icon-pencil'}></use>
           </svg>
         </button> 
-        {isModalEdit && <TaskPopUp task={task}/>}
+        {openModal && <ModalTaskEdit closeModal={closeModalEdit} task={task} />}
+
         <button className={css.toolbar__btn} onClick={confirmationModalOpen}>
           <svg className={css.toolbar__svg}>
             <use xlinkHref={icon + '#icon-trash'}></use>

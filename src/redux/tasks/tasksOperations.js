@@ -22,9 +22,9 @@ export const fetchTasks = createAsyncThunk(
 export const deleteTaskThunk = createAsyncThunk(
   'task/delete',
   async (credentials, thunkAPI) => {
-    try {
-      const data = await deleteTaskApi(credentials);
-      return data;
+    try {    
+      await deleteTaskApi(credentials);   
+      return credentials;
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);
     }
