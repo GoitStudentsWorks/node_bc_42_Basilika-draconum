@@ -1,0 +1,19 @@
+.choosedMonthWrapper {
+  max-height: 60vh;
+
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    height: 14px;
+    max-width: 360px;
+
+    background: var(--color-owerflow-background);
+
+    border-radius: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-owerflow-tumb);
+
+    border-radius: 12px;
+  }
+}

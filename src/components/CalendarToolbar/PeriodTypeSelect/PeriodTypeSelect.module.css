@@ -1,0 +1,62 @@
+.periodTypeSelectMarkUp {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .periodTypeSelectMarkUp {
+      justify-content: flex-start;
+      margin-bottom: 0;
+    }
+  }
+  
+  .navLinkMonth,
+  .activeLinkMonth,
+  .navLinkDay,
+  .activeLinkDay {
+    background-color: var(--type-select-bg-color); /* #21222C - dark */
+    color: var(--type-select-color);
+  
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.286;
+    align-items: center;
+    text-decoration: none;
+  
+    border: none;
+  
+    cursor: pointer;
+  }
+  
+  .navLinkMonth,
+  .activeLinkMonth {
+    padding: 8px 16px;
+    border-right: 1px solid var(--type-select-border-color); /* 1px solid rgba(255, 255, 255, 0.15); - dark */
+    border-radius: 8px 0px 0px 8px;
+  }
+  
+  .navLinkDay,
+  .activeLinkDay {
+    padding: 8px 25px;
+  
+    border-radius: 0px 8px 8px 0px;
+  }
+  
+  .activeLinkMonth,
+  .activeLinkDay {
+    background-color: var(--type-select-active-bg-color); /* #3E85F3 - dark */
+    color: var(--type-select-active-color); /* color: #FFFFFF; - dark */
+  }
+  
+  @media screen and (min-width: 768px) {
+    .navLinkMonth,
+    .activeLinkMonth,
+    .navLinkDay,
+    .activeLinkDay {
+      font-size: 16px;
+      line-height: 1.125;
+    }
+  }
+  

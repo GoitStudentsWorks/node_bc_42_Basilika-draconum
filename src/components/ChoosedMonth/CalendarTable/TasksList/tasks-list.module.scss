@@ -1,0 +1,72 @@
+.tasksListStyle {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+
+  .tasksListItem {
+    width: 95%;
+
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: center;
+
+    padding: 2px 0;
+
+    transition: scale 250ms linear;
+
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+
+    &:hover,
+    &:focus {
+      scale: 1.05;
+    }
+  }
+
+  .low,
+  .medium,
+  .high {
+    padding: 3px 7px;
+
+    border-radius: 8px;
+
+    @media (min-width: 768px) {
+      font-size: 14px;
+      line-height: 1.286;
+    }
+  }
+
+  .low {
+    background-color: #ceeefd;
+    color: var(--notheme-color-accent);
+  }
+
+  .medium {
+    background-color: #fcf0d4;
+    color: var(--bgColor-range-medium);
+  }
+
+  .high {
+    background-color: #ffd2dd;
+    color: var(--bgColor-range-high);
+  }
+
+  @media (min-width: 768px) {
+    li {
+      font-size: 14px;
+      line-height: 1.286;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    padding: 4px 0;
+  }
+}
