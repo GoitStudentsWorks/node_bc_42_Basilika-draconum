@@ -15,8 +15,8 @@
 	height: 336px;
 	padding: 48px 18px 40px 18px;
 
-	border: 1px solid rgba(220, 227, 229, 0.8);
-	box-shadow: 0px 4px 16px rgba(17, 17, 17, 0.1);
+	border: 1px solid var(--borderColor-colum);
+	box-shadow: 0px 4px 16px var(--popup-box-shadow);
 	border-radius: 8px;
 }
 
@@ -36,7 +36,8 @@
 		font-weight: 600;
 		font-size: 14px;
 		line-height: 18px;
-		color: #616161;
+		color: var(--profile-text-user);
+		border: var(--paginator-border-color);
 	}
 }
 
@@ -60,12 +61,21 @@
 	& input {
 		width: 100%;
 		height: 42px;
-		background: #f7f7f7;
+		background-color: var(--background-modal-input);
 		border-radius: 8px;
-		border: none;
+		border: 1px solid var(--border-input);
 		padding: 12px 14px;
 		outline: none;
 		transition: 200ms cubic-bezier(0.19, 1, 0.22, 1);
+		color: var(--input-text) !important;
+
+		&::placeholder {
+			color: var(--input-placeholder);
+			opacity: 1;
+		}
+
+
+
 
 		@media screen and (min-width: 768px) {
 			width: 100%;
@@ -74,17 +84,20 @@
 		}
 
 		&:hover {
-			border: 1px solid #4096ff;
+			border: 1px solid var(--month-day-text);
 		}
 
-		&:focus {
-			box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
-			border-inline-end-width: 1px;
+		&:focus::-webkit-input-placeholder {
+			text-indent: 500px;
+			transition: text-indent 0.3s ease;
 		}
+
+		// &:focus {
+		// 	box-shadow: 0 0 0 2px var(--labe-modal);
+		// 	border-inline-end-width: 1px;
+		// }
 
 	}
-
-
 }
 
 .timePickersWrapper {
@@ -107,34 +120,34 @@
 	align-items: flex-start;
 	gap: 8px;
 
+
+	& input {
+		color: var(--input-text) !important;
+	}
 }
 
 .timePicker {
 	position: relative;
 	height: 42px;
-	background-color: #f7f7f7;
-	border: none;
-
+	border: 1px solid var(--border-input);
+	background-color: var(--background-modal-input);
 	font-family: inherit;
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 18px;
-	color: #616161;
 
-	input[name='start'],
-	input[name='end'] {
-		color: #616161;
-	}
 
 	&:hover {
-		border: 1px solid #4096ff;
+		border: 1px solid var(--month-day-text);
 	}
 
 	@media screen and (min-width: 768px) {
 		height: 46px;
 		padding: 14px 18px;
 	}
+
 }
+
 
 .radioGroup {
 	display: flex;
@@ -153,7 +166,7 @@
 		position: relative;
 		padding-left: 16px;
 		font-weight: 600;
-		color: #616161;
+		color: var(--input-placeholder);
 		cursor: pointer;
 
 		&:before {
@@ -174,19 +187,20 @@
 
 	label[id='low'] {
 		&:before {
-			background-color: #72c2f8;
+			background-color: var(--bgColor-range-low);
 		}
 	}
 
 	label[id='medium'] {
 		&:before {
-			background-color: #f3b249;
+			background-color: var(--bgColor-range-medium);
 		}
 	}
 
 	label[id='high'] {
 		&:before {
-			background-color: #ea3d65;
+			background-color: var(--bgColor-range-high);
+
 		}
 	}
 
@@ -194,7 +208,7 @@
 		display: none;
 
 		&:checked {
-			background-color: red;
+			background-color: var(--bgColor-range-high);
 		}
 	}
 
@@ -207,16 +221,17 @@
 	}
 
 	input:checked+label[id='low']:before {
-		border: 1.3px solid rgba(114, 194, 248, 0.3);
+		border: 1.3px solid var(--notheme-radio-modal);
 	}
 
 	input:checked+label[id='medium']:before {
-		border: 1.3px solid rgba(243, 178, 73, 0.3);
+		border: 1.3px solid var(--notheme-radio-modal);
 	}
 
 	input:checked+label[id='high']:before {
-		border: 1.3px solid rgba(234, 61, 101, 0.3);
+		border: 1.3px solid var(--notheme-radio-modal);
 	}
+
 }
 
 .buttonWrapper {
@@ -237,10 +252,9 @@
 	gap: 10px;
 	width: 135px;
 	height: 42px;
-	background: #3e85f3;
+	background: var(--month-day-text);
 	border-radius: 8px;
-	color: #fff;
-
+	color: var(--paginator-text-color);
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 18px;
@@ -250,12 +264,12 @@
 	@media screen and (min-width: 768px) {
 		width: 182px;
 		height: 48px;
+		gap: 8px;
 	}
 
 	span {
 		width: 18px;
 		height: 18px;
-		// background-image: url('../../images/taskPopUp/add.png');
 		background-repeat: no-repeat;
 		background-position: center;
 	}
@@ -268,7 +282,7 @@
 		left: 0;
 		width: 0;
 		height: 2px;
-		background-color: #3498db;
+		background-color: var(--month-day-text);
 		transition: width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
 
@@ -279,10 +293,12 @@
 	&:hover::after {
 		width: 100%;
 	}
-}
 
-.plus {
-	color: #FFFFFF;
+	&__icon {
+		width: 20px;
+		height: 20px;
+		stroke: var(--paginator-text-color);
+	}
 }
 
 .cancelButton {
@@ -294,7 +310,8 @@
 	width: 118px;
 	height: 42px;
 
-	background: #efefef;
+	background-color: var(--background-modal-cancel);
+
 	border-radius: 8px;
 	border: none;
 	cursor: pointer;
@@ -302,7 +319,7 @@
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 18px;
-	color: #111111;
+	color: var(--notheme-textColor-primary);
 
 	@media screen and (min-width: 768px) {
 		width: 144px;
@@ -317,7 +334,7 @@
 		right: 0;
 		width: 0;
 		height: 2px;
-		background-color: #DA1414;
+		background-color: var(--bgColor-range-high);
 		transition: width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
 
@@ -344,13 +361,18 @@
 	cursor: pointer;
 	transition: transform 250ms ease-in;
 
+
 	&:hover {
 		transform: rotateZ(90deg);
-		border: 2.5px solid rgba(114, 194, 248, 0.7);
+
 	}
 }
 
-
+.close_icon {
+	width: 10px;
+	height: 10px;
+	fill: var(--clos-modal);
+}
 
 .title {
 	width: 26px;
@@ -360,8 +382,7 @@
 	font-weight: 500;
 	font-size: 12px;
 	line-height: 14px;
-
-	color: rgba(52, 52, 52, 0.8);
+	color: var(--profile-text-modal);
 }
 
 .start {
@@ -374,7 +395,7 @@
 	font-size: 12px;
 	line-height: 14px;
 
-	color: rgba(52, 52, 52, 0.8);
+	color: var(--profile-text-modal);
 }
 
 .end {
@@ -387,5 +408,5 @@
 	font-size: 12px;
 	line-height: 14px;
 
-	color: rgba(52, 52, 52, 0.8);
+	color: var(--profile-text-modal);
 }
