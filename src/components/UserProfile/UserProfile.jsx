@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Formik, ErrorMessage, Form } from 'formik';
+import Notiflix from 'notiflix';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FiPlus, FiChevronDown } from 'react-icons/fi';
@@ -33,7 +34,7 @@ const UserProfile = () => {
     }
   }, [dispatch, isUpdated]);
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = async (values, { resetForm }) => {
     const profileData = {
       name: values.name,
       phone: values.phone,
@@ -42,17 +43,21 @@ const UserProfile = () => {
       birthday: values.birthday,
     };
 
-    console.log(values.birthday);
+    const avatarData = new FormData();
+    avatarData.append('avatar', newAvatar);
 
-    if (newAvatar) {
-      const avatarData = new FormData();
-      avatarData.append('avatar', newAvatar);
-      dispatch(updateAvatarThunk(avatarData));
+    try {
+      if (newAvatar) {
+        await dispatch(updateAvatarThunk(avatarData));
+      }
+
+      await dispatch(updateUserInfoThunk(profileData));
+      Notiflix.Notify.success('User profile is succesfully updated');
+      setIsUpdated(true);
+      resetForm();
+    } catch (error) {
+      Notiflix.Notify.failure('Something went wrong. Please try again');
     }
-
-    dispatch(updateUserInfoThunk(profileData));
-    setIsUpdated(true);
-    resetForm();
   };
 
   return (
