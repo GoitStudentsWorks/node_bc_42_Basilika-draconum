@@ -3,17 +3,35 @@
 }
 
 .profilePageContainer {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 84px);
   padding: 0 20px 40px;
   background-color: var(--notes-background);
+  overflow-y: auto;
+  padding-top: 36px;
+  margin-top: -36px;
 
   @media screen and (min-width: 768px) {
     height: calc(100vh - 132px);
     padding: 0 32px 38px;
+    margin-top: 0;
   }
   @media screen and (min-width: 1440px) {
     height: calc(100vh - 116px);
     padding: 0 32px 32px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 14px;
+    max-width: 360px;
+
+    background: var(--color-owerflow-background);
+
+    border-radius: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-owerflow-tumb);
+
+    border-radius: 12px;
   }
 }
 
@@ -220,6 +238,7 @@
       }
     }
   }
+
   .formBtn {
     display: flex;
     justify-content: center;
@@ -240,6 +259,10 @@
     &:hover,
     &:active {
       background-color: #2b78ef;
+    }
+
+    &[disabled] {
+      background-color: #666;
     }
 
     @media screen and (min-width: 768px) {
