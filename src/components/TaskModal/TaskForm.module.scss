@@ -205,7 +205,16 @@
 	}
 
 	input.radioInput {
-		display: none;
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		border: 0;
+		padding: 0;
+		white-space: nowrap;
+		clip-path: inset(100%);
+		clip: rect(0 0 0 0);
+		overflow: hidden;
 
 		&:checked {
 			background-color: var(--bgColor-range-high);
@@ -349,8 +358,8 @@
 
 .closeButton {
 	position: absolute;
-	top: 14px;
-	right: 14px;
+	top: 4px;
+	right: 25px;
 	width: 20px;
 	height: 20px;
 	border: none;
@@ -359,13 +368,13 @@
 	background-color: transparent;
 	border-radius: 50%;
 	cursor: pointer;
-	transition: transform 250ms ease-in;
+	// transition: transform 250ms ease-in;
 
 
-	&:hover {
-		transform: rotateZ(90deg);
+	// &:hover {
+	// 	fill: red;
 
-	}
+	// }
 }
 
 .close_icon {
