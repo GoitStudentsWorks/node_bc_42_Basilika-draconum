@@ -16,7 +16,9 @@ const ChoosedDay = () => {
   const dayFromParams = new Date(`${currentDay}`).toISOString().slice(0, 10);
 
   useEffect(() => {
-    const filteredTasks = arrTasks?.filter(t => t.date.start.slice(0, 10) === dayFromParams);
+    const filteredTasks = arrTasks?.filter(
+      t => t.date.start.slice(0, 10) === dayFromParams
+    );
     setTasksFilter(filteredTasks);
   }, [dayFromParams, arrTasks, currentDay]);
 

@@ -6,6 +6,8 @@ import {
   updateTaskStatusApi,
   addTaskApi,
 } from 'services/tasksService';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 export const fetchTasks = createAsyncThunk(
   'tasks/fetchTasks',
@@ -35,7 +37,13 @@ export const updateTaskThunk = createAsyncThunk(
   'task/update',
   async ({ id, dataTask }, thunkAPI) => {
     try {
-      return await updateTaskByIdApi(id, dataTask);
+      Loading.pulse({
+        svgColor: 'orange',
+      });
+      const result = await updateTaskByIdApi(id, dataTask);
+      Notify.success('The task has been successfully changed.');
+      Loading.remove();
+      return result;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
