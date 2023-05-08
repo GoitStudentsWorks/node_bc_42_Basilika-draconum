@@ -18,15 +18,34 @@
 }
 
 .item {
-    border: 1px solid rgba(17, 17, 17, 0.1);
-    border-radius: 8px;
-    margin-bottom: 24px;
-    padding: 24px;
-    max-width: 580px;
-    min-height: 187px;
-    list-style: none;
+    display: flex;
+        border: 1px solid;
+        border-color: #ebe8e4;
+        border-radius: 8px;
+        width: 490px;
+        padding: 25px;
 
 }
+
+
+
+@media screen and (min-width: 768px) {
+    .item {
+display: flex;
+    }
+   
+}
+
+/* @media screen and (min-width: 768px) {
+   .item {
+    height: 187px;
+        width: 580px;
+        padding: 33px;
+        display: flex;
+        flex-direction: column;
+   }
+
+} */
 
  .item:focus,
  .item:hover {
