@@ -13,14 +13,15 @@ import { clearAuthHeader, setAuthHeader } from 'shared/http';
 
 export const registerThunk = createAsyncThunk(
   'auth/register',
-  async (credentials, thunkAPI) => {
+  async ({ name, email, password }, thunkAPI) => {
     try {
-      const data = await registerUserApi(credentials);
+      await registerUserApi({ name, email, password });
+      const data = await loginUserApi({ email, password });
+      setAuthHeader(data.token);
       return data;
     } catch (error) {
-      Notiflix.Notify.failure(
-        'Please check your email or password and try again'
-      );
+      console.log(error);
+      Notiflix.Notify.failure('Please change your email or name and try again');
       thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -111,6 +112,3 @@ export const logOutThunk = createAsyncThunk(
     }
   }
 );
-
-
-
