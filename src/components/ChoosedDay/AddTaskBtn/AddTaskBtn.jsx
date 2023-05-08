@@ -4,6 +4,7 @@
 // import Modal from 'components/TaskModal/Modal';
 import icon from '../../../images/svg.svg';
 
+
 import s from './addTaskBtn.module.scss';
 
 const AddTaskBtn = ({ openModal }) => {

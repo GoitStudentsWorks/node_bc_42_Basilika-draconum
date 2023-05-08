@@ -20,8 +20,10 @@ export const registerThunk = createAsyncThunk(
       setAuthHeader(data.token);
       return data;
     } catch (error) {
-      console.log(error);
-      Notiflix.Notify.failure('Please change your email or name and try again');
+      if (error.response.status === 409)
+        Notiflix.Notify.failure('Email is use');
+      if (error.response.status === 400)
+        Notiflix.Notify.failure('Invalid email');
       thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -32,11 +34,13 @@ export const loginThunk = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const data = await loginUserApi(credentials);
-
       setAuthHeader(data.token);
+      Notiflix.Notify.success('Аuthorization successful');
       return data;
     } catch (error) {
-      Notiflix.Notify.failure('Please change your email or name and try again');
+      Notiflix.Notify.failure(
+        'Please change your email or password and try again'
+      );
       thunkAPI.rejectWithValue(error.message);
     }
   }
