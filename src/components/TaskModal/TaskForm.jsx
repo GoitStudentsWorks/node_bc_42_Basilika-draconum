@@ -4,8 +4,8 @@ import dayjs from 'dayjs';
 import Notiflix from 'notiflix';
 import { isModalEditShownAction } from 'redux/tasks/tasksSlice';
 import { useDispatch, useSelector } from 'react-redux';
-
-import close from '../../images/close.svg';
+import close from '../../images/modal-svg/closeModal.svg';
+import icon from '../../images/modal-svg/plus.svg';
 
 import { selectArrTasks } from 'redux/tasks/tasksSelectors';
 
@@ -89,9 +89,6 @@ function TaskPopUp({ task, closeModal, type }) {
 
   return (
     <>
-      {/* <Modal active={activateModal} setActive={setActivateModal}> */}
-      {/* <div className={style.backdrop}>
-        <div className={style.popup}> */}
       <form action="" className={style.popupForm} onSubmit={handleAdd}>
         <label htmlFor="start" className={style.titleLabel}>
           <p className={style.title}>Title</p>
@@ -180,12 +177,11 @@ function TaskPopUp({ task, closeModal, type }) {
         </div>
         {!task ? (
           <div className={style.buttonWrapper}>
-            <button
-              type="submit"
-              className={style.submitButton}
-              // onClick={handleAdd}
-            >
-              <span className={style.plus}>+</span>Add
+            <button type="submit" className={style.submitButton}>
+              <svg className={style.submitButton__icon} alt="plus">
+                <use href={`${icon}#plus`}></use>
+              </svg>
+              Add
             </button>
             <button
               type="button"
@@ -205,12 +201,11 @@ function TaskPopUp({ task, closeModal, type }) {
           onClick={hadleCloseModal}
           className={style.closeButton}
         >
-          <img src={close} alt="close" />
+          <svg className={style.closeButton_icon}>
+            <use href={`${close}#icon-Vector`} />
+          </svg>
         </button>
       </form>
-      {/* </div>
-      </div> */}
-      {/* </Modal> */}
     </>
   );
 }
