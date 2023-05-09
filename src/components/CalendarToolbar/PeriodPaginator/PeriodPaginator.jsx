@@ -5,6 +5,7 @@ import { handleChangeMonth } from 'hooks/handleChangeMonth.js';
 import { handleChangeDay } from 'hooks/handleChangeDay.js';
 import { setDate } from 'redux/date/dateSlice';
 import { selectDate } from 'redux/date/dateSelectors';
+import CalendarDatePicker from './CalendarDatePicker/CalendarDatePicker';
 import styles from './PeriodPaginator.module.css';
 
 export const PeriodPaginator = () => {
@@ -19,14 +20,14 @@ export const PeriodPaginator = () => {
   const handlePrevMonth = () => {
     dispatch(setDate(format(handleChangeMonth(dateFull, -1), 'yyyy-MM-dd')));
     navigate(
-      `/calendar/month/${format(handleChangeMonth(dateFull, -1), 'yyyy-MM-dd')}`
+      `/calendar/month/${format(handleChangeMonth(dateFull, -1), 'yyyy-MMMM')}`
     );
   };
 
   const handleNextMonth = () => {
     dispatch(setDate(format(handleChangeMonth(dateFull, 1), 'yyyy-MM-dd')));
     navigate(
-      `/calendar/month/${format(handleChangeMonth(dateFull, 1), 'yyyy-MM-dd')}`
+      `/calendar/month/${format(handleChangeMonth(dateFull, 1), 'yyyy-MMMM')}`
     );
   };
 
@@ -47,31 +48,51 @@ export const PeriodPaginator = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.nameContainer}>
-        <p className={styles.name}>
-          {pathname === `/calendar/month/${choosedDay}`
+        {/* <p className={styles.name}>
+          {pathname.slice(0, 16) === '/calendar/month/'
             ? format(dateFull, 'MMMM Y')
             : format(dateFull, 'd MMMM Y')}
-        </p>
+        </p> */}
+        <CalendarDatePicker />
       </div>
+
       <div className={styles.buttonsContainer}>
         <button
           className={`${styles.button} ${styles.buttonLeft}`}
           type="button"
           onClick={
-            pathname === `/calendar/month/${choosedDay}`
+            pathname.slice(0, 16) === '/calendar/month/'
               ? handlePrevMonth
               : handlePrevDay
           }
-        ></button>
+        >
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M6 12L10 8L6 4"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
         <button
           className={`${styles.button} ${styles.buttonRight}`}
           type="button"
           onClick={
-            pathname === `/calendar/month/${choosedDay}`
+            pathname.slice(0, 16) === '/calendar/month/'
               ? handleNextMonth
               : handleNextDay
           }
-        ></button>
+        >
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M6 12L10 8L6 4"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );

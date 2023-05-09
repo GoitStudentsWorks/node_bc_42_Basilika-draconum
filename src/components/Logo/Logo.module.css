@@ -1,0 +1,23 @@
+.logo {
+  text-decoration: none;
+  box-sizing: border-box;
+  width: 122px;
+  height: 35px;
+  background-image: url("../../images/LogoGooseTrackMobile.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 156px;
+    height: 58px;
+    background-image: url("../../images/LogoGooseTrackTablet.png");
+  }
+}
+@media screen and (min-width: 1440px) {
+  .logo {
+    width: 201px;
+    height: 68px;
+    background-image: url("../../images/LogoGooseTrackDesk.png");
+  }
+}/*# sourceMappingURL=Logo.module.css.map */

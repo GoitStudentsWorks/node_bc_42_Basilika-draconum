@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import PropTypes from 'prop-types';
@@ -9,10 +8,6 @@ import DaysWithTasks from './DaysWithTasks/DaysWithTasks';
 import css from './calendar-table.module.scss';
 
 const CalendarTable = ({ tasks, currentDate }) => {
-  // eslint-disable-next-line no-unused-vars
-  const [isOpened, setOpening] = useState(false);
-  // eslint-disable-next-line no-unused-vars
-  const [selectedTask, setSelectedTask] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -34,24 +29,7 @@ const CalendarTable = ({ tasks, currentDate }) => {
     }
   };
 
-//   const formattedDate = () => {
-//     if (selectedTask) {
-//       const date = new Date(selectedTask.date);
-//       const formatDate = format(date, 'yyyy-MM-dd');
-//       return formatDate;
-//     }
-//   };
-
-//   const handleToggleModal = () => {
-//     setOpening(!isOpened);
-//   };
-
-  const currentTask = data => {
-    setSelectedTask(data);
-  };
-
   const rows = [];
-
   const EmptyCells = firstDayOfMonth => {
     return Array.from({ length: firstDayOfMonth }, (_, index) => (
       <td key={`empty-${index}`}></td>
@@ -62,13 +40,7 @@ const CalendarTable = ({ tasks, currentDate }) => {
 
   daysWithTasks.forEach((day, index) => {
     cells.push(
-      <DaysWithTasks
-        key={index}
-        day={day}
-        setOpening={setOpening}
-        currentTask={currentTask}
-        handleClick={handleClick}
-      />
+      <DaysWithTasks key={index} day={day} handleClick={handleClick} />
     );
 
     if (cells.length === 7 || index === daysWithTasks.length - 1) {
@@ -84,43 +56,29 @@ const CalendarTable = ({ tasks, currentDate }) => {
           <tbody>{rows}</tbody>
         </table>
       </div>
-
-      {/* {isOpened && (
-        <ModalTaskEdit
-          date={formattedDate()}
-          type="Edit"
-          onCloseModal={handleToggleModal}
-          status={selectedTask.status}
-          id={selectedTask._id}
-          title={selectedTask.title}
-          priority={selectedTask.priority}
-          start={selectedTask.start}
-          end={selectedTask.end}
-        />
-      )} */}
     </>
   );
 };
 
 CalendarTable.propTypes = {
-  //   tasks: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       date: PropTypes.string.isRequired,
-  //       tasks: PropTypes.arrayOf(
-  //         PropTypes.shape({
-  //           title: PropTypes.string.isRequired,
-  //           status: PropTypes.string.isRequired,
-  //           date: PropTypes.objectOf(
-  //             PropTypes.shape({
-  //               start: PropTypes.string.isRequired,
-  //               end: PropTypes.string.isRequired,
-  //             })
-  //           ),
-  //           owner: PropTypes.string.isRequired,
-  //         })
-  //       ),
-  //     }).isRequired
-  //   ),
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+      priority: PropTypes.string.isRequired,
+      date: PropTypes.shape({
+        start: PropTypes.string.isRequired,
+        end: PropTypes.string.isRequired,
+      }).isRequired,
+      owner: PropTypes.shape({
+        email: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        _id: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired
+  ).isRequired,
+
   currentDate: PropTypes.string.isRequired,
 };
 

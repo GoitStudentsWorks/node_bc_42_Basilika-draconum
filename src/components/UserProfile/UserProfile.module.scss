@@ -3,17 +3,33 @@
 }
 
 .profilePageContainer {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 84px);
   padding: 0 20px 40px;
   background-color: var(--notes-background);
+  overflow-y: auto;
+  padding-top: 36px;
+  margin-top: -36px;
 
   @media screen and (min-width: 768px) {
     height: calc(100vh - 132px);
     padding: 0 32px 38px;
+    margin-top: 0;
   }
   @media screen and (min-width: 1440px) {
     height: calc(100vh - 116px);
     padding: 0 32px 32px;
+    overflow-y: visible;
+  }
+
+  &::-webkit-scrollbar {
+    height: 14px;
+    max-width: 360px;
+    background: var(--color-owerflow-background);
+    border-radius: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-owerflow-tumb);
+    border-radius: 12px;
   }
 }
 
@@ -21,7 +37,6 @@
   position: relative;
   background-color: var(--calendar);
   border-radius: 16px;
-  height: 100%;
   padding: 135px 18px 40px;
 
   @media screen and (min-width: 768px) {
@@ -29,7 +44,7 @@
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 60px 164px;
+    padding: 38px 164px 32px;
   }
 }
 
@@ -52,6 +67,9 @@
 
     @media screen and (min-width: 768px) {
       margin: 0 auto 40px;
+    }
+    @media screen and (min-width: 1440px) {
+      margin: 0 auto 20px;
     }
 
     .containerAvatar {
@@ -221,6 +239,7 @@
       }
     }
   }
+
   .formBtn {
     display: flex;
     justify-content: center;
@@ -243,12 +262,17 @@
       background-color: #2b78ef;
     }
 
+    &[disabled] {
+      background-color: var(--background-btn-disabled);
+    }
+
     @media screen and (min-width: 768px) {
       height: 48px;
     }
 
     @media screen and (min-width: 1440px) {
       margin-top: 88px;
+      margin-top: 38px;
     }
   }
 }
@@ -288,11 +312,4 @@
   overflow: hidden;
   color: #ffffff;
   padding: 10px;
-}
-
-@media screen and (min-width: 768px) {
-  /* width: 704px;
-    height: 854px; */
-}
-@media screen and (min-width: 1440px) {
 }

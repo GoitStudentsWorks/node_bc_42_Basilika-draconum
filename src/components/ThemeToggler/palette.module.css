@@ -1,0 +1,24 @@
+.btnLight {
+  background: transparent;
+  border: none;
+  display: block;
+}
+
+.btnDark {
+  background: transparent;
+  border: none;
+  display: block;
+}
+
+.changeTheme {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .changeTheme {
+    width: 32px;
+    height: 32px;
+  }
+}/*# sourceMappingURL=palette.module.css.map */

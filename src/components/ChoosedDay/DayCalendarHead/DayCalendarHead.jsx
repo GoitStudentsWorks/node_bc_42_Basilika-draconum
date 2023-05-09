@@ -34,37 +34,37 @@ const DayCalendarHead = () => {
   };
 
   return (
-      <ul className={css.dayCalendarHeadList}>
-        {dates.map(day => {
-          return (
-            <li key={day} className={css.dayCalendarHeadItem}>
-              <p
-                className={
-                  format(day, 'eee').slice(0, 1) === 'S'
-                    ? css.daysWeekend
-                    : css.daysOfWeek
-                }
-              >
-                {screenMobile
-                  ? format(day, 'eee').slice(0, 1)
-                  : format(day, 'eee').toUpperCase()}
-              </p>
+    <ul className={css.dayCalendarHeadList}>
+      {dates.map(day => {
+        return (
+          <li key={day} className={css.dayCalendarHeadItem}>
+            <p
+              className={
+                format(day, 'eee').slice(0, 1) === 'S'
+                  ? css.daysWeekend
+                  : css.daysOfWeek
+              }
+            >
+              {screenMobile
+                ? format(day, 'eee').slice(0, 1)
+                : format(day, 'eee').toUpperCase()}
+            </p>
 
-              <button
-                className={
-                  choosedDay !== format(day, 'yyyy-MM-dd')
-                    ? css.dayCalendarHeadBtn
-                    : css.choosedDay
-                }
-                type="button"
-                onClick={() => handleClick(day)}
-              >
-                {formattedDay(format(day, 'dd'))}
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+            <button
+              className={
+                choosedDay !== format(day, 'yyyy-MM-dd')
+                  ? css.dayCalendarHeadBtn
+                  : css.choosedDay
+              }
+              type="button"
+              onClick={() => handleClick(day)}
+            >
+              {formattedDay(format(day, 'dd'))}
+            </button>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

@@ -1,0 +1,32 @@
+.monthHeadList {
+  list-style: none;
+  background-color: var(--calendar);
+  color: #616161;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.125;
+  text-transform: uppercase;
+  padding: 16px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(220, 227, 229, 0.5);
+  border-radius: 8px;
+}
+@media screen and (min-width: 768px) {
+  .monthHeadList {
+    padding: 14px 40px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(220, 227, 229, 0.5);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .monthHeadList {
+    padding: 14px 60px;
+    margin-bottom: 15px;
+  }
+}
+
+.monthHeadItem {
+  color: var(--notheme-color-accent);
+}/*# sourceMappingURL=month-head.module.css.map */

@@ -1,37 +1,34 @@
 import React, { useEffect } from 'react';
-import './Modal.scss';
+import style from './Modal.module.scss';
+import { createPortal } from 'react-dom';
 
 const body = document.querySelector('body');
+const modalRoot = document.getElementById('modal');
 
-const Modal = ({ children, active, setActive }) => {
-	useEffect(() => {
-		const handleEscapeClose = event => {
-			if (event.code === 'Escape') {
-				setActive(false);
-			}
-		};
+const Modal = ({ children, setActive }) => {
+  useEffect(() => {
+    const handleEscapeClose = event => {
+      if (event.code === 'Escape') {
+        setActive(false);
+      }
+    };
 
-		window.addEventListener('keydown', handleEscapeClose);
+    window.addEventListener('keydown', handleEscapeClose);
 
-		return () => {
-			window.removeEventListener('keydown', handleEscapeClose);
-			body.classList.toggle('no-scroll');
-		};
-	}, [setActive]);
+    return () => {
+      window.removeEventListener('keydown', handleEscapeClose);
+      body.classList.toggle('no-scroll');
+    };
+  }, [setActive]);
 
-	return (
-		<div
-			className={active ? 'overlay active' : 'overlay'}
-			onClick={() => setActive(false)}
-		>
-			<div
-				className={active ? 'modal active' : 'modal'}
-				onClick={e => e.stopPropagation()}
-			>
-				{children}
-			</div>
-		</div>
-	);
+  return createPortal(
+    <div className={style.overlay} onClick={() => setActive(false)}>
+      <div className={style.modal} onClick={e => e.stopPropagation()}>
+        {children}
+      </div>
+    </div>,
+    modalRoot
+  );
 };
 
 export default Modal;

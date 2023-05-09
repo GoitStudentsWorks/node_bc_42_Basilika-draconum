@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Formik, ErrorMessage, Form } from 'formik';
+import Notiflix from 'notiflix';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FiPlus, FiChevronDown } from 'react-icons/fi';
@@ -21,7 +22,8 @@ import { isWeekendDay, weekendDayClassName } from './DatePickerCalendar';
 // UserProfile
 const UserProfile = () => {
   const [newAvatar, setNewAvatar] = useState(null);
-  const [isUpdated, setIsUpdated] = useState(null);
+  const [isFormChanged, setIsFormChanged] = useState(false);
+  const [isUpdated, setIsUpdated] = useState(false);
 
   const user = useSelector(getUser);
   const dispatch = useDispatch();
@@ -33,7 +35,11 @@ const UserProfile = () => {
     }
   }, [dispatch, isUpdated]);
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleFieldChange = () => {
+    setIsFormChanged(true);
+  };
+
+  const handleSubmit = async (values, { resetForm }) => {
     const profileData = {
       name: values.name,
       phone: values.phone,
@@ -42,17 +48,22 @@ const UserProfile = () => {
       birthday: values.birthday,
     };
 
-    console.log(values.birthday);
+    const avatarData = new FormData();
+    avatarData.append('avatar', newAvatar);
 
-    if (newAvatar) {
-      const avatarData = new FormData();
-      avatarData.append('avatar', newAvatar);
-      dispatch(updateAvatarThunk(avatarData));
+    try {
+      if (newAvatar) {
+        await dispatch(updateAvatarThunk(avatarData));
+      }
+
+      await dispatch(updateUserInfoThunk(profileData));
+      Notiflix.Notify.success('User profile is succesfully updated');
+      setIsUpdated(true);
+      setIsFormChanged(false);
+      resetForm();
+    } catch (error) {
+      Notiflix.Notify.failure('Something went wrong. Please try again');
     }
-
-    dispatch(updateUserInfoThunk(profileData));
-    setIsUpdated(true);
-    resetForm();
   };
 
   return (
@@ -104,6 +115,8 @@ const UserProfile = () => {
                       type="file"
                       onChange={e => {
                         setNewAvatar(e.target.files[0]);
+                        handleChange(e);
+                        handleFieldChange();
                       }}
                       accept="image/*,.png,.jpg,.gif,.web"
                       name="avatar"
@@ -112,7 +125,7 @@ const UserProfile = () => {
                 </div>
 
                 <h3 className={css.avatarName}>
-                  {user.name ? user.name : 'My name'}
+                  {user.name ? user.name : 'No name'}
                 </h3>
                 <span className={css.avatarRole}>User</span>
               </div>
@@ -128,7 +141,10 @@ const UserProfile = () => {
                     id="name"
                     className={css.formInput}
                     value={values.name}
-                    onChange={handleChange}
+                    onChange={e => {
+                      handleChange(e);
+                      handleFieldChange();
+                    }}
                     onBlur={handleBlur}
                     placeholder="Name"
                   ></input>
@@ -149,7 +165,10 @@ const UserProfile = () => {
                     id="phone"
                     className={css.formInput}
                     value={values.phone}
-                    onChange={handleChange}
+                    onChange={e => {
+                      handleChange(e);
+                      handleFieldChange();
+                    }}
                     onBlur={handleBlur}
                     placeholder="+380"
                   ></input>
@@ -181,6 +200,7 @@ const UserProfile = () => {
                       handleChange({
                         target: { name: 'birthday', value: date },
                       });
+                      handleFieldChange();
                     }}
                     dateFormat="dd/MM/yyyy"
                     calendarStartDay={1}
@@ -202,9 +222,12 @@ const UserProfile = () => {
                     name="skype"
                     id="skype"
                     className={css.formInput}
-                    placeholder="Skype"
+                    placeholder="Skype number or username"
                     value={values.skype}
-                    onChange={handleChange}
+                    onChange={e => {
+                      handleChange(e);
+                      handleFieldChange();
+                    }}
                     onBlur={handleBlur}
                   ></input>
                   <ErrorMessage
@@ -225,7 +248,10 @@ const UserProfile = () => {
                     className={css.formInput}
                     placeholder="Email"
                     value={values.email}
-                    onChange={handleChange}
+                    onChange={e => {
+                      handleChange(e);
+                      handleFieldChange();
+                    }}
                     onBlur={handleBlur}
                   ></input>
                   <ErrorMessage
@@ -235,7 +261,11 @@ const UserProfile = () => {
                   />
                 </div>
               </div>
-              <button className={css.formBtn} type="submit">
+              <button
+                className={css.formBtn}
+                type="submit"
+                disabled={!isFormChanged}
+              >
                 Save changes
               </button>
             </Form>

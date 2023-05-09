@@ -1,0 +1,33 @@
+.calendarInput {
+   background-color: var(--paginator-bg-color);
+   color: var(--paginator-text-color);
+
+   font-weight: 700;
+   font-size: 14px;
+   line-height: 1.286;
+   text-align: center;
+   text-transform: uppercase;
+
+   padding: 6px 12px;
+
+   border-radius: 8px;
+
+   border-color: transparent;
+
+   outline: none;
+
+   cursor: pointer;
+
+   &:hover,
+   &:focus {
+      scale: 1.05;
+   }
+
+   @media screen and (min-width: 768px) {
+      font-size: 16px;
+      line-height: 1.125;
+
+      padding: 6px 12px;
+      margin-right: 8px;
+   }
+}

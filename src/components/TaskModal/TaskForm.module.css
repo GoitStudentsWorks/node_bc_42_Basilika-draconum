@@ -1,0 +1,369 @@
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 303px;
+  height: 336px;
+  padding: 48px 18px 40px 18px;
+  border: 1px solid var(--borderColor-colum);
+  box-shadow: 0px 4px 16px var(--popup-box-shadow);
+  border-radius: 8px;
+}
+
+.popupForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.popupForm label {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+.popupForm input {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--profile-text-user);
+  border: var(--paginator-border-color);
+}
+
+.titleLabel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+@media screen and (min-width: 768px) {
+  .titleLabel {
+    margin-bottom: 18px;
+  }
+}
+.titleLabel input {
+  width: 100%;
+  height: 42px;
+  background-color: var(--background-modal-input);
+  border-radius: 8px;
+  border: 1px solid var(--border-input);
+  padding: 12px 14px;
+  outline: none;
+  transition: 200ms cubic-bezier(0.19, 1, 0.22, 1);
+  color: var(--input-text) !important;
+}
+.titleLabel input::-moz-placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+}
+.titleLabel input::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .titleLabel input {
+    width: 100%;
+    height: 46px;
+    padding: 14px 18px;
+  }
+}
+.titleLabel input:hover {
+  border: 1px solid var(--month-day-text);
+}
+.titleLabel input:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  -webkit-transition: text-indent 0.3s ease;
+  transition: text-indent 0.3s ease;
+}
+
+.timePickersWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .timePickersWrapper {
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+}
+
+.timePickerLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+.timePickerLabel input {
+  color: var(--input-text) !important;
+}
+
+.timePicker {
+  position: relative;
+  height: 42px;
+  border: 1px solid var(--border-input);
+  background-color: var(--background-modal-input);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+}
+.timePicker:hover {
+  border: 1px solid var(--month-day-text);
+}
+@media screen and (min-width: 768px) {
+  .timePicker {
+    height: 46px;
+    padding: 14px 18px;
+  }
+}
+
+.radioGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 178px;
+  margin-bottom: 32px;
+}
+
+.radioButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.radioButton label {
+  position: relative;
+  padding-left: 16px;
+  font-weight: 600;
+  color: var(--input-placeholder);
+  cursor: pointer;
+}
+.radioButton label:before {
+  content: "";
+  box-sizing: border-box;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 100ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.radioButton label[id=low]:before {
+  background-color: var(--bgColor-range-low);
+}
+.radioButton label[id=medium]:before {
+  background-color: var(--bgColor-range-medium);
+}
+.radioButton label[id=high]:before {
+  background-color: var(--bgColor-range-high);
+}
+.radioButton input.radioInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.radioButton input.radioInput:checked {
+  background-color: var(--bgColor-range-high);
+}
+.radioButton input:checked + label:before {
+  box-sizing: content-box;
+  padding: 0.7px;
+  width: 8px;
+  height: 8px;
+  background-clip: content-box;
+}
+.radioButton input:checked + label[id=low]:before {
+  border: 1.3px solid var(--notheme-radio-modal);
+}
+.radioButton input:checked + label[id=medium]:before {
+  border: 1.3px solid var(--notheme-radio-modal);
+}
+.radioButton input:checked + label[id=high]:before {
+  border: 1.3px solid var(--notheme-radio-modal);
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .buttonWrapper {
+    gap: 14px;
+  }
+}
+
+.submitButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 135px;
+  height: 42px;
+  background: var(--month-day-text);
+  border-radius: 8px;
+  color: var(--paginator-text-color);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  border: none;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .submitButton {
+    width: 182px;
+    height: 48px;
+    gap: 8px;
+  }
+}
+.submitButton span {
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.submitButton::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--month-day-text);
+  transition: width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.submitButton:hover {
+  transform: translateY(-4px);
+}
+.submitButton:hover::after {
+  width: 100%;
+}
+.submitButton__icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--paginator-text-color);
+}
+
+.cancelButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 118px;
+  height: 42px;
+  background-color: var(--background-modal-cancel);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--notheme-textColor-primary);
+}
+@media screen and (min-width: 768px) {
+  .cancelButton {
+    width: 144px;
+    height: 48px;
+  }
+}
+.cancelButton::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--bgColor-range-high);
+  transition: width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.cancelButton:hover {
+  transform: translateY(-4px);
+}
+.cancelButton:hover::after {
+  width: 100%;
+}
+
+.closeButton {
+  position: absolute;
+  top: 4px;
+  right: 25px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-size: contain;
+  background-position: center;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close_icon {
+  width: 10px;
+  height: 10px;
+  fill: var(--clos-modal);
+}
+
+.title {
+  width: 26px;
+  height: 14px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--profile-text-modal);
+}
+
+.start {
+  width: 29px;
+  height: 14px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--profile-text-modal);
+}
+
+.end {
+  width: 22px;
+  height: 14px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--profile-text-modal);
+}/*# sourceMappingURL=TaskForm.module.css.map */
