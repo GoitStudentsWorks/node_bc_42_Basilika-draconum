@@ -1,22 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import icon from '../../images/sideBarIcon/SideBarIcon.svg';
 // import { ReactComponent as UserCheck } from '../../images/close.svg';
 import s from './UserNav.module.scss';
 
 const UserNav = () => {
-  const [isActive, setIsActive] = useState(false);
-
   return (
     <nav className={s.userNavLinks}>
-      <NavLink
-        to="/account"
-        className={
-          isActive
-            ? `${s.userNavLinks__link}`
-            : `${s.userNavLinks__link} ${s.active}`
-        }
-      >
+      <NavLink to="/account" className={`${s.userNavLinks__link} ${s.active}`}>
         <svg className={s.userNavLinks__link__icon}>
           <use href={`${icon}#icon-userCheck`}></use>
         </svg>
@@ -28,11 +19,7 @@ const UserNav = () => {
         // className={({ isActive }) =>
         //   isActive ? s.userNavLinks__link + '' + s.active : s.userNavLinks__link
         // }
-        className={
-          isActive
-            ? `${s.userNavLinks__link}`
-            : `${s.userNavLinks__link} ${s.active}`
-        }
+        className={`${s.userNavLinks__link} ${s.active}`}
       >
         <svg className={s.userNavLinks__link__icon}>
           <use href={`${icon}#icon-calendarCheck`}></use>
