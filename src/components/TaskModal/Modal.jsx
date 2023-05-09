@@ -4,7 +4,6 @@ import { createPortal } from 'react-dom';
 
 const body = document.querySelector('body');
 const modalRoot = document.getElementById('modal');
-console.log('modalRoot');
 
 const Modal = ({ children, setActive }) => {
   useEffect(() => {

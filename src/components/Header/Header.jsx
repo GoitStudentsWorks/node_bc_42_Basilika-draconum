@@ -14,8 +14,6 @@ const Header = ({ setMenuActive }) => {
   const userAvatar = useSelector(getUserAvatar);
   const params = useParams();
   const avatarName = userName.name.slice(0, 1).toUpperCase();
-  //const task = useSelector(selectArrTasks);
-  //console.log(task);
 
   const arrTasks = useSelector(selectArrTasks);
   const currentDay = useSelector(selectDate);
@@ -30,7 +28,6 @@ const Header = ({ setMenuActive }) => {
     setTasksFilter(filteredTasks);
   }, [dayFromParams, arrTasks, currentDay]);
   const filterTodo = tasksFilter?.filter(task => task.status === 'toDo');
-  //console.log(filterTodo?.length);
 
   return (
     <header className={s.header}>
@@ -65,8 +62,6 @@ const Header = ({ setMenuActive }) => {
         </div>
         <div className={s.boxContent}>
           <ThemeToggler />
-
-          {/* <div className={s.boxContent__name}>{userName.name}</div> */}
           <Link to="/account" className={s.boxContent__name}>
             {userName.name}
           </Link>

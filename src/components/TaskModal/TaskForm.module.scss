@@ -74,9 +74,6 @@
 			opacity: 1;
 		}
 
-
-
-
 		@media screen and (min-width: 768px) {
 			width: 100%;
 			height: 46px;
@@ -91,11 +88,6 @@
 			text-indent: 500px;
 			transition: text-indent 0.3s ease;
 		}
-
-		// &:focus {
-		// 	box-shadow: 0 0 0 2px var(--labe-modal);
-		// 	border-inline-end-width: 1px;
-		// }
 
 	}
 }
@@ -147,7 +139,6 @@
 	}
 
 }
-
 
 .radioGroup {
 	display: flex;
@@ -368,13 +359,7 @@
 	background-color: transparent;
 	border-radius: 50%;
 	cursor: pointer;
-	// transition: transform 250ms ease-in;
 
-
-	// &:hover {
-	// 	fill: red;
-
-	// }
 }
 
 .close_icon {

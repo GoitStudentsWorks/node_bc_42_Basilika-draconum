@@ -1,4 +1,3 @@
-//something
 import axios from 'axios';
 
 export const privateAPI = axios.create({
@@ -16,18 +15,3 @@ export const setAuthHeader = token => {
 export const clearAuthHeader = () => {
   privateAPI.defaults.headers.common.Authorization = '';
 };
-
-// export const setAuthHeader = {
-//   set: token => {
-//     privateAPI.defaults.headers.Authorization = `Bearer ${token}`;
-//   },
-//   unSet: () => {
-//     privateAPI.defaults.headers.Authorization = '';
-//   },
-// };
-  // axios.interceptors.request.use(config => {
-  //   config.baseURL = privateAPI;
-  //   config.headers.common['Authorization'] = 'Bearer ' + token;
-  //   config.headers.post['Content-Type'] = 'application/json';
-  //   return config;
-  // });
