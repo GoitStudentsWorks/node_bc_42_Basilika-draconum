@@ -85,17 +85,17 @@ const ModalTaskEdit = ({ task, closeModal }) => {
             >
               <title>button-close</title>
               <path
-                stroke-linejoin="round"
-                stroke-linecap="round"
-                stroke-miterlimit="4"
-                stroke-width="3.2"
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeMiterlimit="4"
+                strokeWidth="3.2"
                 d="M24 8l-16 16"
               ></path>
               <path
-                stroke-linejoin="round"
-                stroke-linecap="round"
-                stroke-miterlimit="4"
-                stroke-width="3.2"
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeMiterlimit="4"
+                strokeWidth="3.2"
                 d="M8 8l16 16"
               ></path>
             </svg>
@@ -108,7 +108,8 @@ const ModalTaskEdit = ({ task, closeModal }) => {
               type="text"
               placeholder="Enter text"
               value={title}
-              maxlength="250"
+              maxLength="250"
+              autoFocus
               onChange={onChangeTitle}
             />
           </label>

@@ -65,7 +65,16 @@ export const PeriodPaginator = () => {
               ? handlePrevMonth
               : handlePrevDay
           }
-        ></button>
+        >
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M6 12L10 8L6 4"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
         <button
           className={`${styles.button} ${styles.buttonRight}`}
           type="button"
@@ -74,7 +83,16 @@ export const PeriodPaginator = () => {
               ? handleNextMonth
               : handleNextDay
           }
-        ></button>
+        >
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M6 12L10 8L6 4"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );
