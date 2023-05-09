@@ -1,0 +1,107 @@
+.dayCalendarHeadList {
+  background-color: var(--calendar);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 19px;
+  margin-bottom: 14px;
+  border: 1px solid var(--paginator-border-color);
+  border-radius: 8px;
+}
+@media (min-width: 768px) {
+  .dayCalendarHeadList {
+    padding: 10px 32px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(220, 227, 229, 0.8);
+  }
+}
+@media (min-width: 1440px) {
+  .dayCalendarHeadList {
+    padding: 10px 47px;
+  }
+}
+
+.dayCalendarHeadItem {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.daysOfWeek,
+.daysWeekend,
+.choosedDay,
+.dayCalendarHeadBtn {
+  background-color: var(--calendar);
+  color: #616161;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.125;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+@media (min-width: 768px) {
+  .daysOfWeek,
+  .daysWeekend,
+  .choosedDay,
+  .dayCalendarHeadBtn {
+    font-size: 14px;
+    gap: 4px;
+  }
+}
+
+.daysWeekend {
+  color: #3e85f3;
+}
+
+.dayCalendarHeadNumber {
+  font-weight: 600;
+  line-height: 18px;
+}
+@media (min-width: 768px) {
+  .dayCalendarHeadNumber {
+    font-size: 14px;
+  }
+}
+
+.dayCalendarHeadBtn,
+.choosedDay {
+  color: var(--name-text-color);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.167;
+  padding: 4px 8px;
+  margin-bottom: 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.dayCalendarHeadBtn:hover, .dayCalendarHeadBtn:focus,
+.choosedDay:hover,
+.choosedDay:focus {
+  background-color: #3e85f3;
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .dayCalendarHeadBtn,
+  .choosedDay {
+    font-size: 16px;
+    line-height: 1.125;
+  }
+}
+@media (min-width: 1440px) {
+  .dayCalendarHeadBtn,
+  .choosedDay {
+    padding: 4px 8px;
+  }
+}
+
+.choosedDay {
+  background-color: #3e85f3;
+  color: #ffffff;
+}/*# sourceMappingURL=day-calendar.module.css.map */

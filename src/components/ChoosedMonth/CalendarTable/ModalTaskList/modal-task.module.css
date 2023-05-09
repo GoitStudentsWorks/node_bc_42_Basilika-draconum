@@ -1,0 +1,73 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalWrapper {
+  position: absolute;
+  width: 100px;
+  max-height: 150px;
+  background-color: rgba(146, 143, 143, 0.9);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px;
+  border-radius: 15px;
+  transform: translate(-50%, 0);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+@media screen and (min-width: 768px) {
+  .modalWrapper {
+    width: 130px;
+  }
+}
+@media (min-width: 1440px) {
+  .modalWrapper {
+    width: 170px;
+  }
+}
+
+.modalBtnClose {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 3;
+  width: 10px;
+  height: 10px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../../../../images/button-close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modalBtnClose:hover, .modalBtnClose:focus {
+  transform: scale(1.2);
+}
+
+.modalBox {
+  text-align: left;
+  margin: 0 auto;
+}
+
+.modalText {
+  color: #52555f;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  margin: 50px 0 20px;
+}/*# sourceMappingURL=modal-task.module.css.map */

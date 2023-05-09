@@ -1,0 +1,10 @@
+.wrapChooseDay {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 72px);
+}
+@media screen and (min-width: 768px) {
+  .wrapChooseDay {
+    height: calc(100% - 39px);
+  }
+}/*# sourceMappingURL=choosedDay.module.css.map */

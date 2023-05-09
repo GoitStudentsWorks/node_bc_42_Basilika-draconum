@@ -1,0 +1,48 @@
+.columnHeadBar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 768px) {
+  .columnHeadBar {
+    margin-bottom: 28px;
+  }
+}
+.columnHeadBar__Text {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.11;
+}
+@media screen and (min-width: 768px) {
+  .columnHeadBar__Text {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.addTaskBtnIcon {
+  width: 22px;
+  height: 22px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .addTaskBtnIcon {
+    width: 24px;
+    height: 24px;
+  }
+}
+.addTaskBtnIcon__icon {
+  width: 100%;
+  height: 100%;
+  stroke: var(--profile-text-main);
+  fill: transparent;
+  transition: stoke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.addTaskBtnIcon__icon:hover {
+  stroke: var(--gooseTrack-color);
+}/*# sourceMappingURL=columnHeadBar.module.css.map */

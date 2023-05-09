@@ -1,0 +1,41 @@
+.userNavLinks__link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 16px 0 16px 20px;
+  color: var(--sidebar-text-other);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.userNavLinks__link:not(:last-child) {
+  margin-bottom: 18px;
+}
+@media screen and (min-width: 767px) {
+  .userNavLinks__link:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+.userNavLinks__link:hover {
+  background-color: var(--sidebar-hover-bg);
+  border-radius: 8px;
+  color: var(--sidebar-hover-link);
+}
+.userNavLinks__link:hover .userNavLinks__link__icon {
+  stroke: var(--sidebar-hover-icon);
+}
+.userNavLinks__link__text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.18;
+}
+.userNavLinks__link__icon {
+  display: inline-block;
+  padding-right: 10px;
+  fill: transparent;
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.0556640625em;
+  stroke: var(--sidebar-text-other);
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}/*# sourceMappingURL=UserNav.module.css.map */

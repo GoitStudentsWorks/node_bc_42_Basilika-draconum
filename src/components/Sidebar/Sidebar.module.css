@@ -1,0 +1,105 @@
+.sectionSidebar {
+  box-sizing: border-box;
+  height: 100%;
+  background-color: var(--sidebar);
+  max-width: 225px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .sectionSidebar {
+    max-width: 289px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .sectionSidebar {
+    display: block;
+  }
+}
+.sectionSidebar__blur {
+  width: calc(100vw - 225px);
+  height: 100%;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  position: absolute;
+  left: 225px;
+}
+@media screen and (min-width: 768px) {
+  .sectionSidebar__blur {
+    width: calc(100vw - 289px);
+    left: 289px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .sectionSidebar__blur {
+    display: none;
+  }
+}
+.sectionSidebar__container {
+  padding: 24px 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .sectionSidebar__container {
+    padding: 24px 32px;
+  }
+}
+.sectionSidebar__title {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: var(--sidebar-text-panel);
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 768px) {
+  .sectionSidebar__title {
+    font-size: 14px;
+    line-height: 1.21;
+    margin-bottom: 32px;
+  }
+}
+.sectionSidebar__logoBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 39px;
+  margin-bottom: 64px;
+}
+@media screen and (min-width: 768px) {
+  .sectionSidebar__logoBtn {
+    gap: 36px;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .sectionSidebar__logoBtn {
+    margin-bottom: 33px;
+  }
+}
+.sectionSidebar__closeBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.sectionSidebar__closeBtn__closeIcon {
+  display: block;
+  fill: transparent;
+  width: 24px;
+  height: 24px;
+  stroke-width: 0.9599609375em;
+  stroke: var(--name-text-color);
+}
+@media screen and (min-width: 768px) {
+  .sectionSidebar__closeBtn__closeIcon {
+    width: 34px;
+    height: 34px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .sectionSidebar__closeBtn__closeIcon {
+    display: none;
+  }
+}/*# sourceMappingURL=Sidebar.module.css.map */
