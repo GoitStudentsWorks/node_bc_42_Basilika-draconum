@@ -1,24 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TimePicker } from 'antd';
 import dayjs from 'dayjs';
 import Notiflix from 'notiflix';
 import { isModalEditShownAction } from 'redux/tasks/tasksSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import close from '../../images/close.svg';
+import close from '../../images/modal-svg/closeModal.svg';
+import icon from '../../images/modal-svg/plus.svg';
 
 import { selectArrTasks } from 'redux/tasks/tasksSelectors';
 
 import style from './TaskForm.module.scss';
 import { addTask } from 'redux/tasks/tasksOperations';
+import { selectDate } from 'redux/date/dateSelectors';
 
 function TaskPopUp({ task, closeModal, type }) {
-  const format = 'H:mm';
+  // const format = 'H:mm';
+  const currentDate = useSelector(selectDate);
   const [start, setStart] = useState(
-    task ? task.start : dayjs('09:00', format)
+    task ? task.start : dayjs(`${currentDate} 09:00`)
   );
-  const [end, setEnd] = useState(task ? task.end : dayjs('12:00', format));
+  const [end, setEnd] = useState(
+    task ? task.end : dayjs(`${currentDate} 09:00`)
+  );
   const [priority, setPriority] = useState(task ? task.priority : 'low');
   const [title, setTitle] = useState(task ? task.title : '');
+
+  useEffect(() => {
+    setStart(dayjs(`${currentDate} 9:00`));
+    setEnd(dayjs(`${currentDate} 12:00`));
+  }, [currentDate]);
 
   const dispatch = useDispatch();
 
@@ -35,11 +45,11 @@ function TaskPopUp({ task, closeModal, type }) {
   };
 
   const onChangeStart = (time, valueString) => {
-    setStart(dayjs(valueString, format));
+    setStart(dayjs(`${currentDate} ${valueString}`));
   };
 
   const onChangeEnd = (time, valueString) => {
-    setEnd(dayjs(valueString, format));
+    setEnd(dayjs(`${currentDate} ${valueString}`));
   };
 
   const onChangePriority = e => {
@@ -61,7 +71,6 @@ function TaskPopUp({ task, closeModal, type }) {
       Notiflix.Notify.failure(`${title} is already added.`);
       return;
     }
-    console.log(data);
     dispatch(addTask(data))
       .unwrap()
       .then(() => hadleCloseModal());
@@ -71,6 +80,7 @@ function TaskPopUp({ task, closeModal, type }) {
 
   const handleCancel = () => {
     isModalEditShownAction(false);
+    closeModal(false);
   };
 
   const hadleCloseModal = () => {
@@ -79,10 +89,7 @@ function TaskPopUp({ task, closeModal, type }) {
 
   return (
     <>
-      {/* <Modal active={activateModal} setActive={setActivateModal}> */}
-      {/* <div className={style.backdrop}>
-        <div className={style.popup}> */}
-      <form action="" className={style.popupForm}>
+      <form action="" className={style.popupForm} onSubmit={handleAdd}>
         <label htmlFor="start" className={style.titleLabel}>
           <p className={style.title}>Title</p>
           <input
@@ -100,6 +107,7 @@ function TaskPopUp({ task, closeModal, type }) {
               name="start"
               onChange={onChangeStart}
               value={start}
+              defaultValue={'08:00'}
               format={'H:mm'}
               minuteStep={5}
               suffixIcon={false}
@@ -114,6 +122,7 @@ function TaskPopUp({ task, closeModal, type }) {
               name="end"
               onChange={onChangeEnd}
               value={end}
+              defaultValue={'12:00'}
               format={'H:mm'}
               minuteStep={5}
               suffixIcon={false}
@@ -129,6 +138,7 @@ function TaskPopUp({ task, closeModal, type }) {
               id="low"
               name="priority"
               value="low"
+              checked={priority === 'low'}
               onChange={onChangePriority}
               className={style.radioInput}
             />
@@ -142,6 +152,7 @@ function TaskPopUp({ task, closeModal, type }) {
               id="medium"
               name="priority"
               value="medium"
+              checked={priority === 'medium'}
               onChange={onChangePriority}
               className={style.radioInput}
             />
@@ -155,6 +166,7 @@ function TaskPopUp({ task, closeModal, type }) {
               id="high"
               name="priority"
               value="high"
+              checked={priority === 'high'}
               onChange={onChangePriority}
               className={style.radioInput}
             />
@@ -165,12 +177,11 @@ function TaskPopUp({ task, closeModal, type }) {
         </div>
         {!task ? (
           <div className={style.buttonWrapper}>
-            <button
-              type="submit"
-              className={style.submitButton}
-              onClick={handleAdd}
-            >
-              <span className={style.plus}>+</span>Add
+            <button type="submit" className={style.submitButton}>
+              <svg className={style.submitButton__icon} alt="plus">
+                <use href={`${icon}#plus`}></use>
+              </svg>
+              Add
             </button>
             <button
               type="button"
@@ -190,12 +201,11 @@ function TaskPopUp({ task, closeModal, type }) {
           onClick={hadleCloseModal}
           className={style.closeButton}
         >
-          <img src={close} alt="close" />
+          <svg className={style.closeButton_icon}>
+            <use href={`${close}#icon-Vector`} />
+          </svg>
         </button>
       </form>
-      {/* </div>
-      </div> */}
-      {/* </Modal> */}
     </>
   );
 }

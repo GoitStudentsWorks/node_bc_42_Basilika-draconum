@@ -1,133 +1,171 @@
 @import-normalize;
 /* bring in normalize.css styles */
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}  */
 :root {
-	--notheme-bgColor-primary: #ffffff;
-	--notheme-bgColor-secondary: #dcebf7;
-	--notheme-textColor-title: #171820;
-	--notheme-color-accent: #3e85f3;
-	--notheme-textColor-primary: #111111;
-	--notheme-textColor-reviews: #111111b2;
-	--notheme-textColor-white: #ffffff;
-	--notheme-textColor-placeholder: #dce3e599;
-	--notheme-textColor-description: #111111e5;
-	--notheme-profile-text-user: #616161;
-	--notheme-hover-btn: #2b78ef;
-	--notheme-warning-color: red;
-	--notheme-bgColor-avatar: #f8f8f8;
-	--notheme-radio-modal: rgba(114, 194, 248, 0.3);
-	--notheme-popup-box-shadow: rgba(17, 17, 17, 0.1);
-	--notheme-labe-modal: rgba(5, 145, 255, 0.1);
+  --notheme-bgColor-primary: #ffffff;
+  --notheme-bgColor-secondary: #dcebf7;
+  --notheme-textColor-title: #171820;
+  --notheme-color-accent: #3e85f3;
+  --notheme-textColor-primary: #111111;
+  --notheme-textColor-reviews: #111111b2;
+  --notheme-textColor-white: #ffffff;
+  --notheme-textColor-placeholder: #dce3e599;
+  --notheme-textColor-description: #111111e5;
+  --notheme-profile-text-user: #616161;
+  --notheme-hover-btn: #2b78ef;
+  --notheme-warning-color: red;
+  --notheme-bgColor-avatar: #f8f8f8;
+  --notheme-radio-modal: rgba(114, 194, 248, 0.3);
+  --notheme-popup-box-shadow: rgba(17, 17, 17, 0.1);
+  --notheme-labe-modal: rgba(5, 145, 255, 0.1);
 }
 
 html[data-theme='dark'] {
-	--sidebar: #13151a;
-	--bgColor-secondary: #171820;
-	--calendar: #21222c;
-	--paginator-text-color: #ffffff;
-	--paginator-bg-color: #3e85f3;
-	--paginator-border-color: rgba(255, 255, 255, 0.15);
-	--type-select-bg-color: #21222c;
-	--type-select-color: #3e85f3;
-	--type-select-border-color: rgba(255, 255, 255, 0.15);
-	--type-select-active-bg-color: #3e85f3;
-	--type-select-active-color: #ffffff;
-	--sidebar-accent: #3e85f3;
-	--textColor-main: #111111;
-	--gooseTrack-color: #e3f3ff;
-	--sidebar-text-panel: rgba(250, 250, 250, 0.3);
-	--sidebar-text-other: #fff;
-	--profile-text-main: #fff;
-	--name-text-color: #fff;
-	--profile-text-user: rgba(250, 250, 250, 0.3);
-	--profile-text-categories: rgba(250, 250, 250, 0.3);
-	--month-day-background-accent: #3e85f3;
-	--month-day-background: #21222c;
-	--month-day-text: #3e85f3;
-	--month-day-text-accent: #fff;
-	--notes-background: #171820;
-	--list-status: #171820;
-	--bgColor-range-low: #72c2f8;
-	--bgColor-range-medium: #f3b249;
-	--bgColor-range-high: #ea3d65;
-	--sidebar-hover-icon: #ffffff;
-	--sidebar-hover-link: #ffffff;
-	--sidebar-hover-bg: #3e85f3;
-	--border-shadow-btn: rgba(136, 165, 191, 0.48);
-	--borderColor-colum: rgba(255, 255, 255, 0.15);
-	--color-owerflow-background: #21222C;
-	--color-owerflow-tumb: #2D3037;
-	--borderColor-input-profile: rgba(255, 255, 255, 0.15);
-	--background-modal-cancel: #EFEFEF;
-	--background-modal: #171820;
-	--profile-text-modal: rgba(250, 250, 250, 0.3);
-	--input-placeholder: #FFFFFF;
-	--input-text: #ffffff;
-	--clos-modal: #ffffff;
-	--border-input: rgba(255, 255, 255, 0.15);
-	--background-modal-input: #171820;
-
-	--bg-modalEdit: #171820;
-	--bgInput-modalEdit: transparent;
-	--colorTitle-modalEdit: rgba(250, 250, 250, 0.3);
+  --sidebar: #13151a;
+  --bgColor-secondary: #171820;
+  --calendar: #21222c;
+  --paginator-text-color: #ffffff;
+  --paginator-bg-color: #3e85f3;
+  --paginator-border-color: rgba(255, 255, 255, 0.15);
+  --type-select-bg-color: #21222c;
+  --type-select-color: #3e85f3;
+  --type-select-border-color: rgba(255, 255, 255, 0.15);
+  --type-select-active-bg-color: #3e85f3;
+  --type-select-active-color: #ffffff;
+  --sidebar-accent: #3e85f3;
+  --textColor-main: #111111;
+  --gooseTrack-color: #e3f3ff;
+  --sidebar-text-panel: rgba(250, 250, 250, 0.3);
+  --sidebar-text-other: #fff;
+  --profile-text-main: #fff;
+  --name-text-color: #fff;
+  --profile-text-user: rgba(250, 250, 250, 0.3);
+  --profile-text-categories: rgba(250, 250, 250, 0.3);
+  --month-day-background-accent: #3e85f3;
+  --month-day-background: #21222c;
+  --month-day-text: #3e85f3;
+  --month-day-text-accent: #fff;
+  --notes-background: #171820;
+  --list-status: #171820;
+  --bgColor-range-low: #72c2f8;
+  --bgColor-range-medium: #f3b249;
+  --bgColor-range-high: #ea3d65;
+  --sidebar-hover-icon: #ffffff;
+  --sidebar-hover-link: #ffffff;
+  --sidebar-hover-bg: #3e85f3;
+  --border-shadow-btn: rgba(136, 165, 191, 0.48);
+  --borderColor-colum: rgba(255, 255, 255, 0.15);
+  --color-owerflow-background: #21222c;
+  --color-owerflow-tumb: #2d3037;
+  --borderColor-input-profile: rgba(255, 255, 255, 0.15);
+  --background-modal-cancel: #efefef;
+  --background-modal: #171820;
+  --profile-text-modal: rgba(250, 250, 250, 0.3);
+  --input-placeholder: #ffffff;
+  --input-text: #ffffff;
+  --clos-modal: #ffffff;
+  --border-input: rgba(255, 255, 255, 0.15);
+  --background-modal-input: #171820;
+  --background-btn-disabled: #616161;
+  --bg-modalEdit: #171820;
+  --bgInput-modalEdit: transparent;
+  --colorTitle-modalEdit: rgba(250, 250, 250, 0.3);
+  --colorInput-modalEdit: #ffffff;
+  --color-btnClose-modalEdit: #ffffff;
 }
 
 html[data-theme='light'] {
-	--sidebar: #fff;
-	--bgColor-secondary: #dcebf7;
-	--calendar: #fff;
-	--paginator-text-color: #ffffff;
-	--paginator-bg-color: #3e85f3;
-	--paginator-border-color: rgba(220, 227, 229, 0.5);
-	--type-select-bg-color: #e3f3ff;
-	--type-select-color: #3e85f3;
-	--type-select-border-color: rgba(62, 133, 243, 0.2);
-	--type-select-active-bg-color: #cae8ff;
-	--type-select-active-color: #3e85f3;
-	--sidebar-accent: #e3f3ff;
-	--textColor-main: #fff;
-	--gooseTrack-color: #3e85f3;
-	--sidebar-text-panel: #7e7d82;
-	--sidebar-text-other: #84828a;
-	--profile-text-main: #111111;
-	--name-text-color: #343434;
-	--profile-text-user: #616161;
-	--profile-text-categories: #111111;
-	--sidebar-hover-icon: #3e85f3;
-	--sidebar-hover-link: #3e85f3;
-	--sidebar-hover-bg: #e3f3ff;
-	--border-shadow-btn: rgba(136, 165, 191, 0.3);
-	--month-day-background-accent: #cae8ff;
-	--month-day-background: #e3f3ff;
-	--month-day-text: #3e85f3;
-	--month-day-text-accent: #3e85f3;
-	--notes-background: #f7f6f9;
-	--list-status: #ffffff;
-	--bgColor-range-low: #72c2f8;
-	--bgColor-range-medium: #f3b249;
-	--bgColor-range-high: #ea3d65;
-	--borderColor-colum: rgba(220, 227, 229, 0.8);
-	--add-button-color-hover: #CAE8FF;
-	/* не змінний*/
-	--color-owerflow-background: #f2f2f2;
-	--color-owerflow-tumb: #e7e5e5;
-	--borderColor-input-profile: rgba(17, 17, 17, 0.15);
-	--background-modal-cancel: #EFEFEF;
-	--background-modal: #FFFFFF;
-	--profile-text-modal: rgba(52, 52, 52, 0.8);
-	--input-placeholder: #616161;
-	--input-text: #111111;
-	--clos-modal: #111111;
-	--border-input: #F7F7F7;
-	--background-modal-input: #F7F7F7;
+  --sidebar: #fff;
+  --bgColor-secondary: #dcebf7;
+  --calendar: #fff;
+  --paginator-text-color: #ffffff;
+  --paginator-bg-color: #3e85f3;
+  --paginator-border-color: rgba(220, 227, 229, 0.5);
+  --type-select-bg-color: #e3f3ff;
+  --type-select-color: #3e85f3;
+  --type-select-border-color: rgba(62, 133, 243, 0.2);
+  --type-select-active-bg-color: #cae8ff;
+  --type-select-active-color: #3e85f3;
+  --sidebar-accent: #e3f3ff;
+  --textColor-main: #fff;
+  --gooseTrack-color: #3e85f3;
+  --sidebar-text-panel: #7e7d82;
+  --sidebar-text-other: #84828a;
+  --profile-text-main: #111111;
+  --name-text-color: #343434;
+  --profile-text-user: #616161;
+  --profile-text-categories: #111111;
+  --sidebar-hover-icon: #3e85f3;
+  --sidebar-hover-link: #3e85f3;
+  --sidebar-hover-bg: #e3f3ff;
+  --border-shadow-btn: rgba(136, 165, 191, 0.3);
+  --month-day-background-accent: #cae8ff;
+  --month-day-background: #e3f3ff;
+  --month-day-text: #3e85f3;
+  --month-day-text-accent: #3e85f3;
+  --notes-background: #f7f6f9;
+  --list-status: #ffffff;
+  --bgColor-range-low: #72c2f8;
+  --bgColor-range-medium: #f3b249;
+  --bgColor-range-high: #ea3d65;
+  --borderColor-colum: rgba(220, 227, 229, 0.8);
+  --add-button-color-hover: #cae8ff;
+  --background-btn-disabled: #919191;
 
-	--bg-modalEdit: #ffffff;
-	--bgInput-modalEdit: #f7f7f7;
-	--colorTitle-modalEdit: rgba(52, 52, 52, 0.8);
+  /* не змінний*/
+  --color-owerflow-background: #f2f2f2;
+  --color-owerflow-tumb: #e7e5e5;
+  --borderColor-input-profile: rgba(17, 17, 17, 0.15);
+  --background-modal-cancel: #efefef;
+  --background-modal: #ffffff;
+  --profile-text-modal: rgba(52, 52, 52, 0.8);
+  --input-placeholder: #616161;
+  --input-text: #111111;
+  --clos-modal: #111111;
+  --border-input: #f7f7f7;
+  --background-modal-input: #f7f7f7;
+  --bg-modalEdit: #ffffff;
+  --bgInput-modalEdit: #f7f7f7;
+  --colorTitle-modalEdit: rgba(52, 52, 52, 0.8);
+  --colorInput-modalEdit: #616161;
+  --color-btnClose-modalEdit: #212121;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 375px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+    padding: 0 24px;
+  }
+}
+
+.active {
+  background-color: var(--sidebar-hover-bg);
+  border-radius: 8px;
+  color: var(--sidebar-hover-link);
 }
 
 * {

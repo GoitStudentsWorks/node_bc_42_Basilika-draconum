@@ -17,15 +17,16 @@
       }
     }
 
-    &:hover {
-      background-color: var(--sidebar-hover-bg);
-      border-radius: 8px;
-      color: var(--sidebar-hover-link);
-    }
+    // &:hover {
+    //   background-color: var(--sidebar-hover-bg);
+    //   border-radius: 8px;
+    //   color: var(--sidebar-hover-link);
+    // }
 
-    &:hover &__icon {
-      stroke: var(--sidebar-hover-icon);
-    }
+    // &:hover &__icon {
+    //   stroke: var(--sidebar-hover-icon);
+    // }
+
     &__text {
       font-family: 'Inter';
       font-style: normal;
@@ -42,6 +43,31 @@
       stroke-width: 1.0556640625em;
       stroke: var(--sidebar-text-other);
       transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      // &.active {
+      //   stroke: var(--sidebar-hover-icon);
+      // }
     }
   }
+  // &__link.active {
+  //   background-color: var(--sidebar-hover-bg);
+  //   border-radius: 8px;
+  //   color: var(--sidebar-hover-link);
+  // }
+  // &__link.active &__icon {
+  //   stroke: var(--sidebar-hover-icon);
+  //stroke: inherit;
+  // }
 }
+
+// .userNavLinks__link.active > svg {
+//   stroke: var(--sidebar-hover-icon);
+// }
+// .userNavLinks__link.active {
+//   background-color: var(--sidebar-hover-bg);
+//   border-radius: 8px;
+//   color: var(--sidebar-hover-link);
+// }
+// .userNavLinks__link.active .userNavLinks__link__icon {
+//   stroke: var(--sidebar-hover-icon);
+// }

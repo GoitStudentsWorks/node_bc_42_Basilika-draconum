@@ -6,6 +6,8 @@ import {
   updateTaskStatusApi,
   addTaskApi,
 } from 'services/tasksService';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 export const fetchTasks = createAsyncThunk(
   'tasks/fetchTasks',
@@ -22,8 +24,8 @@ export const fetchTasks = createAsyncThunk(
 export const deleteTaskThunk = createAsyncThunk(
   'task/delete',
   async (credentials, thunkAPI) => {
-    try {    
-      await deleteTaskApi(credentials);   
+    try {
+      await deleteTaskApi(credentials);
       return credentials;
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);
@@ -35,7 +37,13 @@ export const updateTaskThunk = createAsyncThunk(
   'task/update',
   async ({ id, dataTask }, thunkAPI) => {
     try {
-      return await updateTaskByIdApi(id, dataTask);
+      Loading.pulse({
+        svgColor: 'orange',
+      });
+      const result = await updateTaskByIdApi(id, dataTask);
+      Notify.success('The task has been successfully changed.');
+      Loading.remove();
+      return result;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -53,26 +61,6 @@ export const updateTaskStatusThunk = createAsyncThunk(
     }
   }
 );
-
-// export const addTask = createAsyncThunk(
-//   'task/addTask',
-//   async (tasksData, thunkAPI) => {
-//     try {
-//       const response = await fetch('/task',
-//       {
-//         // method: 'POST',
-//         // body: JSON.stringify(tasksData),
-//         // headers: {
-//         //   'Content-Type': 'application/json',
-//         // },
-//       });
-//       const data = await response.json();
-//       return data;
-//     } catch (e) {
-//       return thunkAPI.rejectWithValue(e.message);
-//     }
-//   }
-// );
 
 export const addTask = createAsyncThunk(
   'task/addTask',

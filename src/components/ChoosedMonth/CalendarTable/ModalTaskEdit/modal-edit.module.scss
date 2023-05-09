@@ -7,6 +7,17 @@
    height: 100vh;
 
    z-index: 10;
+
+   animation: show 1s forwards;
+}
+
+@keyframes show {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
 }
 
 .modalEditWrapper {
@@ -14,7 +25,7 @@
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   //   transition: transform 200ms cubic-bezier(0.19, 1, 0.22, 1);
+   transition: transform 250ms cubic-bezier(0.19, 1, 0.22, 1);
 
    z-index: 11;
 
@@ -29,6 +40,14 @@
    border-radius: 8px;
 
    box-shadow: 0px 4px 16px rgba(17, 17, 17, 0.1);
+
+   // box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.4);
+
+   animation: show 1s forwards;
+
+   @media screen and (min-width: 1440px) {
+      transform: translate(0, -50%);
+   }
 }
 
 .popupForm {
@@ -47,7 +66,7 @@
       font-weight: 600;
       font-size: 14px;
       line-height: 1.286;
-      color: #616161;
+      color: var(--colorInput-modalEdit);
    }
 }
 
@@ -139,9 +158,9 @@
 
    border: 1px solid rgba(255, 255, 255, 0.15);
 
-   input[name='start'],
-   input[name='end'] {
-      color: #616161;
+   input[name="start"],
+   input[name="end"] {
+      color: var(--colorInput-modalEdit);
    }
 
    &:hover {
@@ -173,7 +192,7 @@
    label {
       position: relative;
 
-      color: #616161;
+      color: var(--colorInput-modalEdit);
 
       font-weight: 600;
 
@@ -182,7 +201,7 @@
       cursor: pointer;
 
       &:before {
-         content: '';
+         content: "";
 
          position: absolute;
          left: 0;
@@ -202,19 +221,19 @@
       }
    }
 
-   label[id='low'] {
+   label[id="low"] {
       &:before {
          background-color: #72c2f8;
       }
    }
 
-   label[id='medium'] {
+   label[id="medium"] {
       &:before {
          background-color: #f3b249;
       }
    }
 
-   label[id='high'] {
+   label[id="high"] {
       &:before {
          background-color: #ea3d65;
       }
@@ -228,7 +247,7 @@
       }
    }
 
-   input:checked+label:before {
+   input:checked + label:before {
       width: 8px;
       height: 8px;
 
@@ -238,22 +257,22 @@
       background-clip: content-box;
    }
 
-   input:checked+label[id='low']:before {
+   input:checked + label[id="low"]:before {
       border: 1.3px solid rgba(114, 194, 248, 0.3);
    }
 
-   input:checked+label[id='medium']:before {
+   input:checked + label[id="medium"]:before {
       border: 1.3px solid rgba(243, 178, 73, 0.3);
    }
 
-   input:checked+label[id='high']:before {
+   input:checked + label[id="high"]:before {
       border: 1.3px solid rgba(234, 61, 101, 0.3);
    }
 }
 
 .buttonWrapper {
    width: 100%;
-   
+
    display: flex;
    justify-content: space-between;
 
@@ -287,8 +306,7 @@
    border: none;
    border-radius: 8px;
 
-   box-shadow: 0 3px 3px 0 rgb(0 0 0 / 14%), 0 1px 7px 0 rgb(0 0 0 / 12%),
-      0 3px 1px -2px rgb(0 0 0 / 20%);
+   box-shadow: 0 3px 3px 0 rgb(0 0 0 / 14%), 0 1px 7px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
 
    cursor: pointer;
 
@@ -300,33 +318,34 @@
       min-width: 15px;
       height: 15px;
 
-      background-image: url('../../../../images/edit.svg');
+      background-image: url("../../../../images/edit.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
    }
 }
 
-.closeButton {
+.closeBtn {
    position: absolute;
-   top: 14px;
+   top: 10px;
    right: 14px;
 
    width: 20px;
    height: 20px;
 
-   background-color: transparent;
-   background-size: contain;
-   background-position: center;
-
    border: none;
    border-radius: 50%;
 
+   background-color: transparent;
+
+   stroke: var(--color-btnClose-modalEdit);
+
    cursor: pointer;
 
-   transition: transform 250ms ease-in;
+   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-   &:hover {
+   &:hover,
+   &:focus {
       transform: rotateZ(90deg);
       border: 2.5px solid rgba(114, 194, 248, 0.7);
    }

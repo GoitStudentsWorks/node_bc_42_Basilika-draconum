@@ -13,23 +13,24 @@ export const PeriodTypeSelect = () => {
 
   const { pathname } = location;
 
-  const currentDate = format(new Date(), 'yyyy-MM-dd');
+  const currentDateMonth = format(new Date(), 'yyyy-MMMM');
+  const currentDateDay = format(new Date(), 'yyyy-MM-dd');
 
   const handleClickMonth = () => {
-    dispatch(setDate(currentDate));
-    navigate(`/calendar/month/${currentDate}`);
+    dispatch(setDate(currentDateDay));
+    navigate(`/calendar/month/${currentDateMonth}`);
   };
 
   const handleClickDay = () => {
-    dispatch(setDate(currentDate));
-    navigate(`/calendar/day/${currentDate}`);
+    dispatch(setDate(currentDateDay));
+    navigate(`/calendar/day/${currentDateDay}`);
   };
 
   return (
     <div className={styles.periodTypeSelectMarkUp}>
       <button
         className={
-          pathname === `/calendar/month/${choosedDay}`
+          pathname.slice(0, 16) === `/calendar/month/`
             ? styles.activeLinkMonth
             : styles.navLinkMonth
         }

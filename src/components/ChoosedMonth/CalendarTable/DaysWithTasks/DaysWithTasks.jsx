@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { isToday, parseISO } from 'date-fns';
 import { useMediaQuery } from '@mui/material';
 import { formattedDay } from 'hooks/fotmattedDay';
@@ -48,16 +49,8 @@ const DaysWithTasks = ({ day, handleClick }) => {
             return (
               <div key={index}>
                 {screenMobile
-                  ? index === 0 && (
-                      <TasksList
-                        task={task}
-                      />
-                    )
-                  : index <= 1 && (
-                      <TasksList
-                        task={task}
-                      />
-                    )}
+                  ? index === 0 && <TasksList task={task} />
+                  : index <= 1 && <TasksList task={task} />}
               </div>
             );
           })}
@@ -79,9 +72,32 @@ const DaysWithTasks = ({ day, handleClick }) => {
           <ModalTaskList closeModalList={closeModalList} taskList={day} />
         </div>
       )}
-      {/* </div> */}
     </td>
   );
+};
+
+DaysWithTasks.propTypes = {
+  day: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    tasks: PropTypes.arrayOf(
+      PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        status: PropTypes.string.isRequired,
+        priority: PropTypes.string.isRequired,
+        date: PropTypes.shape({
+          start: PropTypes.string.isRequired,
+          end: PropTypes.string.isRequired,
+        }).isRequired,
+        owner: PropTypes.shape({
+          email: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          _id: PropTypes.string.isRequired,
+        }).isRequired,
+      })
+    ).isRequired,
+  }),
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default DaysWithTasks;

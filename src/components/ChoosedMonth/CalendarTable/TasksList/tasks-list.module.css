@@ -1,0 +1,61 @@
+.tasksListStyle {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.tasksListItem {
+  width: 41;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: left;
+  padding: 2px 0;
+  transition: scale 250ms linear;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .tasksListItem {
+    width: 90px;
+  }
+}
+@media (min-width: 1440px) {
+  .tasksListItem {
+    width: 147px;
+  }
+}
+.tasksListItem:hover, .tasksListItem:focus {
+  scale: 1.05;
+}
+
+.lowColor,
+.mediumColor,
+.highColor {
+  padding: 3px 7px;
+  border-radius: 8px;
+}
+@media (min-width: 768px) {
+  .lowColor,
+  .mediumColor,
+  .highColor {
+    font-size: 14px;
+    line-height: 1.286;
+  }
+}
+
+.lowColor {
+  background-color: #ceeefd;
+  color: var(--notheme-color-accent);
+}
+
+.mediumColor {
+  background-color: #fcf0d4;
+  color: var(--bgColor-range-medium);
+}
+
+.highColor {
+  background-color: #ffd2dd;
+  color: var(--bgColor-range-high);
+}/*# sourceMappingURL=tasks-list.module.css.map */

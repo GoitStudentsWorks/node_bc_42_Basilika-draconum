@@ -1,0 +1,315 @@
+* {
+  box-sizing: border-box;
+}
+
+.profilePageContainer {
+  height: calc(100vh - 84px);
+  padding: 0 20px 40px;
+  background-color: var(--notes-background);
+  overflow-y: auto;
+  padding-top: 36px;
+  margin-top: -36px;
+}
+@media screen and (min-width: 768px) {
+  .profilePageContainer {
+    height: calc(100vh - 132px);
+    padding: 0 32px 38px;
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .profilePageContainer {
+    height: calc(100vh - 116px);
+    padding: 0 32px 32px;
+  }
+}
+.profilePageContainer::-webkit-scrollbar {
+  height: 14px;
+  max-width: 360px;
+  background: var(--color-owerflow-background);
+  border-radius: 12px;
+}
+.profilePageContainer::-webkit-scrollbar-thumb {
+  background: var(--color-owerflow-tumb);
+  border-radius: 12px;
+}
+
+.wrapper {
+  position: relative;
+  background-color: var(--calendar);
+  border-radius: 16px;
+  padding: 135px 18px 40px;
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    padding: 40px 175px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    padding: 60px 164px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 1440px) {
+  .form {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+.form .formAvatar {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .form .formAvatar {
+    margin: 0 auto 40px;
+  }
+}
+.form .formAvatar .containerAvatar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid #3e85f3;
+  background-color: #f8f8f8;
+  color: rgba(62, 133, 243, 0.18);
+  font-size: 28px;
+  margin: -170px auto 0;
+}
+@media screen and (min-width: 768px) {
+  .form .formAvatar .containerAvatar {
+    width: 124px;
+    height: 124px;
+    font-size: 36px;
+    margin-top: 0;
+  }
+}
+.form .formAvatar .containerAvatar .avatarImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.form .formAvatar .containerAvatar .inputUpload {
+  position: absolute;
+  bottom: -7px;
+  right: 12px;
+  opacity: 0;
+  width: 17px;
+  height: 17px;
+}
+@media screen and (min-width: 768px) {
+  .form .formAvatar .containerAvatar .inputUpload {
+    bottom: -9px;
+    right: 21px;
+    width: 26px;
+    height: 26px;
+    font-size: 20px;
+  }
+}
+.form .formAvatar .containerAvatar .btnUpload {
+  position: absolute;
+  bottom: -5px;
+  right: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  background: #3e85f3;
+  font-size: 14px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .form .formAvatar .containerAvatar .btnUpload {
+    bottom: -8px;
+    right: 22px;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+  }
+}
+.form .formAvatar .avatarName {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--name-text-color);
+  margin-top: 18px;
+  margin-bottom: 4px;
+}
+@media screen and (min-width: 768px) {
+  .form .formAvatar .avatarName {
+    font-size: 18px;
+    line-height: 1;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+}
+.form .formAvatar .avatarRole {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--profile-text-user);
+}
+@media screen and (min-width: 768px) {
+  .form .formAvatar .avatarRole {
+    font-size: 14px;
+    line-height: 1.29;
+  }
+}
+.form .formCenter {
+  display: grid;
+  row-gap: 24px;
+  width: 100%;
+}
+@media screen and (min-width: 1440px) {
+  .form .formCenter {
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 50px;
+         column-gap: 50px;
+  }
+}
+.form .formCenter .formRow {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 375px) {
+  .form .formCenter .formRow {
+    max-width: 299px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .form .formCenter .formRow {
+    max-width: 354px;
+  }
+}
+.form .formCenter .formRow .formLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--profile-text-categories);
+  margin-bottom: 8px;
+}
+@media screen and (min-width: 768px) {
+  .form .formCenter .formRow .formLabel {
+    font-size: 14px;
+    line-height: 1.29;
+  }
+}
+.form .formCenter .formRow .formInput {
+  width: 100%;
+  height: 42px;
+  border: 1px solid var(--borderColor-input-profile);
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--profile-text-main);
+  background-color: var(--calendar);
+  padding: 0 14px;
+}
+.form .formCenter .formRow .formInput:hover, .form .formCenter .formRow .formInput:active, .form .formCenter .formRow .formInput:focus {
+  border-color: var(--profile-text-main);
+}
+@media screen and (min-width: 768px) {
+  .form .formCenter .formRow .formInput {
+    height: 46px;
+    font-size: 16px;
+    line-height: 1.12;
+  }
+}
+.form .formBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 195px;
+  height: 46px;
+  background-color: var(--notheme-color-accent);
+  color: #fff;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.29;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  margin: 40px auto 0;
+}
+.form .formBtn:hover, .form .formBtn:active {
+  background-color: #2b78ef;
+}
+.form .formBtn[disabled] {
+  background-color: #666;
+}
+@media screen and (min-width: 768px) {
+  .form .formBtn {
+    height: 48px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .form .formBtn {
+    margin-top: 88px;
+  }
+}
+
+.dateIcon {
+  position: absolute;
+  bottom: 9px;
+  right: 13px;
+  font-size: 22px;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .dateIcon {
+    bottom: 10px;
+    right: 14px;
+  }
+}
+
+.formInput[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.formError {
+  position: absolute;
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--bgColor-range-high);
+  margin: 5px 0 0 18px;
+}
+
+.customCalendarStyle {
+  background-color: #3e85f3;
+  border-radius: 16px;
+  border: none;
+  overflow: hidden;
+  color: #ffffff;
+  padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  /* width: 704px;
+    height: 854px; */
+}/*# sourceMappingURL=UserProfile.module.css.map */
