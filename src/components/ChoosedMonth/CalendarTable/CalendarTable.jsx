@@ -75,7 +75,7 @@ CalendarTable.propTypes = {
         email: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         _id: PropTypes.string.isRequired,
-      }).isRequired,
+      }),
     }).isRequired
   ).isRequired,
 

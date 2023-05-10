@@ -1,7 +1,8 @@
 .styledTd {
    position: relative;
 
-   width: 48px;
+   min-width: 46px;
+   max-width: 48px;
    height: calc((100vh - 335px) / 5);
 
    vertical-align: middle;
@@ -15,12 +16,14 @@
    cursor: pointer;
 
    @media (min-width: 768px) {
-      width: 100px;
+      min-width: 98px;
+      max-width: 100px;
       height: calc((100vh - 295px) / 5);
    }
 
    @media (min-width: 1440px) {
-      width: 156px;
+      min-width: 130px;
+      // max-width: 150px;
       height: calc((100vh - 285px) / 5);
    }
 
