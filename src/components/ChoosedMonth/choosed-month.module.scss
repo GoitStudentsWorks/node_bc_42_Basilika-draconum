@@ -1,8 +1,16 @@
 .choosedMonthWrapper {
-   max-height: 60vh;
+   height: 47vh;
 
    overflow-y: auto;
    overflow-x: hidden;
+
+   @media (min-width: 768px) {
+      height: 62vh;
+   }
+
+   @media (min-width: 1440px) {
+      height: 62vh;
+   }
 
    &::-webkit-scrollbar {
       height: 14px;

@@ -3,12 +3,12 @@
   background-color: var(--notes-background);
 
   &__container {
-    padding: 24px 32px 64px 32px;
+    padding: 24px 20px 64px 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
       padding: 40px 32px 32px 32px;
     }
   }
