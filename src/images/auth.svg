@@ -1,9 +1,0 @@
-<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<defs>
-
-<symbol id="icon-log-out" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556" d="M22.259 23.824l7.824-7.824M30.083 16l-7.824-7.824M30.083 16h-18.778M11.306 1.917h-1.878c-2.629 0-3.944 0-4.948 0.512-0.883 0.45-1.601 1.168-2.051 2.051-0.512 1.004-0.512 2.319-0.512 4.948v13.144c0 2.629 0 3.944 0.512 4.948 0.45 0.883 1.168 1.601 2.051 2.051 1.004 0.512 2.319 0.512 4.948 0.512h1.878"></path>
-</symbol>
-
-</defs>
-</svg>
