@@ -57,7 +57,7 @@ const ModalTaskEdit = ({ task, closeModal }) => {
       Notify.warning('Try to change something first.');
       return;
     }
-    if (start > end) {
+    if (start >= end) {
       Notify.warning('Incorrect time of the event');
       return;
     }
