@@ -30,15 +30,23 @@
 .lowColor,
 .mediumColor,
 .highColor {
+   min-width: 46px;
+
    padding: 3px;
 
    border-radius: 8px;
 
    @media (min-width: 768px) {
+      min-width: 80px;
+
       font-size: 14px;
       line-height: 1.286;
 
       padding: 3px 7px;
+   }
+
+   @media (min-width: 1440px) {
+      min-width: 130px;
    }
 }
 
