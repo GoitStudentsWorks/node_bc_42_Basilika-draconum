@@ -1,9 +1,11 @@
 .wrapChooseDay {
    display: flex;
    flex-direction: column;
-   height: calc(100% - 72px);
+   // height: calc(100% - 72px);
+   height: calc(100vh - 225px);
 
    @media screen and (min-width: 768px) {
-      height: calc(100% - 39px);
+      // height: calc(100% - 39px);
+      height: calc(100vh - 195px);
    }
 }
