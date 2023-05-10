@@ -41,7 +41,7 @@ const tasksSlice = createSlice({
       })
       .addCase(deleteTaskThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.error = null;        
+        state.error = null;
         state.tasks = state.tasks.filter(task => task._id !== payload);
       })
       .addCase(deleteTaskThunk.rejected, (state, { payload }) => {
@@ -52,7 +52,6 @@ const tasksSlice = createSlice({
       })
       .addCase(updateTaskStatusThunk.fulfilled, (state, { payload }) => {
         if (payload === undefined || payload === null) {
-          console.log('UpdateTaskStatusThunk payload not object!');
           return;
         }
         const { _id, status } = payload;

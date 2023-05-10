@@ -30,7 +30,6 @@ export const LoginForm = () => {
       password: yup.string().min(6).required(),
     }),
   });
-  console.log(formik);
 
   return (
     <div className={style.wrapper}>
