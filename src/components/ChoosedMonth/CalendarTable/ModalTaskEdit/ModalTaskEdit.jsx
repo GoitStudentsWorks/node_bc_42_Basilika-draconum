@@ -57,6 +57,10 @@ const ModalTaskEdit = ({ task, closeModal }) => {
       Notify.warning('Try to change something first.');
       return;
     }
+    if (start > end) {
+      Notify.warning('Incorrect time of the event');
+      return;
+    }
     hadleCloseModal();
     dispatch(updateTaskThunk({ id, dataTask }))
       .unwrap()
