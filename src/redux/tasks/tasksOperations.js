@@ -8,14 +8,18 @@ import {
 } from 'services/tasksService';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
+import { logOutThunk } from 'redux/auth/authOperations';
 
 export const fetchTasks = createAsyncThunk(
   'tasks/fetchTasks',
-  async (_, { rejectWithValue }) => {
+  async (_, { rejectWithValue, dispatch }) => {
     try {
       const data = await getTaskAllApi();
       return data;
     } catch (error) {
+      if (error.response.status === 401) {
+        dispatch(logOutThunk);
+      }
       return rejectWithValue(error.message);
     }
   }
