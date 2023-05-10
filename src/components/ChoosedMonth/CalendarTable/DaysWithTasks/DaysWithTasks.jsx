@@ -39,6 +39,7 @@ const DaysWithTasks = ({ day, handleClick }) => {
         className={
           isToday(parseISO(day.date)) ? css.today : css.styledNumberDay
         }
+        onClick={e => handleClick(e, day.date)}
       >
         {formattedDay(day.date)}
       </p>
