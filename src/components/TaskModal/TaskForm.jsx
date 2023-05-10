@@ -64,6 +64,10 @@ function TaskPopUp({ task, closeModal, type }) {
   const handleAdd = e => {
     e.preventDefault();
     const status = chooseProgressType(type);
+    if (title.length > 250) {
+      Notiflix.Notify.failure('Exceeded maximum length of 250 characters');
+      return;
+    }
     const data = { date: { start, end }, priority, title, status };
     if (
       filterTasks.find(
