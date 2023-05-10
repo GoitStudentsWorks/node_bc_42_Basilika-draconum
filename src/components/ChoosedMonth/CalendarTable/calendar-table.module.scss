@@ -3,21 +3,28 @@
 
    border: 1px solid rgba(220, 227, 229, 0.5);
    border-radius: 8px;
+
+   overflow-y: auto;
+   overflow-x: hidden;
 }
 
 .calendarTableStyle {
    width: 100%;
-   // max-height: 470px;
+   max-height: calc(100vh - 282px - 52px);
 
    border-spacing: 0;
    border-style: hidden;
    border-radius: 50px;
 
    @media (min-width: 768px) {
-      // max-height: 720px;
+      max-height: calc(100vh - 282px - 42px);
    }
 
    @media (min-width: 1440px) {
-      // max-height: 625px;
+      max-height: calc(100vh - 282px - 32px);
    }
+}
+
+.claendarTableBody {
+   width: 100%;
 }

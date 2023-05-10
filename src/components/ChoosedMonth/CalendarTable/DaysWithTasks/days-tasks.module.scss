@@ -2,7 +2,7 @@
    position: relative;
 
    width: 48px;
-   height: 94px;
+   height: calc((100vh - 335px) / 5);
 
    vertical-align: middle;
 
@@ -14,6 +14,16 @@
 
    cursor: pointer;
 
+   @media (min-width: 768px) {
+      width: 100px;
+      height: calc((100vh - 295px) / 5);
+   }
+
+   @media (min-width: 1440px) {
+      width: 156px;
+      height: calc((100vh - 285px) / 5);
+   }
+
    &:hover,
    &:focus {
       border: 1px solid #3e85f3;
@@ -22,16 +32,6 @@
    .today {
       background-color: #3e85f3;
       color: #ffffff;
-   }
-
-   @media (min-width: 768px) {
-      width: 100px;
-      height: 144px;
-   }
-
-   @media (min-width: 1440px) {
-      width: 156px;
-      height: 125px;
    }
 }
 
@@ -44,8 +44,8 @@
 .styledNumberDay,
 .today {
    position: absolute;
-   top: 8px;
-   right: 10px;
+   top: 3px;
+   right: 3px;
 
    color: var(--name-text-color); // #FFFFFF; dark
 
@@ -59,6 +59,9 @@
    border-radius: 8px;
 
    @media (min-width: 768px) {
+      top: 8px;
+      right: 10px;
+
       font-size: 16px;
       line-height: 1.125;
 

@@ -57,7 +57,7 @@ const DaysWithTasks = ({ day, handleClick }) => {
 
           {screenMobile && day.tasks.length > 1 ? (
             <p className={css.burgerListTasks} onClick={openModalList}>
-              +{day.tasks.length - 1} tasks
+              +{day.tasks.length - 1} ...
             </p>
           ) : !screenMobile && day.tasks.length > 2 ? (
             <p className={css.burgerListTasks} onClick={openModalList}>
