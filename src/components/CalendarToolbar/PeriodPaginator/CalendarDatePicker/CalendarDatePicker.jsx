@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { format, parseISO } from 'date-fns';
 import { selectDate } from 'redux/date/dateSelectors';
 import { setDate } from 'redux/date/dateSlice';
+import './DatePickerStyles.scss';
 import css from './calendar-picker.module.scss';
 
 const CalendarDatePicker = () => {
@@ -27,16 +28,19 @@ const CalendarDatePicker = () => {
             navigate(`/calendar/month/${format(date, 'yyyy-MMMM')}`);
           }}
           className={css.calendarInput}
+          calendarClassName={css.customCalendarStyle}
         />
       ) : (
         <DatePicker
           dateFormat="d MMMM Y"
           selected={dateFull}
+          calendarStartDay={1}
           onChange={date => {
             dispatch(setDate(format(date, 'yyyy-MM-dd')));
             navigate(`/calendar/day/${format(date, 'yyyy-MM-dd')}`);
           }}
           className={css.calendarInput}
+          calendarClassName={css.customCalendarStyle}
         />
       )}
     </>

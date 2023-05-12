@@ -31,3 +31,12 @@
       margin-right: 8px;
    }
 }
+
+.customCalendarStyle {
+   background-color: var(--notheme-color-accent);
+
+   border-radius: 16px;
+   border: none;
+
+   overflow: hidden;
+}
