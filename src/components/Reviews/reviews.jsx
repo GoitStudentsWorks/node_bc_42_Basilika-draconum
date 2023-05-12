@@ -6,16 +6,19 @@ import { data } from './reviewsData';
 import {BsFillStarFill} from 'react-icons/bs';
 
 const Slider = () => {
-const [current, setCurrent] = useState(0);
+const [currentReview, setCurrentReview] = useState(0);
 
 const prevSlide = () => {
-    const newIndex = current === 0 ? data.length - 1 : current - 1;
-    setCurrent(newIndex);
+  setCurrentReview(
+      currentReview === data.length - 1 ? 0 : currentReview + 1
+    )
 };
 
-const nextSlide = () => {
-    const newIndex = current + ((window.innerWidth >= 1280) ? 2 : 1);
-    setCurrent(newIndex >= data.length ? 0 : newIndex);}
+  const nextSlide = () => {
+    setCurrentReview(
+      currentReview === data.length - 1 ? 0 : currentReview + 1
+    )
+  }
 
 return (
   <>
@@ -24,9 +27,9 @@ return (
       <ul className={css.list}>
         {data
           .slice(
-            current,
-            current +
-              Math.min(data.length - current, window.innerWidth >= 1280 ? 2 : 1)
+            currentReview,
+            currentReview +
+              Math.min(data.length - currentReview, window.innerWidth >= 1280 ? 2 : 1)
           )
           .map((review, index) => (
             <li className={css.item} key={review.id}>
