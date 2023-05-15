@@ -2,7 +2,7 @@
   "name": "goose-track",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Basilika-draconum.github.io/goose-track/",
+  "homepage": "https://GoitStudentsWorks.github.io/node_bc_42_Basilika-draconum/",
   "dependencies": {
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
