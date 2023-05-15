@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/node_bc_42_Basilika-draconum/static/css/main.8cafb8b2.css",
-    "main.js": "/node_bc_42_Basilika-draconum/static/js/main.a53aa82d.js",
+    "main.js": "/node_bc_42_Basilika-draconum/static/js/main.16087366.js",
     "static/css/983.b69b4627.chunk.css": "/node_bc_42_Basilika-draconum/static/css/983.b69b4627.chunk.css",
     "static/js/983.2dcc7639.chunk.js": "/node_bc_42_Basilika-draconum/static/js/983.2dcc7639.chunk.js",
     "static/css/953.a16a3028.chunk.css": "/node_bc_42_Basilika-draconum/static/css/953.a16a3028.chunk.css",
@@ -47,7 +47,7 @@
     "static/media/button-close.svg": "/node_bc_42_Basilika-draconum/static/media/button-close.e99c5637d2694ed651b6.svg",
     "static/media/downArrow2.svg": "/node_bc_42_Basilika-draconum/static/media/downArrow2.a24bc4f2d3f004d9549a80985e7c88ba.svg",
     "main.8cafb8b2.css.map": "/node_bc_42_Basilika-draconum/static/css/main.8cafb8b2.css.map",
-    "main.a53aa82d.js.map": "/node_bc_42_Basilika-draconum/static/js/main.a53aa82d.js.map",
+    "main.16087366.js.map": "/node_bc_42_Basilika-draconum/static/js/main.16087366.js.map",
     "983.b69b4627.chunk.css.map": "/node_bc_42_Basilika-draconum/static/css/983.b69b4627.chunk.css.map",
     "983.2dcc7639.chunk.js.map": "/node_bc_42_Basilika-draconum/static/js/983.2dcc7639.chunk.js.map",
     "953.a16a3028.chunk.css.map": "/node_bc_42_Basilika-draconum/static/css/953.a16a3028.chunk.css.map",
@@ -72,6 +72,6 @@
   },
   "entrypoints": [
     "static/css/main.8cafb8b2.css",
-    "static/js/main.a53aa82d.js"
+    "static/js/main.16087366.js"
   ]
 }
