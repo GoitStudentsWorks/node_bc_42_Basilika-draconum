@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <BrowserRouter basename="/goose-track">
+        <BrowserRouter basename="/node_bc_42_Basilika-draconum">
           <App />
         </BrowserRouter>
       </PersistGate>
